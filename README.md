@@ -83,3 +83,7 @@ Este módulo trabajará de manera análoga al análisis de datasets, de una form
 será trasladar a un modelo abstracto el resumen de funcionamiento del modelo, representando no por qué ha tomado las
 decisiones que ha tomado sino centrándose en resumirlas y exponerlas de una forme que dote de sentido al modelo
 para el usuario experto.
+
+### Especificaciones técnicas
+
+Se realizará la totalidad del trabajo en Python haciendo uso de las frameworks de Pandas y Sklearn, entre otras.
