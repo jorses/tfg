@@ -4,7 +4,7 @@ TAREAS A REALIZAR
 
     El módulo debe aportar una estructura capaz de almacenar una forma de identificar un dataset,
     una forma de guardar diferentes tipos de info relevante para el dominio, desde métricas estándar
-    para cada columna a 
+    para cada columna a colores, desviaciones, valores especiales...
     
 [ ] Determinar una estructura de JSON capaz de almacenar toda la información relevante
 [ ] Programarla
