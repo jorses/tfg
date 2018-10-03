@@ -10,7 +10,7 @@ también por el programa.
 
 La estructura modular abstracta del programa, creada para permitir una *aproximación general a cualquier ámbito de conocimiento* y almacenar información sobre los ámbitos, será la siguiente:
 
-#### Almacenamiento de la información (Aprendizaje)
+#### Almacenamiento de la información 
 
 Tendremos un módulo encargado de *almacenar la información* de los dominios que conoce el programa, y para simplificar
 estos serán reconocidos según los nombres de las columnas del dataset introducido.
@@ -32,6 +32,15 @@ Este módulo tendrá en cuenta los tipos de las columnas, el conocimiento del do
 del dataset y de los individuos frente a este para componer el modelo abstracto que mejor lo representará
 para un usuario experto.
 
+La elección del tipo de informe (enfocado a expertos o enfocado al usuario) estará en principio determinada por un parámetro introducido al ejecutar el programa.
+
+Destacamos que este módulo elige también los *elementos gráficos* más adecuados para la visualización de un
+usuario experto y un usuario básico, incluyendo (pero no limitado a) los tipos de gráficos, los colores,
+los rangos, el grosor de las líneas de los gráficos y los fondos de los mismos.
+También determinará la "historia" que se ha de contar, posiblemente teniendo en cuenta el objetivo del informe.
+
+
+
 #### Generación de informes
 
 El módulo recibirá la salida abstracta del módulo de análisis y se encargará de parsearlo a un formato
@@ -42,8 +51,6 @@ estará contenido en el necesario para un usuario experto).
 
 La parte de texto se realizará por plantillas para simplificar esta parte, y todos los aspectos como la elección
 de los colores o el tipo de gráficas a usar estarán también determinados por la representación abstracta del análisis.
-
-La elección del tipo de informe estará en principio determinada por un parámetro introducido al ejecutar el programa.
 
 #### Main
 
