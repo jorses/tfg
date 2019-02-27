@@ -1,0 +1,85 @@
+{
+    "colors": {
+        "active": {
+            "value": "blue"
+        },
+        "age": {
+            "value": "blue"
+        },
+        "alco": {
+            "value": "blue"
+        },
+        "ap_hi": {
+            "value": "blue"
+        },
+        "ap_lo": {
+            "value": "blue"
+        },
+        "cardio": {
+            "value": "blue"
+        },
+        "cholesterol": {
+            "value": "blue"
+        },
+        "gender": {
+            "value": "blue"
+        },
+        "gluc": {
+            "value": "blue"
+        },
+        "height": {
+            "value": "blue"
+        },
+        "id": {
+            "value": "blue"
+        },
+        "smoke": {
+            "value": "blue"
+        },
+        "weight": {
+            "value": "blue"
+        }
+    },
+    "columns": {
+        "active": {
+            "value": 3
+        },
+        "age": {
+            "value": 59109.0
+        },
+        "alco": {
+            "value": 0
+        },
+        "ap_hi": {
+            "value": 360.0
+        },
+        "ap_lo": {
+            "value": 240.0
+        },
+        "cardio": {
+            "value": 0
+        },
+        "cholesterol": {
+            "value": 3
+        },
+        "gender": {
+            "value": 3
+        },
+        "gluc": {
+            "value": 3
+        },
+        "height": {
+            "value": 495.0
+        },
+        "id": {
+            "value": 150004.5
+        },
+        "smoke": {
+            "value": 0
+        },
+        "weight": {
+            "value": 216.0
+        }
+    },
+    "dataset": {}
+}

@@ -17,56 +17,56 @@
     "knowledge": {
         "column_stats": {
             "id": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 50001.5
             },
             "age": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 19703.0
             },
             "gender": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 1.0
             },
             "height": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 165.0
             },
             "weight": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 72.0
             },
             "ap_hi": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 120.0
             },
             "ap_lo": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 80.0
             },
             "cholesterol": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 1.0
             },
             "gluc": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 1.0
             },
             "smoke": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 0.0
             },
             "alco": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 0.0
             },
             "active": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 1.0
             },
             "cardio": {
-                "metric": "num_metric",
-                "value": 3
+                "metric": "median",
+                "value": 0.0
             }
         },
         "dataset_stats": {}
