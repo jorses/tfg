@@ -1,0 +1,94 @@
+{
+    "colors": {
+        "M0700": {
+            "value": "blue"
+        },
+        "M0930": {
+            "value": "blue"
+        },
+        "M1300": {
+            "value": "blue"
+        },
+        "M1500": {
+            "value": "blue"
+        },
+        "M1800": {
+            "value": "blue"
+        },
+        "M2000": {
+            "value": "blue"
+        },
+        "M2300": {
+            "value": "blue"
+        },
+        "i0700": {
+            "value": "blue"
+        },
+        "i0930": {
+            "value": "blue"
+        },
+        "i1300": {
+            "value": "blue"
+        },
+        "i1500": {
+            "value": "blue"
+        },
+        "i1800": {
+            "value": "blue"
+        },
+        "i2300": {
+            "value": "blue"
+        },
+        "week": {
+            "value": "blue"
+        },
+        "weekday": {
+            "value": "blue"
+        }
+    },
+    "columns": {
+        "age": {
+            "value": 165.0
+        },
+        "ca": {
+            "value": 0
+        },
+        "chol": {
+            "value": 720.0
+        },
+        "cp": {
+            "value": 0
+        },
+        "exang": {
+            "value": 0
+        },
+        "fbs": {
+            "value": 0
+        },
+        "oldpeak": {
+            "value": 2.4000000000000004
+        },
+        "restecg": {
+            "value": 3
+        },
+        "sex": {
+            "value": 3
+        },
+        "slope": {
+            "value": 6
+        },
+        "target": {
+            "value": 3
+        },
+        "thal": {
+            "value": 6
+        },
+        "thalach": {
+            "value": 459.0
+        },
+        "trestbps": {
+            "value": 390.0
+        }
+    },
+    "dataset": {}
+}

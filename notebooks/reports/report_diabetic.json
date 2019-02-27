@@ -1,0 +1,97 @@
+{
+    "colors": {
+        "M0700": {
+            "value": "blue"
+        },
+        "M0930": {
+            "value": "green"
+        },
+        "M1300": {
+            "value": "red"
+        },
+        "M1500": {
+            "value": "blue"
+        },
+        "M1800": {
+            "value": "red"
+        },
+        "M2000": {
+            "value": "blue"
+        },
+        "M2300": {
+            "value": "green"
+        },
+        "i0700": {
+            "value": "blue"
+        },
+        "i0930": {
+            "value": "blue"
+        },
+        "i1300": {
+            "value": "blue"
+        },
+        "i1500": {
+            "value": "blue"
+        },
+        "i1800": {
+            "value": "blue"
+        },
+        "i2300": {
+            "value": "blue"
+        },
+        "week": {
+            "value": "blue"
+        },
+        "weekday": {
+            "value": "blue"
+        }
+    },
+    "columns": {
+        "M0700": {
+            "value": 24.0
+        },
+        "M0930": {
+            "value": 15.899999999999999
+        },
+        "M1300": {
+            "value": 19.5
+        },
+        "M1500": {
+            "value": 18.9
+        },
+        "M1800": {
+            "value": 12.299999999999999
+        },
+        "M2000": {
+            "value": 18.6
+        },
+        "M2300": {
+            "value": 0.0
+        },
+        "i0700": {
+            "value": 12.0
+        },
+        "i0930": {
+            "value": 0.0
+        },
+        "i1300": {
+            "value": 14.399999999999999
+        },
+        "i1500": {
+            "value": 0.0
+        },
+        "i1800": {
+            "value": 18.0
+        },
+        "i2300": {
+            "value": 0.0
+        },
+        "week": {
+            "value": 3
+        },
+        "weekday": {
+            "value": 3
+        }
+    },
+    "dataset": {}
+}

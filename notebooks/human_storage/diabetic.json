@@ -1,0 +1,150 @@
+{
+    "attribute_list": [
+        "week",
+        "weekday",
+        "M0700",
+        "M0930",
+        "M1300",
+        "M1500",
+        "M1800",
+        "M2000",
+        "M2300",
+        "i0700",
+        "i0930",
+        "i1300",
+        "i1500",
+        "i1800",
+        "i2300"
+    ],
+    "profiles": {
+        "patient": {
+            "knowledge": {
+                "colors": {
+                    "week": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "weekday": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M0700": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M0930": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M1300": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M1500": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M1800": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M2000": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M2300": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i0700": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i0930": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i1300": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i1500": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i1800": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i2300": {
+                        "metric": "num_metric",
+                        "value": 3
+                    }
+                },
+                "column_stats": {
+                    "week": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "weekday": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M0700": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M0930": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M1300": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M1500": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M1800": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M2000": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M2300": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i0700": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i0930": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i1300": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i1500": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i1800": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i2300": {
+                        "metric": "num_metric",
+                        "value": 3
+                    }
+                },
+                "dataset_stats": {}
+            }
+        }
+    }
+}

@@ -4,7 +4,7 @@
             "value": "blue"
         },
         "age": {
-            "value": "blue"
+            "value": "red"
         },
         "alco": {
             "value": "blue"
@@ -32,6 +32,47 @@
         },
         "id": {
             "value": "blue"
+        },
+        "smoke": {
+            "value": "blue"
+        },
+        "weight": {
+            "value": "blue"
+        }
+    },
+    "graphs": {
+        "active": {
+            "value": "blue"
+        },
+        "age": {
+            "value": "red"
+        },
+        "alco": {
+            "value": "blue"
+        },
+        "ap_hi": {
+            "value": "blue"
+        },
+        "ap_lo": {
+            "value": "red"
+        },
+        "cardio": {
+            "value": "blue"
+        },
+        "cholesterol": {
+            "value": "red"
+        },
+        "gender": {
+            "value": "blue"
+        },
+        "gluc": {
+            "value": "red"
+        },
+        "height": {
+            "value": "blue"
+        },
+        "id": {
+            "value": "red"
         },
         "smoke": {
             "value": "blue"

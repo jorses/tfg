@@ -1,0 +1,145 @@
+{
+    "attribute_list": [
+        "age",
+        "sex",
+        "cp",
+        "trestbps",
+        "chol",
+        "fbs",
+        "restecg",
+        "thalach",
+        "exang",
+        "oldpeak",
+        "slope",
+        "ca",
+        "thal",
+        "target"
+    ],
+    "profiles": {
+        "patient": {
+            "knowledge": {
+                "colors": {
+                    "week": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "weekday": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M0700": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M0930": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M1300": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M1500": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M1800": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M2000": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "M2300": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i0700": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i0930": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i1300": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i1500": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i1800": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "i2300": {
+                        "metric": "num_metric",
+                        "value": 3
+                    }
+                },
+                "column_stats": {
+                    "age": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "sex": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "cp": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "trestbps": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "chol": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "fbs": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "restecg": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "thalach": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "exang": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "oldpeak": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "slope": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "ca": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "thal": {
+                        "metric": "num_metric",
+                        "value": 3
+                    },
+                    "target": {
+                        "metric": "num_metric",
+                        "value": 3
+                    }
+                },
+                "dataset_stats": {}
+            }
+        }
+    }
+}
