@@ -1,0 +1,74 @@
+{
+    "attribute_list": [
+        "id",
+        "age",
+        "gender",
+        "height",
+        "weight",
+        "ap_hi",
+        "ap_lo",
+        "cholesterol",
+        "gluc",
+        "smoke",
+        "alco",
+        "active",
+        "cardio"
+    ],
+    "knowledge": {
+        "column_stats": {
+            "id": {
+                "metric": "num_metric",
+                "value": 3
+            },
+            "age": {
+                "metric": "num_metric",
+                "value": 3
+            },
+            "gender": {
+                "metric": "num_metric",
+                "value": 3
+            },
+            "height": {
+                "metric": "num_metric",
+                "value": 3
+            },
+            "weight": {
+                "metric": "num_metric",
+                "value": 3
+            },
+            "ap_hi": {
+                "metric": "num_metric",
+                "value": 3
+            },
+            "ap_lo": {
+                "metric": "num_metric",
+                "value": 3
+            },
+            "cholesterol": {
+                "metric": "num_metric",
+                "value": 3
+            },
+            "gluc": {
+                "metric": "num_metric",
+                "value": 3
+            },
+            "smoke": {
+                "metric": "num_metric",
+                "value": 3
+            },
+            "alco": {
+                "metric": "num_metric",
+                "value": 3
+            },
+            "active": {
+                "metric": "num_metric",
+                "value": 3
+            },
+            "cardio": {
+                "metric": "num_metric",
+                "value": 3
+            }
+        },
+        "dataset_stats": {}
+    }
+}
