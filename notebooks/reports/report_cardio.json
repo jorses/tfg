@@ -25,19 +25,19 @@
             "value": "blue"
         },
         "gluc": {
-            "value": "blue"
+            "value": "green"
         },
         "height": {
             "value": "blue"
         },
         "id": {
-            "value": "blue"
+            "value": "green"
         },
         "smoke": {
             "value": "blue"
         },
         "weight": {
-            "value": "blue"
+            "value": "green"
         }
     },
     "graphs": {
@@ -103,7 +103,7 @@
         "age": {
             "score": 59109.0,
             "metric": "median",
-            "analysis": "HIGH"
+            "analysis": "VERY HIGH"
         },
         "alco": {
             "score": 0,
