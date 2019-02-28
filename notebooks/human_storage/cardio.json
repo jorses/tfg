@@ -20,110 +20,110 @@
                 "colors":{
                     "id": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "blue"
                     },
                     "age": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "red"
                     },
                     "gender": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "blue"
                     },
                     "height": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "blue"
                     },
                     "weight": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "red"
                     },
                     "ap_hi": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "blue"
                     },
                     "ap_lo": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "blue"
                     },
                     "cholesterol": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "red"
                     },
                     "gluc": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "blue"
                     },
                     "smoke": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "blue"
                     },
                     "alco": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "blue"
                     },
                     "active": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "blue"
                     },
                     "cardio": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": "green"
                     }
 
                 },
                 "column_stats": {
                     "id": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": 0.470
                     },
                     "age": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": 0.343
                     },
                     "gender": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": 0.245
                     },
                     "height": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": 0.145
                     },
                     "weight": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value":  0.145
                     },
                     "ap_hi": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value":  0.23
                     },
                     "ap_lo": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": 0.23
                     },
                     "cholesterol": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": 0.30
                     },
                     "gluc": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": 0.30
                     },
                     "smoke": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": 0.30
                     },
                     "alco": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": 0.30
                     },
                     "active": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": 0.30
                     },
                     "cardio": {
                         "metric": "num_metric",
-                        "value": 3
+                        "value": 0.32
                     }
                 },
                 "dataset_stats": {}

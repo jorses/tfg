@@ -7,7 +7,7 @@
             "value": "red"
         },
         "alco": {
-            "value": "blue"
+            "value": "green"
         },
         "ap_hi": {
             "value": "blue"
@@ -42,84 +42,123 @@
     },
     "graphs": {
         "active": {
-            "value": "blue"
+            "value": "pie",
+            "colors" : "blue_scale"
         },
         "age": {
-            "value": "red"
+            "value": "red",
+            "colors" : "blue_scale"
         },
         "alco": {
-            "value": "blue"
+            "value": "blue",
+            "colors" : "blue_scale"
         },
         "ap_hi": {
-            "value": "blue"
+            "value": "blue",
+            "colors" : "blue_scale"
         },
         "ap_lo": {
-            "value": "red"
+            "value": "red",
+            "colors" : "blue_scale"
         },
         "cardio": {
-            "value": "blue"
+            "value": "blue",
+            "colors" : "blue_scale"
         },
         "cholesterol": {
-            "value": "red"
+            "value": "red",
+            "colors" : "blue_scale"
         },
         "gender": {
-            "value": "blue"
+            "value": "blue",
+            "colors" : "blue_scale"
         },
         "gluc": {
-            "value": "red"
+            "value": "red",
+            "colors" : "blue_scale"
         },
         "height": {
-            "value": "blue"
+            "value": "blue",
+            "colors" : "blue_scale"
         },
         "id": {
-            "value": "red"
+            "value": "red",
+            "colors" : "blue_scale"
         },
         "smoke": {
-            "value": "blue"
+            "value": "blue",
+            "colors" : "blue_scale"
         },
         "weight": {
-            "value": "blue"
+            "value": "blue",
+            "colors" : "blue_scale"
         }
     },
     "columns": {
         "active": {
-            "value": 3
+            "score": 3,
+            "metric": "median",
+            "analysis": "NORMAL"
         },
         "age": {
-            "value": 59109.0
+            "score": 59109.0,
+            "metric": "median",
+            "analysis": "HIGH"
         },
         "alco": {
-            "value": 0
+            "score": 0,
+            "metric": "most_freq",
+            "analysis": "NORMAL"
         },
         "ap_hi": {
-            "value": 360.0
+            "score": 360.0,
+            "metric": "median",
+            "analysis": "NORMAL"
         },
         "ap_lo": {
-            "value": 240.0
+            "score": 240.0,
+            "metric": "median",
+            "analysis": "NORMAL"
         },
         "cardio": {
-            "value": 0
+            "score": 0,
+            "metric": "most_freq",
+            "analysis": "1"
         },
         "cholesterol": {
-            "value": 3
+            "score": 3,
+            "metric": "most_freq",
+            "analysis": "3"
         },
         "gender": {
-            "value": 3
+            "score": 1,
+            "metric": "most_freq",
+            "analysis": "3"
         },
         "gluc": {
-            "value": 3
+            "score": 3,
+            "metric": "most_freq",
+            "analysis": "3"
         },
         "height": {
-            "value": 495.0
+            "score": 495.0,
+            "metric": "median",
+            "analysis": "LOW"
         },
         "id": {
-            "value": 150004.5
+            "score": 150004.5,
+            "metric": "median",
+            "analysis": "NORMAL"
         },
         "smoke": {
-            "value": 0
+            "score": 0,
+            "metric": "most_freq",
+            "analysis": "LOW"
         },
         "weight": {
-            "value": 216.0
+            "score": 216.0,
+            "metric": "median",
+            "analysis": "NORMAL"
         }
     },
     "dataset": {}
