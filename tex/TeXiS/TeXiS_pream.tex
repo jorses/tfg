@@ -1,0 +1,731 @@
+%---------------------------------------------------------------------
+%
+%                        TeXiS_pream.tex
+%
+%---------------------------------------------------------------------
+%
+% TeXiS_pream.tex
+% Copyright 2009 Marco Antonio Gomez-Martin, Pedro Pablo Gomez-Martin
+%
+% This file belongs to TeXiS, a LaTeX template for writting
+% Thesis and other documents. The complete last TeXiS package can
+% be obtained from http://gaia.fdi.ucm.es/projects/texis/
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainers of this work are Marco Antonio Gomez-Martin
+% and Pedro Pablo Gomez-Martin
+%
+%---------------------------------------------------------------------
+%
+% Contiene la parte inicial del documento, antes del
+% \begin{document}. Carga los paquetes que se utilizar�n.
+%
+%---------------------------------------------------------------------
+
+% El paquete verbatim  es utilizado por uno de  los comandos definidos
+% en TeXiS.  Aunque  el propio estilo indica que  necesita ese paquete
+% con \RequirePackage, lo  hacemos "expl�cito" incluy�ndolo aqu� antes
+% de incluir nuestro paquete.  Es necesario �nicamente para el comando
+% "example",  espec�fico del  manual y  que con  toda seguridad  no se
+% necesitar� en  ning�n otro tipo  de documento (Tesis, etc.),  por lo
+% que si por alguna raz�n  la inclusi�n de este paquete interfiere con
+% otros y se desea no tener que incluirlo, se puede cambiar TeXiS.sty,
+% y eliminar el comando example.
+\usepackage{verbatim}
+
+% El  paquete  "layout" es  de  "depuraci�n".  Sirve  para definir  el
+% comando \layout que puedes meter  en cualquier sitio del documento y
+% te genera  un par de p�ginas  con un gr�fico sobre  la estructura de
+% las  p�ginas,   es  decir,  con  informaci�n   sobre  los  m�rgenes,
+% posiciones de las notas a pie, los encabezados, y dem�s. Recibe como
+% par�metro un  idioma que  le sirve para  mostrar "la leyenda"  en un
+% idioma diferente al ingl�s.
+
+%\usepackage[english]{layout}
+
+% El  paquete  glosstex  te  permite  generar listas  de  acr�nimos  y
+% glosarios.  En  realidad  te   permite  crear  listas  m�ltiples  de
+% cualquier cosa,  con tal de que  des un identificador  a cada lista.
+% Luego de  manera predeterminada controla  dos listas, una  de nombre
+% "acr" pensada para acr�nimos, y otra "glo" para el glosario.
+
+%
+% La idea  es tener uno o  varios ficheros externos  donde se mantiene
+% una "base  de datos" de acr�nimos,  de palabras para  el glosario, o
+% de, en  general, entradas  para cualquiera de  la lista  de t�rminos
+% gestionadas por glosstex. Esos ficheros normalmente llevan extensi�n
+% .gdf (Glossary  Data File, supongo),  y, por aclarar,  son similares
+% conceptualmente a  los ficheros .bib. En cada  entrada se especifica
+% una etiqueta que  la identifica y que normalmente  se utiliza cuando
+% aparece dicha entrada en alguna de las listas en el documento final.
+% Tambi�n  puede opcionalmente  especificarse un  texto en  LaTeX para
+% dicha entrada si  queremos poner otra o darle  formato (por ejemplo,
+% si  queremos meter  en  el glosario  el  t�rmino LaTeX,  normalmente
+% querremos usar  como etiqueta  identificativa la cadena  LaTeX, pero
+% luego queremos  que al escribirlo  en el documento salga  su versi�n
+% pija conseguida  mediante \LaTeX{}). Tambi�n  tiene una "descripci�n
+% larga"  (�til dependiendo  de  la configuraci�n)  y, finalmente,  la
+% descripci�n de la entrada.
+%
+%
+% Por ejemplo, una entrada sin descripci�n corta ser�a:
+%
+%   @entry{LaTeX, \LaTeX{}} Herramienta basada en \TeX{} para
+%   facilitar la creaci�n de documentaci�n.
+%
+
+% Puedes consultar  m�s informaci�n sobre  el formato en  el fichero
+% acronimos.gdf.
+
+% La idea es tener tantos ficheros gdf como queramos, y reutilizarlos
+% entre todos los documentos que necesitemos crear. Posteriormente, a
+% lo largo de esos documentos, referenciamos su uso. En concreto,
+% indicamos al sistema que queremos que una determinada entrada se
+% incluya en una de las listas gestionadas por GlossTeX.
+%
+% Para eso:
+%
+%  \glosstex[(<lista>)]{<etiqueta>}
+%
+% Lo de <lista> es opcional. Si no se especifica, se entiende "glo",
+% que se supone que contiene el glosario normal. El soporte "nativo"
+% para la lista de acr�nimos queda patente porque para a�adir uno
+% basta con:
+%
+%  \acronym{<etiqueta>}
+%
+% que es sin�nimo de \glosstex(acr){<etiqueta>}
+%
+% La  aparici�n   de  estos   comandos  ocasionan  la   generaci�n  de
+% anotaciones en los ficheros .aux correspondientes. Esos .aux hay que
+% procesarlos con la herramienta  glosstex, que genera un fichero .gxs
+% con informaci�n  sobre las entradas referenciadas y  su contenido, y
+% un .gxg con un log. El .gxs (si todo fue bien) es procesado de nuevo
+% para ser  ordenado y para aplicarle  estilo. Esto se  realiza con la
+% herramienta externa  makeindex, y usando el  estilo glosstex.ist. El
+% resultado es un  fichero .glx, que por fin  tiene todo correcto. Ese
+% fichero es  utilizado por el comando \printglosstex  dentro de alg�n
+% fichero .tex en la proxima invocaci�n a LaTeX
+%
+% Una cosa interesante es en el uso de acr�nimos. Al igual que podemos
+% utilizar  con natbib cosas  como \citeyear  o \citeauthor,  con esto
+% podemos  hacer \ac{<etiqueta>},  y el  sistema te  pone  el acr�nimo
+% autom�ticamente.  Esto  no  parece   muy  �til,  si  se  piensa  que
+% normalmente el  acr�nimo ser� igual a  la etiqueta ;-)  La gracia es
+% que, adem�s,  la primera vez que  se hace, te  pone entre par�ntesis
+% tambi�n la forma larga 8-)
+%
+% Tambi�n puedes usar \acf si quieres  que te aparezca las siglas y el
+% significado  entre  par�ntesis en  alg�n  momento.  En realidad  hay
+% muchas m�s cosas, pero no las he mirado todas.
+%
+% http://www.ctan.org/tex-archive/help/Catalogue/entries/glosstex.html
+\ifx\generaacronimos\undefined
+  % No queremos acr�nimos. Como no incluiremos el paquete glosstex
+  % redefinimos sus comandos para que no cruja si se han usado.
+  \newcommand{\glosstex}[1]{}
+  \newcommand{\acronym}[1]{}
+  \newcommand{\ac}[1]{#1}
+  \newcommand{\acs}[1]{#1}
+  \newcommand{\acl}[1]{#1}
+  \newcommand{\acf}[1]{#1}
+\else
+  \usepackage{glosstex}
+\fi
+
+% shortvrb supuestamente define algunas macros c�modas como car�cteres
+% de escape.  Por ejemplo, para poner  un < normalmente  hay que hacer
+% una  ecuaci�n:   $<$.  Este   paquete  define  algunas   macros  m�s
+% intuitivas, en este caso bastar�a  con \< De igual forma, para poner
+% algo en  verbatim, la versi�n  larga es \texttt{blabla},  la versi�n
+% corta es  \verb+blabla+ (el +  puede sustituirse por  cualquier otra
+% cosa,  como un  |  ), y  con  este paquete  basta  con |blabla|  (es
+% equivalente a \verb|blabla|).  Pero vamos... a m� no me funciona :-/
+
+\usepackage{shortvrb}
+
+% Modifica la codificaci�n de  entrada para LaTeX. B�sicamente permite
+% escribir cosas con acentos (�) y  �l solo lo sustituye por \'a. Para
+% eso, se especifica  en el primer par�metro la  p�gina de c�digos que
+% estamos utilizando (latin1  significa ISO Latin 1, o  sea ISO 8859-1
+% supongo). Para cada p�gina de c�digos (en nuestro caso latin1) tiene
+% un fichero de definiciones (.def)  en el que mapea cada car�cter por
+% encima del 128 a una orden LaTeX.
+%
+% Otra posible opci�n ser�a indicar utf8 (o utf8x) en lugar de latin1,
+% que podr�a  resultar �til para  aquellos que prefieran  escribir sus
+% fuentes  en  UTF-8 (como  tiende  a  ocurrir  actualmente de  manera
+% predeterminada  en  Ubuntu). No  obstante,  una  b�squeda r�pida  en
+% google parece indicar  que el soporte para fuentes  TeX con UTF-8 no
+% est� demasiado  bien soportado y  podr�a dar algunos  problemas.  En
+% TeXiS, adem�s, seguro que generar� conflictos, dado que si se indica
+% aqu� utf8  se asumir� que  *todo* usa UTF-8, inclu�dos  los ficheros
+% del propio  TeXiS que en realidad  est�n con ISO  8859-1. Por tanto,
+% usa  utf8  *bajo tu  propia  responsabilidad*.  TeXiS, desde  luego,
+% recomienda el uso de ISO 8859-1.
+
+\usepackage[latin1]{inputenc}
+
+% Incluimos el  estilo de bibliograf�a natbib, para  poder citarlas de
+% forma m�s compleja.  Por ejemplo,  \citep{ref} para que nos lo saque
+% entre  par�ntesis, \citet{ref}  normal  (si lo  referenciamos en  un
+% texto), \citeyear{ref} para la  fecha del art�culo, libro, etc�tera,
+% \citeauthor{ref} para los autores... Hay un mont�n de posibilidades.
+% Puedes ver informaci�n en http://merkel.zoneo.net/Latex/natbib.php
+%
+% Es importante incluirlo ANTES de  babel. Si primero se a�ade babel y
+% luego natbib,  cuando se tienen apellidos  "compuestos" (por ejemplo
+% "Du  Boulay" natbib  a�ade  un  ~ de  separaci�n  para convertir  al
+% espacio  en un espacio  no separable  en dos  l�neas, pero  al tener
+% activado  babel  el ~  aparece  en lugar  de  salir  el espacio.  En
+% cualquier  caso,  sigue  existiendo  un potencial  problema.  Natbib
+% abrevia los  nombres poniendo �nicamente las  iniciales (por ejemplo
+% para  el nombre  compuesto Francisco  Nunes Ferreira  pone Ferreira,
+% F. N.). El  problema es que tambi�n pone la ~  para separar, de modo
+% que sale Ferreira F.�. El problema est� en que Babel autom�ticamente
+% da significado  a ~n y lo  sustituye sin que le  digamos nada... hay
+% m�s  informaci�n en  el comentario  de babel  y  en TeXiS_bib.tex
+% http://chico.rediris.es/cgi-bin/wa?A2=ind0601&L=es-tex&D=0&P=1989
+
+\usepackage[round]{natbib}
+
+% Activa el  uso de  espa�ol. Babel es  un paquete bastante  gordo que
+% afecta a  otros paquetes de  LaTeX que antes ten�an  cableadas cosas
+% para el ingl�s... por ejemplo, hace  que la '�' vaya despu�s de la N
+% en el orden alfab�tico, y cosas varias sobre espa�ol.
+% En alg�n sitio le� que "activeacute" nos permite poner � en lugar de
+% tener que escribir  \'a ... aunque eso en teor�a  lo hace el paquete
+% inputenc :-m
+
+\usepackage[english,activeacute]{babel}
+
+% El paquete url sirve para poder  poner direcciones Web y no morir en
+% el intento,  sobre todo  en la bibliograf�a.   Es �til porque  si la
+% direcci�n  no entra  en una  l�nea,  la divide  de forma  coherente.
+% Adem�s en  la bibliograf�a tambi�n  cambia el formato de  la fuente.
+% Se utiliza poniendo la  direcci�n con \url{http://...}  Tambi�n vale
+% para direcciones de correo, etc.
+% No conviene  quitarlo, porque con  casi toda seguridad, al  menos la
+% bibliograf�a utilizar� el comando.
+
+\usepackage{url}
+
+% El documento est�  pensado para ser compilado o  bien con pdflatex o
+% bien con  latex. Algunas  cosas s�lo se  soportan si se  compila con
+% pdflatex (por  ejemplo, a�adir en  el "�ndice del documento"  PDF un
+% t�tulo para una secci�n para luego verlo cuando se ve en el visor de
+% PDF el  �ndice). Para  meter c�modamente las  l�neas que  s�lo deben
+% "ejecutarse" si  se compila el  documento con pdflatex  definimos un
+% nuevo "tipo de if".
+% En  realidad,  en vez  de  utilizar  el  paquete, se  puede  definir
+% directamente, utilizando:
+% \newif\ifpdf\ifx\pdfoutput\undefined\pdffalse\else\pdfoutput=1\pdftrue\fi
+%
+% La idea es luego poder tener:
+% \ifpdf ...
+% \else
+% ...
+% \fi
+
+\usepackage{ifpdf}
+
+% Juego (solo make latex) :-p
+%\usepackage[mirror,invert]{crop}
+
+% Si estamos usando  pdflatex, queremos pedir que se  creen enlaces en
+% las  referencias  a figuras,  cap�tulos  y  bibliograf�a para  poder
+% "navegar" al visualizar el PDF. Tambi�n queremos que esos enlaces NO
+% aparezcan rodeados de un marco que queda horrible.
+%
+% La opci�n "pdfpagelabels"  sirve para que en el  cuadrito del n�mero
+% de p�gina del Adobe Acrobat  salga el n�mero de "p�gina l�gico", por
+% ejemplo  "v (5  de  180)"  (con n�mero  romano  porque al  principio
+% empieza a numerarse as�).
+
+\ifpdf
+   \RequirePackage[pdfborder=0,colorlinks,hyperindex,pdfpagelabels]{hyperref}
+   \def\pdfBorderAttrs{/Border [0 0 0] } % Ning�n borde en los enlaces
+\fi
+
+% Cuando se  genera el  �ndice, se necesita  el paquete  hyperref, que
+% permite referencias  (o enlaces) en el propio  documento. El paquete
+% aparece como \RequirePackage cuando se est� usando pdflatex, gracias
+% al comando anterior. Si no se est� en pdf, se incluye directamente
+\ifpdf
+\else
+\usepackage{hyperref}
+\fi
+
+\hypersetup{colorlinks=false}
+
+
+% Durante  la infancia  de TeXiS  (es decir,  cuando est�bamos  en las
+% primeras etapas de la escritura de nuestras tesis), ten�amos la idea
+% de tener �ndice de palabras, es decir una lista de palabras usadas a
+% lo   largo  del   documento,  junto   con  las   p�ginas   donde  se
+% mencionaban. Esto aparece en algunos libros, permitiendo la b�squeda
+% r�pida de los lugares donde se habla de ciertas cosas.
+%
+% El problema  de hacer  dicho �ndice no  es s�lo "tecnol�gico"  en lo
+% referente al  uso de  LaTeX, sino  tambi�n a la  hora de  marcar qu�
+% palabras (y en qu� lugares) se quieren a�adir a dicho �ndice.
+%
+% En nuestro  caso, despu�s de haber superado  la barrera tecnol�gica,
+% decidimos que no  merec�a la pena el esfuerzo  de recorrer las tesis
+% tras  ser  escritas  para  anotar  las palabras  importantes  y  que
+% aparecieran en el �ndice. Debido  a eso, ni siquiera el soporte est�
+% terminado  (a  nivel, por  ejemplo,  del  Makefile).  Por lo  tanto,
+% podemos  decir que  TeXiS  tiene un  soporte  embrionario para  esas
+% listas de palabras,  pero que necesitar�a algo m�s  de esfuerzo para
+% hacerlo amigable.  Para no crear  falsas expectativas, el  manual de
+% TeXiS, por  tanto, no menciona  nada de este asunto,  aunque dejamos
+% aqu� esa configuraci�n original del soporte b�sico.
+%
+% En realidad, para a�adir un �ndice de palabras bastar�a con:
+%
+%    - Modificar la parte final de Tesis.tex, e incluir siempre
+%      TeXiS/TeXiS_indice (ahora su inclusi�n est� comentada).
+%    - Modificar el Makefile y descomentar las lineas
+%      -makeindex $(NOMBRE_LATEX)
+%      pare que se genere el �ndice de palabras.
+%
+% No se ha  hecho "oficial" este soporte (ni se  explica en el manual)
+% porque no se ha probado en "producci�n". No obstante, a continuaci�n
+% se describe su uso, tanto a nivel de configuraci�n (mucho de lo cual
+% TeXiS ya hace) como a nivel del usuario:
+
+
+% Permite crear  �ndices (de palabras)  en LaTeX (es decir,  el �ndice
+% que suele  haber al final de  los libros diciendo en  qu� p�ginas se
+% habla de qu� t�rminos). La  generaci�n no es una cosa trivial...  Lo
+% primero que hay que hacer  es poner '\makeindex' en el pre�mbulo del
+% documento (antes del  \begin{document}), luego poner \index{entrada}
+% a lo largo  de todo el documento para  indicar qu� palabras queremos
+% que  aparezcan en  el �ndice  tem�tico.  Por �ltimo,  hay que  poner
+% \printindex en  el lugar donde queramos  que se genere  y muestre el
+% �ndice.
+
+% Pero  eso no  es todo...  en realidad  la generaci�n  del  �ndice se
+% realiza con  una herramienta externa a LaTeX  llamada makeindex (que
+% funciona  con  la  misma  "filosof�a"  que bibtex,  como  una  etapa
+% posterior).  Total, que  hay que ejecutar LaTeX una  primera vez, lo
+% que  genera un  fichero  auxiliar  con extensi�n  .idx  con toda  la
+% informaci�n sobre las  palabras que deben salir en  el �ndice. Luego
+% se ejecuta  MakeIndex, que recoge  ese fichero y utiliza  un fichero
+% con extensi�n  .ist con informaci�n  sobre estilo para  generar otro
+% fichero,   esta   vez   con   extensi�n  .ind   (que   supongo   que
+% conceptualmente es  semejante al "bbl"  de BibTeX).  Por  �ltimo, se
+% vuelve a  ejecutar LaTeX que  recompila el fichero y,  utilizando el
+% .ind, mete por f�n el �ndice bueno.
+
+% Aconsejan NO  poner los \index  seg�n vas escribiendo  el documento,
+% porque el �ndice que te queda seguramente sea un poco malo. En lugar
+% de eso  dicen que utilices  "delatex" para sacar todas  las palabras
+% que utilizas en tu  documento, luego las "limpies" decidiendo cuales
+% quieres que aparezcan, y luego  metas todos los \index. En cualquier
+% caso,  el  programa "delatex"  no  se  instala  con la  distribuci�n
+% habitual de latex.
+
+% Puedes anular la generaci�n del �ndice si quitas el \makeindex en el
+% pre�mbulo (supongo que no se generar� el .idx).
+ 
+% http://www.mpi.nl/world/persons/private/robstu/latex/how_to/indexes.html
+% http://ipagwww.med.yale.edu/latex/makeindex.pdf
+
+\usepackage{makeidx}
+
+
+% Paquete de  depuraci�n. Se si utiliza,  en el margen  de cada p�gina
+% aparecen  las palabras  que se  a�adir�n  al �ndice  de esa  p�gina.
+% Pero... parece que no funciona con el pdflatex de Linux :'( En lugar
+% de sacar las palabras en la esquina de la p�gina la saca en el sitio
+% donde est�n insertadas, en mitad del p�rrafo... y claro, es un tanto
+% ca�tico :'(
+% Por  eso, aunque  estemos en  modo "depuraci�n",  si  estamos usando
+% pdflatex no se incluye.
+
+\ifpdf
+\else
+   \ifx\release\undefined
+      \usepackage{showidx}
+   \fi
+\fi
+
+%\citeindextrue Activa la aparici�n de las referencias en el �ndice
+%\citeindexfalse La desactiva
+
+
+% Para pedir que se genere  la informaci�n para el �ndice de palabras.
+% Para  no  ralentizar la  compilaci�n,  s�lo  se  genera cuando  est�
+% definido el s�mbolo correspondiente.
+\ifx\generaindice\undefined
+\else
+\makeindex
+\fi
+
+% Pruebas con �ndices
+%\usepackage{index}
+%\newindex{default}{idx}{ind}{�ndice}
+%\newindex{cite}{cdx}{cnd}{�ndice de citas}
+%\renewcommand{\citeindextype}{cite}
+%\citeindextrue
+
+
+% Otro paquete  de depuraci�n, para mostrar las  etiquetas del \label,
+% etc. Se  puede desactivar  el mostrado de  algunas de ellas  con las
+% opciones [notref]  y [notcite].  Lo tengo  desactivado, porque queda
+% demasiado  cargado.   Adem�s,  provoca  errores de  compilaci�n  con
+% algunas figuras  convertidas desde eps  a pdf cuando se  compila con
+% pdflatex.
+
+\ifx\release\undefined
+%\usepackage{showkeys}
+\fi
+
+
+% Para poder utilizar el entorno multicol, �til en los sitios donde se
+% quieren poner dos figuras una al lado de la otra.
+\usepackage{multicol}
+
+%
+% Para  poder poner  "subfiguras". El  paquete permite  incluir varias
+% figuras dentro  de un entorno  flotante (t�picamente una  figura), y
+% puede  etiquetar  cada  una  con  una letra,  y  asociar  diferentes
+% descripciones a cada una.
+%
+% La idea  es crear  un entorno figura  tradicional, pero no  poner en
+% ella  directamente  el  \includegraphics  (o  cualquier  otra  cosa,
+% vamos), sino subdividir ese entorno  figura en varias partes. A cada
+% una  de   ellas  se  le   da  una  etiqueta  diferente   para  poder
+% referenciarlas, una descripci�n, etc�tera.  Un ejemplo:
+%
+% \begin{figure}[t]
+%   \centering
+%   %
+%   \subfloat[<ParaElIndice1>][<Caption1>]{ 
+%      % Contenido para este "subelemento" (podr� ser una
+%      % figura, una tabla, o cualquier otra cosa).
+%      \includegraphics[width=5cm]{ficheroSinExtension}
+%      \label{fig:etiqueta1}
+%   }
+%   \subfloat[<ParaElIndice2>][<Caption2>]{
+%      % Contenido para este "subelemento" (podr� ser una
+%      % figura, una tabla, o cualquier otra cosa).
+%      \includegraphics[width=5cm]{ficheroSinExtension}
+%      \label{fig:etiqueta2}
+%   }
+%  \caption{Descripci�n global para la figura}
+%  \label{Etiqueta para toda la figura}
+% \end{figure}
+%
+% El sistema  autom�ticamente decide cuando poner  la siguiente figura
+% al lado, o  en otra linea. Es  posible forzar a que se  ponga en una
+% linea nueva si se deja una linea en blanco en el .tex. Esto tiene la
+% repercusi�n  de que  no deber�as  dejar lineas  en blanco  en ning�n
+% momento dentro  del entorno flotante,  para evitar que se  "salte de
+% linea"  en las  figuras.  Si quieres  por  legilibidad dejar  alguna
+% linea, pon un comentario vacio.
+%
+% La separaci�n  entre dos figuras/tablas  que se colocan en  la misma
+% fila puede ser demasiado peque�a. Para seprarlas un poco m�s, puedes
+% poner \qquad entre el cierre llaves de un \subfloat y el siguiente:
+%
+% [...]
+%    \subfloat[..][..]{ ... }
+%    \qquad
+%    \subfloat[..][..]{ ... }
+% [...]
+%
+% Por otro lado,  el \subfloat tiene dos "par�metros",  que se colocan
+% entre   corchetes    justo   despu�s.   En    realidad   ambos   son
+% opcionales. Podr�amos poner directamente:
+%
+% \subfloat{ <comandos para el subelemento> }
+%
+% pero en ese caso no se etiquetar� con una letra.
+%
+% El texto que se pone entre los primeros corchetes se utiliza para el
+% �ndice de figuras. En teor�a, se mostrar� en dicho �ndice primero la
+% descripci�n global de la figura,  y luego la de cada subelemento. Si
+% no  quieres que  ocurra,  deja  en blanco  el  contenido del  primer
+% corchete. En la  pr�ctica... yo he puesto una cadena  y no ha salido
+% en el �ndice.
+% El  segundo  corchete  recibe   el  texto  con  la  descripci�n  del
+% subelemento,   es  decir  lo   que  aparecer�   junto  a   la  letra
+% identificativa.  Si lo  dejas vac�o  (pero poniendo  los corchetes),
+% saldr� la letra, sin texto.  Si ni siquieras pones los corchetes, no
+% saldr� tampoco la letra.
+%
+% Para referenciar  uno de los subelementos  basta con \ref{etiqueta},
+% siendo  la   etiqueta  una  definida  mediante   \label  DENTRO  del
+% \subfloat. La  forma de salir  ser�, por ejemplo, 2.3a  Si prefieres
+% que salga  2.3 (a) (o quieres poner  "en la imagen (a)  de la figura
+% 2.3...")  puedes  utilizar  \subref{etiquitaDeSubelemento}.  \subref
+% escribir� el (a).  Combin�ndolo con la etiqueta global  de la figura
+% (del  entorno flotante contenedor,  vamos) que  mostrar� el  2.3 del
+% ejemplo, puedes hacer cosas como la anterior con facilidad.
+%
+% Se pueden hacer muchas m�s pijadas, pero esto deber�a ser suficiente
+% la mayor parte de las veces. Mira el manual oficial para m�s
+% informaci�n (ftp://tug.ctan.org/pub/tex-archive/macros/latex/contrib/subfig/subfig.pdf)
+%
+% Por cierto,  este paquete es la  evoluci�n de subfigure,  pero no es
+% compatible con �l (por eso decidieron cambiarle el nombre).
+\usepackage{subfig}
+
+% El  paquete anterior  tiene un  problema  cuando se  utiliza en  los
+% subfloat entornos verbatim (eso incluye a los lstlistings), debido a
+% que  no  se  pueden  anidar  entornos verbatim  (bueno,  esa  es  la
+% explicaci�n que  he encontrado,  aunque no ten�a  ni idea de  que se
+% estuvieran anidando entornos verbatim :-) ).
+
+% Para  arreglarlo, en la  documentaci�n de  subfig dan  una soluci�n,
+% creando un  nuevo entorno,  SubFloat, que est�  en una caja  LaTeX o
+% algo  as�, y que  consigue poder  meterlos. El  entorno se  define a
+% continuaci�n  (cortar  y  pegar  de  la  documentaci�n  del  paquete
+% subfig).
+%
+% Los dos par�metros que ten�amos  antes para el \subfloat (caption, y
+% caption para el �ndice) ahora se pasan de forma distinta:
+%
+% \begin{SubFloat}[texto indice]{Texto figura\label{<etiqueta>}
+%    <contenido>
+% \end{SubFloat}
+%
+% Es decir, hay que poner la etiqueta directamente en el par�metro del
+% entorno.
+%
+% Para que el SubFloat funcione,  hay que hacer algo m�s, no obstante,
+% ya que el entorno verbatim  (y lstlisting) NO definen en su creaci�n
+% lo que ocupan, y por lo tanto el \subfloat no es capaz de determinar
+% c�mo colocar las  subfiguras, ya que no conoce  su tama�o. Para eso,
+% el entorno verbatim (o lstlisting)  hay que enmarcarlo dentro de una
+% minipage en la que s� definimos (a mano) el tama�o. Un ejemplo puede
+% ser:
+%
+% \begin{SubFloat}{\label{fig:ejercicios1a3:2}Ejercicio 2}%
+% \begin{minipage}{0.4\linewidth}%
+% \begin{lstlisting}[frame=tb]
+% public void f(int b) {
+%     int a;
+%     a = 3 + b;
+% }
+% \end{lstlisting}%
+% \end{minipage}
+% \end{SubFloat}
+%
+% De esta  forma, se  hace que  el c�digo en  el lstlisting  ocupe dos
+% quintas  partes del ancho  de la  p�gina.  Se  podr�a pensar  que es
+% posible  utilizar  el  "par�metro"  linewidth  del  lstlisting,  que
+% permite     tambi�n     indicar      el     ancho     del     c�digo
+% (\begin{lstlisting}[frame=tb,linediwth=0.4\linewidth]; sin embargo,
+% eso  no es  posible ya  que ese  ancho es  utilizado por  el entorno
+% lstlisting para  dibujar el marco  y, si tiene activado  el "romper"
+% las l�neas  autom�ticamente, para romperlas; si todas  las l�neas de
+% c�digo  son m�s  cortas que  ese  espacio, el  espacio efectivo  del
+% c�digo ser� el ancho de la l�nea m�s ancha.
+%
+% Otra desagradable sorpresa surge  con los subfloat: existe un margen
+% a los  lados del �rea reservada  a la subfigura, para  que no queden
+% todas  pegadas.   Esto  est�  bien,  porque as�  no  tienes  t�  que
+% encargarte de  definir el espacio; simplemente  decides cu�nto ocupa
+% de ancho cada  subfigura, y �l se encarga de  colocarlo todo. Lo que
+% ocurre es que parece no tener  en cuenta que, cuando a la derecha de
+% un subfloat NO hay otro (porque es el �ltimo de la "l�nea"), _sigue_
+% poniendo  el espacio  en blanco  para  separar con  el siguiente  (e
+% inexistente) subfloat, lo  que hace que, en caso  de estar centrando
+% los elementos, no quede perfectamente centrado :(
+
+\makeatletter
+\newbox\sf@box
+\newenvironment{SubFloat}[2][]%
+{\def\sf@one{#1}%
+\def\sf@two{#2}%
+\setbox\sf@box\hbox
+\bgroup}%
+{ \egroup
+\ifx\@empty\sf@two\@empty\relax
+\def\sf@two{\@empty}
+\fi
+\ifx\@empty\sf@one\@empty\relax
+\subfloat[\sf@two]{\box\sf@box}%
+\else
+\subfloat[\sf@one][\sf@two]{\box\sf@box}%
+\fi}
+\makeatother
+
+
+% Para poder  incluir c�digo  fuente resaltado f�cilmente.   El tama�o
+% b�sico de la letra, peque�o.
+\usepackage{listings}
+\lstset{basicstyle=\small}
+\lstset{showstringspaces=false}
+\lstset{tabsize=3}
+
+% Para poder utilizar el entorno tabularx, que sirve para hacer tablas
+% con  p�rrafos, sin tener  que indicar  el ancho  de cada  columna de
+% p�rrafo particular.
+\usepackage{tabularx}
+
+% Definimos  los  nombres para  las  tablas  y  el �ndice  de  tablas,
+% sobreescribiendo los de babel, que los llama 'cuadros'.
+% \addto\captionsspanish{%
+%   \def\tablename{Tabla}%
+%   \def\listtablename{\'Indice de Tablas}%
+%   \def\contentsname{\'Indice}%
+%   \def\chaptername{Cap\'itulo}%
+% }
+
+% Supuestamente,  codificaci�n   que  tiene  'nativas'   las  palabras
+% acentuadas,  para poder  tener guionado  de palabras  con acentos...
+% aunque no estoy yo demasiado seguro...
+\usepackage[T1]{fontenc}
+
+% Paquete para poder utilizar figuras EPS
+\usepackage{epsfig}
+%\usepackage[dvips]{graphicx}
+%http://www.cidse.itcr.ac.cr/revistamate/HERRAmInternet/Latex/wmlatexrevista/node19.html
+
+% Hacemos que los  p�rrafos se separen con algo m�s  de espacio que lo
+% habitual.
+\setlength{\parskip}{0.2ex}
+
+% El paquete  psboxit permite poner  una imagen Post Script  dentro de
+% una  caja de  TeX. La  imagen se  parametriza con  la posici�n  y el
+% tama�o de la caja TeX.
+
+%\usepackage{psboxit}
+
+% Permite hacer c�lculos sencillos dentro  de un documento de LaTeX Lo
+% necesitamos en  la portada, para  poder ajustar los m�rgenes  con un
+% poco de independencia  del tama�o de la p�gina.  Consulta el fichero
+% portada.tex para m�s informaci�n.
+\usepackage{calc}
+
+% Define el entorno  longtable que sirve para crear  tablas que ocupan
+% m�s de una p�gina.
+
+%\usepackage{longtable}
+
+% Cuando en una tabla tenemos lineas dobles de separaci�n entre filas
+% y columnas, LaTeX las pinta de manera que d� la sensaci�n de que
+% cada celda es un rect�ngulo:
+%          | |
+%  [celda] | | [celda]
+%          | |
+% ---------+ +---------
+%                       <- hueco entre lineas
+% ---------+ +---------
+%          | |
+%  [celda] | | [celda]
+%          | |
+%
+% Si queremos que las l�neas se corten:
+%          | |
+%  [celda] | | [celda]
+%          | |
+% ---------+-+---------
+%          | |          <- hueco entre lineas
+% ---------+-+---------
+%          | |
+%  [celda] | | [celda]
+%          | |
+%
+% podemos utilizar el paquete hhline, que permite concretar en gran
+% medida c�mo queremos que queden los cruces
+% (http://www.cs.wright.edu/~jslater/hhline.pdf)
+%
+% Otro uso interesante de hhline es como sustitutivo de \cline. \cline
+% (nativo de LaTeX) permite poner lineas de separaci�n entre filas que
+% no englobe  a todas las  columnas. El problema  es que \cline  no se
+% lleva bien con celdas con  fondo de color, porque queda _debajo_ del
+% relleno y no se ve. \hhline sin embargo queda por encima, por lo que
+% puede utilizarse para pintar lineas sencillas sin preocuparnos de la
+% interacci�n  con las l�neas  horizontales (quiz�  tambi�n sencillas)
+% pero aprovechar  que s� van a  verse.  En concreto, en  una tabla de
+% cuatro columnas  \cline{1-3} es  similar a \hhline{----~}  (el gui�n
+% indica  que  queremos  l�nea para  esa  columna,  y  el ~  que  no).
+% \usepackage{hhline}
+
+
+% \usepackage[verbose]{geometry}
+% \geometry{a4paper}
+% \geometry{twosideshift=0pt}
+% \geometry{top=4cm,bottom=4cm,left=3cm,right=3cm,headsep=1cm}
+
+%
+% Paquete para  poder ampliar las  opciones de las tablas,  para poder
+% tener p�rrafos  dentro de una celda  y que nos los  ajuste el propio
+% LaTeX.
+%
+%\usepackage{tabulary}
+% Otras opciones anteriores
+%\usepackage{tabularx}  % Este est� inclu�do por arriba
+%\usepackage{array}
+
+%\usepackage{slashbox}
+% Para poder poner l�neas diagonales en una tabla:
+%
+% \ b|  
+%  \ |  ...
+% a \|
+% ---+----------
+%    |
+%    |
+%
+% En la casilla a dividir, \backslashbox{a}{b} & ...
+% Vamos... no queda muy bien... en alg�n sitio vi que para mejorar un
+% poco el aspecto se pod�a inclu�r pict2e tambi�n, aunque en cualquier
+% caso el resultado pod�a seguir siendo discutible.
+
+%
+% Paquete para poder poner celdas de colores en una tabla
+%
+%\usepackage{colortbl}
+%\usepackage{color}
+
+
+% Paquete  que permite  cambiar  el formato  en  el que  se ponen  los
+% t�tulos   de   cap�tulos,  secciones,   etc.    Tambi�n  define   el
+% comando \chaptertitlename, que  equivale a \chaptername ("Cap�tulo")
+% cuando se est�  dentro de un cap�tulo o  a \apendixname ("Ap�ndice")
+% cuando se  est� en un ap�ndice.  Eso se utiliza en  la definici�n de
+% las cabeceras.
+\usepackage{titlesec}
+
+
+% Cambio del t�tulo de los cap�tulos (sacado de
+% http://aristarco.dnsalias.org/book/export/html/13)
+
+% \newcommand{\bigrule}{\titlerule[0.5mm]}
+
+% \titleformat{\chapter}[display] % cambiamos el formato de los cap�tulos
+% {\bfseries\Huge} % por defecto se usar�n caracteres de tama�o \Huge en negrita
+% {% contenido de la etiqueta
+%  \titlerule % l�nea horizontal
+%  \filleft % texto alineado a la derecha
+%  \Large\chaptertitlename\ % "Cap�tulo" o "Ap�ndice" en tama�o \Large en lugar de \Huge
+%  \Large\thechapter} % n�mero de cap�tulo en tama�o \Large
+% {0mm} % espacio m�nimo entre etiqueta y cuerpo
+% {\filleft} % texto del cuerpo alineado a la derecha
+% [\vspace{0.5mm} \bigrule \vspace{1cm}] % despu�s del cuerpo, dejar espacio vertical y trazar l�nea horizontal gruesa
+
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilaci�n y funcionen mejor algunas teclas r�pidas de AucTeX
+
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:
+
