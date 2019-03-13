@@ -13,35 +13,137 @@ We provide both an abstract analysis and a more low level code explanation.
 
 
 %-------------------------------------------------------------------
-\section{The Structure of our program}
+\section{The Structure of the Backend}
 %-------------------------------------------------------------------
-\label{cap1:sec:structure}
+\label{cap2:sec:structure}
 
-This is the introductory texttt
+As we have stated before, the backend side of our program consists of a series of modules designed to interact with each other and provide the necessary tools for our program to work smoothly regardless of the data being used.
+Each module has a main class which provides almost all of its functionality, along with some tests for us to make sure that it's working properly.
+Here we take a look at the main classes of each module and main JSON structures we use to store the information.
+
+%-------------------------------------------------------------------
+\section{The JSON Storage Object}
+%-------------------------------------------------------------------
+\label{cap2:sec:json}
+
+This object is used to represent the raw information stored.
+
+It contains statistics and properties from both columns and datasets, different for different types, as well as how they were measured (by saving the function to be called on a pandas dataset in the case of a dataset stat, or on the values themselves in the case of a function stat).
+
+Saving how they're measured is important to measure new datasets and to be able to compare metrics effectively.
+
+Both the column specific stats and the dataset stats are subjective to change, and the knowledgedomain object can be modified and adapted to fit new parameters easily.
+
+This structure is generated for a single dataset and then combined with the domain one to take account of the new one.
 
 %-------------------------------------------------------------------
 \section{The Storage Module}
 %-------------------------------------------------------------------
-\label{cap1:sec:storage}
+\label{cap2:sec:storage}
 
-This is the introductory texttt
+This module interacts with the JSON storages, its main functions are to retrieve the appropiate domain, create it if it doesn't exist, update it when it's needed and pass it along to the analyzer module.
+
+It has a *load* method, which takes a list of column names (or "attributes"), a path and an optional name for the domain in case it's new. 
+
+It searches the given directory for .json extensions and then opens each one, comparing its "attributelist" key with the one provided to the class itself. If they match, it loads into itself and then returns the contents of the JSON.
+
+If there is no match, creates an empty object with the attribute list and no further stats, and returns that instead.
+
+It also has a *modify* method, which takes a dictionary and overwrites the information stored in the class with the new information from that dictionary, and a *save* method, which simply saves the class representation to a JSON file, intended to be used at the end of the program cycle.
+
+A function to print information has also been added as an utility method to this class.
+
+Also it's worth mentioning we have the ability to extend this class so some of its methods have been designed with the intention of being reused in the Profile Storage module
+
+%-------------------------------------------------------------------
+\section{The JSON Profile Storage Structure}
+%-------------------------------------------------------------------
+\label{cap2:sec:profilejson}
+
+Another kind of information is stored about the domains. This is the information concerning the **human** side of things, that is, **how** to interpret these stats and turn them into something that humans with different levels of familiarity can understand.
+
+To do this, we provide use another storage class that will contain human-relevant data that will modify the objective comparison delivered by the analysis module.
+
+A system of profiles is added to the object itself, inside a "profiles" key. The domain associated is clear as they share the same "attributelist" identification system.
+
+The information contained in each one of these "profiles" serves two different purposes. It provides customizable elements of *how* the data will be presented to the user, and it keeps an historical record of this user's dataset results (similar to the one in the domain storage) making a historical following of a profile possible.
+
+For each domain, there's a *default* profile. This provides a way to present the data when no previous knowledge of the profile is available. The automated processes of obtaining this profile and tuning the existing profiles from user feedback will be explained in further chapters.
+
 
 %-------------------------------------------------------------------
 \section{The Profile Storage Module}
 %-------------------------------------------------------------------
-\label{cap1:sec:profile_storage}
+\label{cap2:sec:profilestorage}
 
-This is the introductory texttt
+This module makes use of the tools provided by our Storage Module, the class itself extends the Storage class providing the extra methods needed to use the "profile" system.
+It has the same methods as that class but also provides a way to change or load a single profile, its functioning mirrors the Storage
+
+%-------------------------------------------------------------------
+\section{The Comparison Metrics}
+%-------------------------------------------------------------------
+\label{cap2:sec:metrics}
+The purpose of these functions is to provide a way to measure the properties of a given dataset or knowledge domain.
+We can categorize them as follows:
+First the "measurement" metrics, used to get the information of a single dataset or domain.
+
+    - Dataset Metrics : they concern the dataset as a whole, like number of rows with missing values.
+        dm :: (ds) --> num
+        
+    - Single Column Metrics : they concern a certain column, and are based on the type of the column.
+        For numerical columns we will have things like median, averages, deviations, distributions...
+        For categorical columns we'll work with frequencies and things of the sort.
+        scm :: (col) --> num
+        
+    - Multiple Column Metrics : we will be looking for correlations and things of that sort.
+        scm :: (col,col) --> num 
+        Time based metrics will be defined from this construct.
+
+We will also have "comparison" metrics, used to compare datasets against their domains.
+These metrics will compare the output of two measurement metrics, both will have to
+spawn from the same function.
+    compm :: (metric) --> num
+
+Note that these metrics are not to provide "meaning" or any human-readable input, nor to be
+inherently comparable between each other outside of a framework of understanding of the domain
+(metric importance).
+
+A mean to convert these machine cold metrics into human understanding will be provided in further 
+modules. For now, we're not taking humans into account.
 
 %-------------------------------------------------------------------
 \section{The Analysis Module}
 %-------------------------------------------------------------------
-\label{cap1:sec:analysis}
+\label{cap2:sec:analysis}
+
+The analysis module will receive a dataset, use the Storage module to load its information, then analyze the dataset, which generates a similar object to the domain json, then producing a comparison of both.
+
+The main methods for this module are *getstats*, *getcolumnstats* and *getdatasetstats*.
+
+The *getstats* method is just a wrapper for the other two, calls them both and stores its results inside the Analyzer class.
+
+Both *getcolumnstats* and *getdatasetstats* compute the statistics for the given dataset. If there is previous knowledge of the domain, the stats that appear there are computed for the domain. If not, a standard set of frequencies for categorical values and medians and distributions for numerical values are calculated and used to populate the stats object.
+
+The most important method is *getanalysis*. Once the stats for the datasets have been generated, if there's previous knowledge available the class runs an analysis comparing the metrics of the two, and generating an object with the result. For this to happen, each metric defined for the dataset must have an associated *comparison metric*.
+
+If there is no previous knowledge then the dataset stats are passed along to the reporter with a field indicating that there was no previous knowledge.
+
+In any case, at this level we've already filtered what is relevant and what is not from the comparison.
 
 %-------------------------------------------------------------------
 \section{The Report Generation Module}
 %-------------------------------------------------------------------
-\label{cap1:sec:analysis}
+\label{cap2:sec:reporter}
+This module stands at the edge between the backend and the frontend. It receives the information from the comparison between the dataset and the domain knowledge and extracts the relevant profile information.
+
+Once this is done, it uses both to generate a report with all the information from both sides. The user-relevant info will modify what is shown and *how* that is shown, changing the graphical elements according to the user so the frontend modules are able to be logic-free.
+
+It is able to directly modify the profile information by the proxy methods *modify* and *savehumaninfo*. Its main method, *generate*, will create and populate an attribute within itself called report.
+
+This method is called when the class itself is generated but the report can be modified as any Python attribute if needed.
+
+At this point, we have an object that represents the dataset compared to the historical data and data about the profile associated with the user. This information, however, is in the form of a JSON object and is not really human-readable. The job of the frontend modules is to take this information and turn it into something easy to understand.
+
 
 %-------------------------------------------------------------------
 \section*{\NotasBibliograficas}

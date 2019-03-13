@@ -8,29 +8,39 @@
 \BOOKMARK [1][-]{indice de tablas.1}{\315ndice de tablas}{indices.0}% 8
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 9
 \BOOKMARK [1][-]{section.1.1}{Overview}{chapter.1}% 10
-\BOOKMARK [1][-]{section.1.1}{Notas bibliogr\341ficas}{chapter.1}% 11
-\BOOKMARK [1][-]{section.1.1}{En el pr\363ximo cap\355tulo}{chapter.1}% 12
-\BOOKMARK [0][-]{chapter.2}{The program structure}{}% 13
-\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.1}{Notas bibliogr\341ficas}{chapter.2}% 15
-\BOOKMARK [1][-]{section.2.1}{En el pr\363ximo cap\355tulo}{chapter.2}% 16
-\BOOKMARK [0][-]{chapter.3}{Backend}{}% 17
-\BOOKMARK [1][-]{section.3.1}{Backend}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.1}{Notas bibliogr\341ficas}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.1}{En el pr\363ximo cap\355tulo}{chapter.3}% 20
-\BOOKMARK [0][-]{chapter.4}{Frontend}{}% 21
-\BOOKMARK [1][-]{section.4.1}{Frontend}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.1}{Notas bibliogr\341ficas}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.1}{En el pr\363ximo cap\355tulo}{chapter.4}% 24
-\BOOKMARK [0][-]{chapter.5}{CBR Application}{}% 25
-\BOOKMARK [1][-]{section.5.1}{CBR Applications}{chapter.5}% 26
-\BOOKMARK [1][-]{section.5.1}{Notas bibliogr\341ficas}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.1}{En el pr\363ximo cap\355tulo}{chapter.5}% 28
-\BOOKMARK [0][-]{chapter.6}{Proof Of Concept Medical Data}{}% 29
-\BOOKMARK [1][-]{section.6.1}{introduction}{chapter.6}% 30
-\BOOKMARK [1][-]{section.6.1}{Notas bibliogr\341ficas}{chapter.6}% 31
-\BOOKMARK [1][-]{section.6.1}{En el pr\363ximo cap\355tulo}{chapter.6}% 32
-\BOOKMARK [0][-]{appendix.A}{As\355 se hizo...}{}% 33
-\BOOKMARK [1][-]{section.A.1}{Introducci\363n}{appendix.A}% 34
-\BOOKMARK [0][-]{section.A.1}{Index}{}% 35
-\BOOKMARK [0][-]{fin.0}{Fin}{}% 36
+\BOOKMARK [1][-]{section.1.2}{Workflow}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.3}{Structure}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.4}{Tools}{chapter.1}% 13
+\BOOKMARK [1][-]{section.1.4}{Notas bibliogr\341ficas}{chapter.1}% 14
+\BOOKMARK [1][-]{section.1.4}{En el pr\363ximo cap\355tulo}{chapter.1}% 15
+\BOOKMARK [0][-]{chapter.2}{The program structure : Backend}{}% 16
+\BOOKMARK [1][-]{section.2.1}{The Structure of the Backend}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.2}{The JSON Storage Object}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.3}{The Storage Module}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.4}{The JSON Profile Storage Structure}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.5}{The Profile Storage Module}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.6}{The Comparison Metrics}{chapter.2}% 22
+\BOOKMARK [1][-]{section.2.7}{The Analysis Module}{chapter.2}% 23
+\BOOKMARK [1][-]{section.2.8}{The Report Generation Module}{chapter.2}% 24
+\BOOKMARK [1][-]{section.2.8}{Notas bibliogr\341ficas}{chapter.2}% 25
+\BOOKMARK [1][-]{section.2.8}{En el pr\363ximo cap\355tulo}{chapter.2}% 26
+\BOOKMARK [0][-]{chapter.3}{The Program Structure : Frontend}{}% 27
+\BOOKMARK [1][-]{section.3.1}{Backend}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.1}{Notas bibliogr\341ficas}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.1}{En el pr\363ximo cap\355tulo}{chapter.3}% 30
+\BOOKMARK [0][-]{chapter.4}{CBR Application}{}% 31
+\BOOKMARK [1][-]{section.4.1}{Frontend}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.1}{Notas bibliogr\341ficas}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.1}{En el pr\363ximo cap\355tulo}{chapter.4}% 34
+\BOOKMARK [0][-]{chapter.5}{CBR Application : User Input}{}% 35
+\BOOKMARK [1][-]{section.5.1}{CBR Applications}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.1}{Notas bibliogr\341ficas}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.1}{En el pr\363ximo cap\355tulo}{chapter.5}% 38
+\BOOKMARK [0][-]{chapter.6}{Proof Of Concept Medical Data}{}% 39
+\BOOKMARK [1][-]{section.6.1}{introduction}{chapter.6}% 40
+\BOOKMARK [1][-]{section.6.1}{Notas bibliogr\341ficas}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.1}{En el pr\363ximo cap\355tulo}{chapter.6}% 42
+\BOOKMARK [0][-]{appendix.A}{As\355 se hizo...}{}% 43
+\BOOKMARK [1][-]{section.A.1}{Introducci\363n}{appendix.A}% 44
+\BOOKMARK [0][-]{section.A.1}{Index}{}% 45
+\BOOKMARK [0][-]{fin.0}{Fin}{}% 46
