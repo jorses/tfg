@@ -8,17 +8,32 @@
 
 
 \begin{resumen}
-In this chapter we provide an analysis of the frontend side of our tool, examining how it works and what was and was not designed for, aswell as its interaction with the backend side.
+In this chapter we provide an analysis of the frontend side of our tool, examining how it works and what was designed for, aswell as its interaction with the backend side.
 We provide both an abstract analysis and a more low level code explanation.
 \end{resumen}
 
 
 %-------------------------------------------------------------------
-\section{Backend}
+\section{The Structure of the Backend}
 %-------------------------------------------------------------------
-\label{cap1:sec:introduccion}
+\label{cap3:sec:structure}
+In our design process we have tried to keep the frontend side logic-free, its only functions being presenting the information to the user and providing the functionality of updating the relevant information with input from the user side.
+The two most important modules are the frontend module, which takes a *report* object from the *reporter* module and turns it into text and relevant graphs, directly displayed to the user by the interaction module.
 
-This is the introductory texttt
+%-------------------------------------------------------------------
+\section{The Frontend Module}
+%-------------------------------------------------------------------
+\label{cap3:sec:frontend}
+
+As we have explained in the previous chapter, this module will receive an abstract representation of a Report as a JSON object. Its main function, *show*, will take a report object from the *reporter* class and turn it into a visual report, which contains both descriptive text and graphical representation of the information which has been labelled as relevant for the user.
+Every decision as to how to represent the information has already been taken before, so this module can be taken as a sort of machine to human translator.
+
+%-------------------------------------------------------------------
+\section{The Interaction Module}
+%-------------------------------------------------------------------
+\label{cap3:sec:interaction}
+
+This module's main function will be to take user feedback as to what is not relevant or what they would like to see, and then automatically update the information in the profile storage module so it can be used in the future by the same user.
 
 %-------------------------------------------------------------------
 \section*{\NotasBibliograficas}

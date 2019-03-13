@@ -25,22 +25,24 @@
 \BOOKMARK [1][-]{section.2.8}{Notas bibliogr\341ficas}{chapter.2}% 25
 \BOOKMARK [1][-]{section.2.8}{En el pr\363ximo cap\355tulo}{chapter.2}% 26
 \BOOKMARK [0][-]{chapter.3}{The Program Structure : Frontend}{}% 27
-\BOOKMARK [1][-]{section.3.1}{Backend}{chapter.3}% 28
-\BOOKMARK [1][-]{section.3.1}{Notas bibliogr\341ficas}{chapter.3}% 29
-\BOOKMARK [1][-]{section.3.1}{En el pr\363ximo cap\355tulo}{chapter.3}% 30
-\BOOKMARK [0][-]{chapter.4}{CBR Application}{}% 31
-\BOOKMARK [1][-]{section.4.1}{Frontend}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.1}{Notas bibliogr\341ficas}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.1}{En el pr\363ximo cap\355tulo}{chapter.4}% 34
-\BOOKMARK [0][-]{chapter.5}{CBR Application : User Input}{}% 35
-\BOOKMARK [1][-]{section.5.1}{CBR Applications}{chapter.5}% 36
-\BOOKMARK [1][-]{section.5.1}{Notas bibliogr\341ficas}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.1}{En el pr\363ximo cap\355tulo}{chapter.5}% 38
-\BOOKMARK [0][-]{chapter.6}{Proof Of Concept Medical Data}{}% 39
-\BOOKMARK [1][-]{section.6.1}{introduction}{chapter.6}% 40
-\BOOKMARK [1][-]{section.6.1}{Notas bibliogr\341ficas}{chapter.6}% 41
-\BOOKMARK [1][-]{section.6.1}{En el pr\363ximo cap\355tulo}{chapter.6}% 42
-\BOOKMARK [0][-]{appendix.A}{As\355 se hizo...}{}% 43
-\BOOKMARK [1][-]{section.A.1}{Introducci\363n}{appendix.A}% 44
-\BOOKMARK [0][-]{section.A.1}{Index}{}% 45
-\BOOKMARK [0][-]{fin.0}{Fin}{}% 46
+\BOOKMARK [1][-]{section.3.1}{The Structure of the Backend}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.2}{The Frontend Module}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.3}{The Interaction Module}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.3}{Notas bibliogr\341ficas}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.3}{En el pr\363ximo cap\355tulo}{chapter.3}% 32
+\BOOKMARK [0][-]{chapter.4}{CBR Application}{}% 33
+\BOOKMARK [1][-]{section.4.1}{Frontend}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.1}{Notas bibliogr\341ficas}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.1}{En el pr\363ximo cap\355tulo}{chapter.4}% 36
+\BOOKMARK [0][-]{chapter.5}{CBR Application : User Input}{}% 37
+\BOOKMARK [1][-]{section.5.1}{CBR Applications}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.1}{Notas bibliogr\341ficas}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.1}{En el pr\363ximo cap\355tulo}{chapter.5}% 40
+\BOOKMARK [0][-]{chapter.6}{Proof Of Concept Medical Data}{}% 41
+\BOOKMARK [1][-]{section.6.1}{introduction}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.1}{Notas bibliogr\341ficas}{chapter.6}% 43
+\BOOKMARK [1][-]{section.6.1}{En el pr\363ximo cap\355tulo}{chapter.6}% 44
+\BOOKMARK [0][-]{appendix.A}{As\355 se hizo...}{}% 45
+\BOOKMARK [1][-]{section.A.1}{Introducci\363n}{appendix.A}% 46
+\BOOKMARK [0][-]{section.A.1}{Index}{}% 47
+\BOOKMARK [0][-]{fin.0}{Fin}{}% 48

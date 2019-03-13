@@ -20,9 +20,11 @@
 \contentsline {section}{Notas bibliogr\'aficas}{7}{section.2.8}
 \contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{7}{section.2.8}
 \contentsline {chapter}{\numberline {3}The Program Structure : Frontend}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Backend}{9}{section.3.1}
-\contentsline {section}{Notas bibliogr\'aficas}{9}{section.3.1}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{9}{section.3.1}
+\contentsline {section}{\numberline {3.1}The Structure of the Backend}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}The Frontend Module}{9}{section.3.2}
+\contentsline {section}{\numberline {3.3}The Interaction Module}{10}{section.3.3}
+\contentsline {section}{Notas bibliogr\'aficas}{10}{section.3.3}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{10}{section.3.3}
 \contentsline {chapter}{\numberline {4}CBR Application}{11}{chapter.4}
 \contentsline {section}{\numberline {4.1}Frontend}{11}{section.4.1}
 \contentsline {section}{Notas bibliogr\'aficas}{11}{section.4.1}
