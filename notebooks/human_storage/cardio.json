@@ -16,62 +16,7 @@
     ],
     "profiles": {
         "patient": {
-            "knowledge": {
-                "colors":{
-                    "id": {
-                        "metric": "num_metric",
-                        "value": "blue"
-                    },
-                    "age": {
-                        "metric": "num_metric",
-                        "value": "red"
-                    },
-                    "gender": {
-                        "metric": "num_metric",
-                        "value": "blue"
-                    },
-                    "height": {
-                        "metric": "num_metric",
-                        "value": "blue"
-                    },
-                    "weight": {
-                        "metric": "num_metric",
-                        "value": "red"
-                    },
-                    "ap_hi": {
-                        "metric": "num_metric",
-                        "value": "blue"
-                    },
-                    "ap_lo": {
-                        "metric": "num_metric",
-                        "value": "blue"
-                    },
-                    "cholesterol": {
-                        "metric": "num_metric",
-                        "value": "red"
-                    },
-                    "gluc": {
-                        "metric": "num_metric",
-                        "value": "blue"
-                    },
-                    "smoke": {
-                        "metric": "num_metric",
-                        "value": "blue"
-                    },
-                    "alco": {
-                        "metric": "num_metric",
-                        "value": "blue"
-                    },
-                    "active": {
-                        "metric": "num_metric",
-                        "value": "blue"
-                    },
-                    "cardio": {
-                        "metric": "num_metric",
-                        "value": "green"
-                    }
-
-                },
+            "profile_knowledge": {
                 "column_stats": {
                     "id": {
                         "metric": "num_metric",
@@ -126,8 +71,11 @@
                         "value": 0.32
                     }
                 },
-                "dataset_stats": {}
-            }
+                "dataset_stats": {
+                    
+                }
+            },
+            "graphical_knowledge": {}
         }
     }
 }
