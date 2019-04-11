@@ -1,0 +1,161 @@
+{
+    "attribute_list": [
+        "NUMORD",
+        "CENTRO",
+        "CURSO",
+        "PLAN",
+        "ANOCON",
+        "MUNICIPIO",
+        "PROVINCIA",
+        "NOTA_BASE_4",
+        "NOTA_BASE_10",
+        "DESPLAN",
+        "SUBTIPO",
+        "GENERO"
+    ],
+    "profiles": {
+        "student_seed": {
+            "user_knowledge": {
+                "age": 20,
+                "class": "student",
+                "gender": "female",
+                "curso": "CURSO del usuario aqui",
+                "numord": "ID del usuario aquí"
+            },
+            "profile_knowledge": {
+                "column_stats": {
+                    "NOTA_BASE_10": {
+                        "metric": {
+                            "comparison": {
+                                "groups": [
+                                    {
+                                        "NUMORD": "ID del usuario aquí",
+                                        "color": "red"
+                                    },
+                                    {
+                                        "CURSO": "CURSO del usuario aqui",
+                                        "color": "red"
+                                    }
+                                ],
+                                "metric": "distribution"
+                            }
+                        },
+                        "show": {
+                            "graph": "lines"
+                        }
+                    }
+                }
+            }
+        },
+        "teacher_seed": {
+            "user_knowledge": {
+                "age": 48,
+                "class": "teacher",
+                "gender": "female",
+                "curso": "Curso del profesor aqui"
+            },
+            "profile_knowledge": {
+                "column_stats": {
+                    "CURSO": {
+                        "metric": "category_count",
+                        "show": "text"
+                    },
+                    "DESPLAN": {
+                        "metric": "category_count",
+                        "show": "text"
+                    },
+                    "MUNICIPIO": {
+                        "metric": {
+                            "value": "category_count"
+                        },
+                        "show": "pie"
+                    },
+                    "PROVINCIA": {
+                        "metric": "category_count",
+                        "show": "text"
+                    },
+                    "NOTA_BASE_10": {
+                        "metric": {
+                            "comparison": {
+                                "groups": [{
+                                    "CURSO": "Curso del profesor aqui",
+                                    "color": "red"
+                                },
+                                {
+                                    "CURSO": "all",
+                                    "color": "red"
+                                }],
+                                "metric": "distribution"
+                            }
+                        },
+                        "show": {
+                            "graph": "lines"
+                        }
+                    }
+                }
+            }
+        },
+        "manager_seed": {
+            "user_knowledge": {
+                "age": 38,
+                "class": "manager",
+                "gender": "male"
+            },
+            "profile_knowledge": {
+                "column_stats": {
+                    "CURSO": {
+                        "metric": "category_count",
+                        "show": "text"
+                    },
+                    "DESPLAN": {
+                        "metric": "category_count",
+                        "show": "text"
+                    },
+                    "MUNICIPIO": {
+                        "metric": "category_count",
+                        "show": "text"
+                    },
+                    "PROVINCIA": {
+                        "metric": "category_count",
+                        "show": "text"
+                    },
+                    "NOTA_BASE_10": {
+                        "metric": {
+                            "comparison": {
+                                "group": {
+                                    "GENERO": "H",
+                                    "color": "blue"
+                                },
+                                "group": {
+                                    "GENERO": "M"
+                                },
+                                "metric": "distribution"
+                            }
+                        },
+                        "show": {
+                            "graph": "lines"
+                        }
+                    },
+                    "GENERO": {
+                        "metric": {
+                            "comparison": {
+                                "group": {
+                                    "GENERO": "H",
+                                    "color": "red"
+                                },
+                                "group": {
+                                    "GENERO": "M",
+                                    "color": "blue"
+                                },
+                                "metric": "distribution"
+                            }
+                        },
+                        "show": {
+                            "graph": "lines"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "attribute_list": [
+        "NUMORD",
+        "CENTRO",
+        "CURSO",
+        "PLAN",
+        "ANOCON",
+        "MUNICIPIO",
+        "PROVINCIA",
+        "NOTA_BASE_4",
+        "NOTA_BASE_10",
+        "DESPLAN",
+        "SUBTIPO",
+        "GENERO"
+    ],
+    "knowledge": {
+        "column_stats": {
+            "NUMORD": {
+                "metric": "distribution",
+                "value": 0
+            },
+            "CENTRO": {
+                "metric": "distribution",
+                "value": 0
+            },
+            "CURSO": {
+                "metric": "distribution",
+                "value": 0
+            },
+            "PLAN": {
+                "metric": "distribution",
+                "value": 0
+            },
+            "ANOCON": {
+                "metric": "distribution",
+                "value": 0
+            },
+            "MUNICIPIO": {
+                "metric": "distribution",
+                "value": 0
+            },
+            "PROVINCIA": {
+                "metric": "distribution",
+                "value": 0
+            },
+            "NOTA_BASE_4": {
+                "metric": "num_metric",
+                "value": 2.1
+            },
+            "NOTA_BASE_10": {
+                "metric": "num_metric",
+                "value": 7.5
+            },
+            "DESPLAN": {
+                "metric": "distribution",
+                "value": 0
+            },
+            "SUBTIPO": {
+                "metric": "distribution",
+                "value": 0
+            },
+            "GENERO": {
+                "metric": "distribution",
+                "value": 0
+            }
+        },
+        "dataset_stats": {}
+    }
+
+}
