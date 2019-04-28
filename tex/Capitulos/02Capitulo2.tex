@@ -4,22 +4,20 @@
 %
 %---------------------------------------------------------------------
 
-\chapter{The program structure : Backend}
+\chapter{The program structure}
 
 \begin{resumen}
-In this chapter we provide an analysis of the backend side of our tool, examining how it works and what was and was not designed for, and its interaction with the frontend side which will be explained later.
-We provide both an abstract analysis and a more low level code explanation.
+In this chapter we provide an analysis of the program structure from an abstract point of view.
 \end{resumen}
 
 
 %-------------------------------------------------------------------
-\section{The Structure of the Backend}
+\section{The Structure}
 %-------------------------------------------------------------------
 \label{cap2:sec:structure}
 
-As we have stated before, the backend side of our program consists of a series of modules designed to interact with each other and provide the necessary tools for our program to work smoothly regardless of the data being used.
-Each module has a main class which provides almost all of its functionality, along with some tests for us to make sure that it's working properly.
-Here we take a look at the main classes of each module and main JSON structures we use to store the information.
+As we have stated before, our program consists of a series of modules designed to interact with each other and provide the necessary tools to work smoothly regardless of the data being used.
+Here we take a look at the main classes of each module and main data structures we use to store the information.
 
 %-------------------------------------------------------------------
 \section{The JSON Storage Object}
@@ -83,6 +81,7 @@ It has the same methods as that class but also provides a way to change or load 
 \section{The Comparison Metrics}
 %-------------------------------------------------------------------
 \label{cap2:sec:metrics}
+
 The purpose of these functions is to provide a way to measure the properties of a given dataset or knowledge domain.
 We can categorize them as follows:
 First the "measurement" metrics, used to get the information of a single dataset or domain.
@@ -134,6 +133,7 @@ In any case, at this level we've already filtered what is relevant and what is n
 \section{The Report Generation Module}
 %-------------------------------------------------------------------
 \label{cap2:sec:reporter}
+
 This module stands at the edge between the backend and the frontend. It receives the information from the comparison between the dataset and the domain knowledge and extracts the relevant profile information.
 
 Once this is done, it uses both to generate a report with all the information from both sides. The user-relevant info will modify what is shown and *how* that is shown, changing the graphical elements according to the user so the frontend modules are able to be logic-free.
