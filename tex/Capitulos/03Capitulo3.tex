@@ -4,36 +4,109 @@
 %
 %---------------------------------------------------------------------
 
-\chapter{The Program Structure : Frontend}
+\chapter{The Program Implementation : Architecture}
 
 
 \begin{resumen}
-In this chapter we provide an analysis of the frontend side of our tool, examining how it works and what was designed for, aswell as its interaction with the backend side.
-We provide both an abstract analysis and a more low level code explanation.
+In this chapter we provide a technical analysis of our tool, examining how it works and what was designed for at a programming level, aswell as its module structure.
 \end{resumen}
 
 
 %-------------------------------------------------------------------
-\section{The Structure of the Backend}
+\section{The Program Module Structure}
 %-------------------------------------------------------------------
-\label{cap3:sec:structure}
-In our design process we have tried to keep the frontend side logic-free, its only functions being presenting the information to the user and providing the functionality of updating the relevant information with input from the user side.
-The two most important modules are the frontend module, which takes a *report* object from the *reporter* module and turns it into text and relevant graphs, directly displayed to the user by the interaction module.
+%% FIGURE HERE
 
 %-------------------------------------------------------------------
-\section{The Frontend Module}
+\section{The JSON Profile Storage Structure}
 %-------------------------------------------------------------------
-\label{cap3:sec:frontend}
+\label{cap2:sec:profilejson}
 
-As we have explained in the previous chapter, this module will receive an abstract representation of a Report as a JSON object. Its main function, *show*, will take a report object from the *reporter* class and turn it into a visual report, which contains both descriptive text and graphical representation of the information which has been labelled as relevant for the user.
-Every decision as to how to represent the information has already been taken before, so this module can be taken as a sort of machine to human translator.
+Another kind of information is stored about the domains. This is the information concerning the **human** side of things, that is, **how** to interpret these stats and turn them into something that humans with different levels of familiarity can understand.
+
+To do this, we provide use another storage class that will contain human-relevant data that will modify the objective comparison delivered by the analysis module.
+
+A system of profiles is added to the object itself, inside a "profiles" key. The domain associated is clear as they share the same "attributelist" identification system.
+
+The information contained in each one of these "profiles" serves two different purposes. It provides customizable elements of *how* the data will be presented to the user, and it keeps an historical record of this user's dataset results (similar to the one in the domain storage) making a historical following of a profile possible.
+
+For each domain, there's a *default* profile. This provides a way to present the data when no previous knowledge of the profile is available. The automated processes of obtaining this profile and tuning the existing profiles from user feedback will be explained in further chapters.
+
 
 %-------------------------------------------------------------------
-\section{The Interaction Module}
+\section{The Profile Storage Module}
 %-------------------------------------------------------------------
-\label{cap3:sec:interaction}
+\label{cap2:sec:profilestorage}
 
-This module's main function will be to take user feedback as to what is not relevant or what they would like to see, and then automatically update the information in the profile storage module so it can be used in the future by the same user.
+This module makes use of the tools provided by our Storage Module, the class itself extends the Storage class providing the extra methods needed to use the "profile" system.
+It has the same methods as that class but also provides a way to change or load a single profile, its functioning mirrors the Storage
+
+%-------------------------------------------------------------------
+\section{The Comparison Metrics}
+%-------------------------------------------------------------------
+\label{cap2:sec:metrics}
+
+The purpose of these functions is to provide a way to measure the properties of a given dataset or knowledge domain.
+We can categorize them as follows:
+First the "measurement" metrics, used to get the information of a single dataset or domain.
+
+    - Dataset Metrics : they concern the dataset as a whole, like number of rows with missing values.
+        dm :: (ds) --> num
+        
+    - Single Column Metrics : they concern a certain column, and are based on the type of the column.
+        For numerical columns we will have things like median, averages, deviations, distributions...
+        For categorical columns we'll work with frequencies and things of the sort.
+        scm :: (col) --> num
+        
+    - Multiple Column Metrics : we will be looking for correlations and things of that sort.
+        scm :: (col,col) --> num 
+        Time based metrics will be defined from this construct.
+
+We will also have "comparison" metrics, used to compare datasets against their domains.
+These metrics will compare the output of two measurement metrics, both will have to
+spawn from the same function.
+    compm :: (metric) --> num
+
+Note that these metrics are not to provide "meaning" or any human-readable input, nor to be
+inherently comparable between each other outside of a framework of understanding of the domain
+(metric importance).
+
+A mean to convert these machine cold metrics into human understanding will be provided in further 
+modules. For now, we're not taking humans into account.
+
+%-------------------------------------------------------------------
+\section{The Analysis Module}
+%-------------------------------------------------------------------
+\label{cap2:sec:analysis}
+
+The analysis module will receive a dataset, use the Storage module to load its information, then analyze the dataset, which generates a similar object to the domain json, then producing a comparison of both.
+
+The main methods for this module are *getstats*, *getcolumnstats* and *getdatasetstats*.
+
+The *getstats* method is just a wrapper for the other two, calls them both and stores its results inside the Analyzer class.
+
+Both *getcolumnstats* and *getdatasetstats* compute the statistics for the given dataset. If there is previous knowledge of the domain, the stats that appear there are computed for the domain. If not, a standard set of frequencies for categorical values and medians and distributions for numerical values are calculated and used to populate the stats object.
+
+The most important method is *getanalysis*. Once the stats for the datasets have been generated, if there's previous knowledge available the class runs an analysis comparing the metrics of the two, and generating an object with the result. For this to happen, each metric defined for the dataset must have an associated *comparison metric*.
+
+If there is no previous knowledge then the dataset stats are passed along to the reporter with a field indicating that there was no previous knowledge.
+
+In any case, at this level we've already filtered what is relevant and what is not from the comparison.
+
+%-------------------------------------------------------------------
+\section{The Report Generation Module}
+%-------------------------------------------------------------------
+\label{cap2:sec:reporter}
+
+This module stands at the edge between the backend and the frontend. It receives the information from the comparison between the dataset and the domain knowledge and extracts the relevant profile information.
+
+Once this is done, it uses both to generate a report with all the information from both sides. The user-relevant info will modify what is shown and *how* that is shown, changing the graphical elements according to the user so the frontend modules are able to be logic-free.
+
+It is able to directly modify the profile information by the proxy methods *modify* and *savehumaninfo*. Its main method, *generate*, will create and populate an attribute within itself called report.
+
+This method is called when the class itself is generated but the report can be modified as any Python attribute if needed.
+
+At this point, we have an object that represents the dataset compared to the historical data and data about the profile associated with the user. This information, however, is in the form of a JSON object and is not really human-readable. The job of the frontend modules is to take this information and turn it into something easy to understand.
 
 %-------------------------------------------------------------------
 \section*{\NotasBibliograficas}
