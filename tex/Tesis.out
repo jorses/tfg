@@ -7,42 +7,46 @@
 \BOOKMARK [1][-]{indice de figuras.1}{\315ndice de figuras}{indices.0}% 7
 \BOOKMARK [1][-]{indice de tablas.1}{\315ndice de tablas}{indices.0}% 8
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 9
-\BOOKMARK [1][-]{section.1.1}{Overview}{chapter.1}% 10
-\BOOKMARK [1][-]{section.1.2}{Workflow}{chapter.1}% 11
-\BOOKMARK [1][-]{section.1.3}{Structure}{chapter.1}% 12
-\BOOKMARK [1][-]{section.1.4}{Tools}{chapter.1}% 13
-\BOOKMARK [1][-]{section.1.4}{Notas bibliogr\341ficas}{chapter.1}% 14
-\BOOKMARK [1][-]{section.1.4}{En el pr\363ximo cap\355tulo}{chapter.1}% 15
-\BOOKMARK [0][-]{chapter.2}{The program structure : Backend}{}% 16
-\BOOKMARK [1][-]{section.2.1}{The Structure of the Backend}{chapter.2}% 17
-\BOOKMARK [1][-]{section.2.2}{The JSON Storage Object}{chapter.2}% 18
-\BOOKMARK [1][-]{section.2.3}{The Storage Module}{chapter.2}% 19
-\BOOKMARK [1][-]{section.2.4}{The JSON Profile Storage Structure}{chapter.2}% 20
-\BOOKMARK [1][-]{section.2.5}{The Profile Storage Module}{chapter.2}% 21
-\BOOKMARK [1][-]{section.2.6}{The Comparison Metrics}{chapter.2}% 22
-\BOOKMARK [1][-]{section.2.7}{The Analysis Module}{chapter.2}% 23
-\BOOKMARK [1][-]{section.2.8}{The Report Generation Module}{chapter.2}% 24
-\BOOKMARK [1][-]{section.2.8}{Notas bibliogr\341ficas}{chapter.2}% 25
-\BOOKMARK [1][-]{section.2.8}{En el pr\363ximo cap\355tulo}{chapter.2}% 26
-\BOOKMARK [0][-]{chapter.3}{The Program Structure : Frontend}{}% 27
-\BOOKMARK [1][-]{section.3.1}{The Structure of the Backend}{chapter.3}% 28
-\BOOKMARK [1][-]{section.3.2}{The Frontend Module}{chapter.3}% 29
-\BOOKMARK [1][-]{section.3.3}{The Interaction Module}{chapter.3}% 30
-\BOOKMARK [1][-]{section.3.3}{Notas bibliogr\341ficas}{chapter.3}% 31
-\BOOKMARK [1][-]{section.3.3}{En el pr\363ximo cap\355tulo}{chapter.3}% 32
-\BOOKMARK [0][-]{chapter.4}{CBR Application}{}% 33
-\BOOKMARK [1][-]{section.4.1}{Frontend}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.1}{Notas bibliogr\341ficas}{chapter.4}% 35
-\BOOKMARK [1][-]{section.4.1}{En el pr\363ximo cap\355tulo}{chapter.4}% 36
-\BOOKMARK [0][-]{chapter.5}{CBR Application : User Input}{}% 37
-\BOOKMARK [1][-]{section.5.1}{CBR Applications}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.1}{Notas bibliogr\341ficas}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.1}{En el pr\363ximo cap\355tulo}{chapter.5}% 40
-\BOOKMARK [0][-]{chapter.6}{Proof Of Concept Medical Data}{}% 41
-\BOOKMARK [1][-]{section.6.1}{introduction}{chapter.6}% 42
-\BOOKMARK [1][-]{section.6.1}{Notas bibliogr\341ficas}{chapter.6}% 43
-\BOOKMARK [1][-]{section.6.1}{En el pr\363ximo cap\355tulo}{chapter.6}% 44
-\BOOKMARK [0][-]{appendix.A}{As\355 se hizo...}{}% 45
-\BOOKMARK [1][-]{section.A.1}{Introducci\363n}{appendix.A}% 46
-\BOOKMARK [0][-]{section.A.1}{Index}{}% 47
-\BOOKMARK [0][-]{fin.0}{Fin}{}% 48
+\BOOKMARK [1][-]{section.1.1}{The Initial Problem}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.2}{Solution Proposed}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.3}{Overview}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.4}{Workflow}{chapter.1}% 13
+\BOOKMARK [1][-]{section.1.5}{Structure}{chapter.1}% 14
+\BOOKMARK [1][-]{section.1.6}{Tools}{chapter.1}% 15
+\BOOKMARK [1][-]{section.1.6}{Notas bibliogr\341ficas}{chapter.1}% 16
+\BOOKMARK [1][-]{section.1.6}{En el pr\363ximo cap\355tulo}{chapter.1}% 17
+\BOOKMARK [0][-]{chapter.2}{The program structure}{}% 18
+\BOOKMARK [1][-]{section.2.1}{The Structure}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.2}{Case presentation}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.3}{Handling the Information}{chapter.2}% 21
+\BOOKMARK [1][-]{section.2.4}{Analyzing the Information}{chapter.2}% 22
+\BOOKMARK [1][-]{section.2.5}{The Subjective Analysis}{chapter.2}% 23
+\BOOKMARK [1][-]{section.2.6}{Presentation and Feedback}{chapter.2}% 24
+\BOOKMARK [1][-]{section.2.6}{Notas bibliogr\341ficas}{chapter.2}% 25
+\BOOKMARK [1][-]{section.2.6}{En el pr\363ximo cap\355tulo}{chapter.2}% 26
+\BOOKMARK [0][-]{chapter.3}{The Program Implementation : Architecture}{}% 27
+\BOOKMARK [1][-]{section.3.1}{The Program Module Structure}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.2}{The JSON Profile Storage Structure}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.3}{The Profile Storage Module}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.4}{The Comparison Metrics}{chapter.3}% 31
+\BOOKMARK [1][-]{section.3.5}{The Analysis Module}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.6}{The Report Generation Module}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.6}{Notas bibliogr\341ficas}{chapter.3}% 34
+\BOOKMARK [1][-]{section.3.6}{En el pr\363ximo cap\355tulo}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{Seed Cases and ELO Tournament}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Motivation}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{Metric Seeds}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.2}{Notas bibliogr\341ficas}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.2}{En el pr\363ximo cap\355tulo}{chapter.4}% 40
+\BOOKMARK [0][-]{chapter.5}{CBR Application : User Input}{}% 41
+\BOOKMARK [1][-]{section.5.1}{CBR Applications}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.1}{Notas bibliogr\341ficas}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.1}{En el pr\363ximo cap\355tulo}{chapter.5}% 44
+\BOOKMARK [0][-]{chapter.6}{Proof Of Concept Medical Data}{}% 45
+\BOOKMARK [1][-]{section.6.1}{introduction}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.1}{Notas bibliogr\341ficas}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.1}{En el pr\363ximo cap\355tulo}{chapter.6}% 48
+\BOOKMARK [0][-]{appendix.A}{As\355 se hizo...}{}% 49
+\BOOKMARK [1][-]{section.A.1}{Introducci\363n}{appendix.A}% 50
+\BOOKMARK [0][-]{section.A.1}{Index}{}% 51
+\BOOKMARK [0][-]{fin.0}{Fin}{}% 52
