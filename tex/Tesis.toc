@@ -8,8 +8,6 @@
 \contentsline {section}{\numberline {1.4}Workflow}{3}{section.1.4}
 \contentsline {section}{\numberline {1.5}Structure}{3}{section.1.5}
 \contentsline {section}{\numberline {1.6}Tools}{4}{section.1.6}
-\contentsline {section}{Notas bibliogr\'aficas}{4}{section.1.6}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{4}{section.1.6}
 \contentsline {chapter}{\numberline {2}The program structure}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}The Structure}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Case presentation}{5}{section.2.2}
@@ -17,8 +15,6 @@
 \contentsline {section}{\numberline {2.4}Analyzing the Information}{6}{section.2.4}
 \contentsline {section}{\numberline {2.5}The Subjective Analysis}{6}{section.2.5}
 \contentsline {section}{\numberline {2.6}Presentation and Feedback}{7}{section.2.6}
-\contentsline {section}{Notas bibliogr\'aficas}{7}{section.2.6}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{7}{section.2.6}
 \contentsline {chapter}{\numberline {3}The Program Implementation : Architecture}{9}{chapter.3}
 \contentsline {section}{\numberline {3.1}The Program Module Structure}{9}{section.3.1}
 \contentsline {section}{\numberline {3.2}The JSON Profile Storage Structure}{9}{section.3.2}
@@ -26,21 +22,24 @@
 \contentsline {section}{\numberline {3.4}The Comparison Metrics}{10}{section.3.4}
 \contentsline {section}{\numberline {3.5}The Analysis Module}{10}{section.3.5}
 \contentsline {section}{\numberline {3.6}The Report Generation Module}{11}{section.3.6}
-\contentsline {section}{Notas bibliogr\'aficas}{11}{section.3.6}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{12}{section.3.6}
 \contentsline {chapter}{\numberline {4}Seed Cases and ELO Tournament}{13}{chapter.4}
 \contentsline {section}{\numberline {4.1}Motivation}{13}{section.4.1}
-\contentsline {section}{\numberline {4.2}Metric Seeds}{13}{section.4.2}
-\contentsline {section}{Notas bibliogr\'aficas}{14}{section.4.2}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{14}{section.4.2}
-\contentsline {chapter}{\numberline {5}CBR Application : User Input}{15}{chapter.5}
-\contentsline {section}{\numberline {5.1}CBR Applications}{15}{section.5.1}
-\contentsline {section}{Notas bibliogr\'aficas}{15}{section.5.1}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{15}{section.5.1}
-\contentsline {chapter}{\numberline {6}Proof Of Concept \\Medical Data}{17}{chapter.6}
-\contentsline {section}{\numberline {6.1}introduction}{17}{section.6.1}
-\contentsline {section}{Notas bibliogr\'aficas}{17}{section.6.1}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{17}{section.6.1}
-\contentsline {chapter}{\numberline {A}As\IeC {\'\i } se hizo...}{19}{appendix.A}
-\contentsline {section}{\numberline {A.1}Introducci\'on}{19}{section.A.1}
-\contentsline {chapter}{Index}{21}{section.A.1}
+\contentsline {section}{\numberline {4.2}Case Seeds}{13}{section.4.2}
+\contentsline {section}{\numberline {4.3}Experiment Design}{14}{section.4.3}
+\contentsline {section}{\numberline {4.4}Experiment results}{14}{section.4.4}
+\contentsline {chapter}{\numberline {5}CBR : Concept}{15}{chapter.5}
+\contentsline {section}{\numberline {5.1}CBR Design}{15}{section.5.1}
+\contentsline {section}{\numberline {5.2}CBR Process}{15}{section.5.2}
+\contentsline {section}{\numberline {5.3}Retrieve}{16}{section.5.3}
+\contentsline {section}{\numberline {5.4}Reuse}{16}{section.5.4}
+\contentsline {section}{\numberline {5.5}Revise}{16}{section.5.5}
+\contentsline {section}{\numberline {5.6}Retain}{17}{section.5.6}
+\contentsline {chapter}{\numberline {6}CBR : Implementation}{19}{chapter.6}
+\contentsline {section}{\numberline {6.1}Information Storage}{19}{section.6.1}
+\contentsline {section}{\numberline {6.2}Retrieve}{19}{section.6.2}
+\contentsline {section}{\numberline {6.3}Reuse}{20}{section.6.3}
+\contentsline {section}{\numberline {6.4}Revise}{20}{section.6.4}
+\contentsline {section}{\numberline {6.5}Retain}{20}{section.6.5}
+\contentsline {chapter}{\numberline {A}As\IeC {\'\i } se hizo...}{21}{appendix.A}
+\contentsline {section}{\numberline {A.1}Introducci\'on}{21}{section.A.1}
+\contentsline {chapter}{Index}{23}{section.A.1}

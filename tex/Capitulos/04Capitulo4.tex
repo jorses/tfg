@@ -17,42 +17,48 @@ In this chapter we outline and explain the our techniques used to ensure new use
 \label{cap1:sec:motivation}
 
 Our objective for this chapter will be to provide details on the process chosen to develop a solid knowledge basis on which we can build a use case for our program.
+
 What we mean by this basis is the knowledge of which metrics to use to provide a clear picture of the datasets belonging to the domain, as well as which metrics are relevant to a profile and how should they be shown, as with a graph, through a text report, which colors, etc.
+
 We will be using the input of an expert to determine the metrics to use, and will then generate a seed profile based on an ELO tournament with a pool of experts. This will be then affected by user input.
 
 %-------------------------------------------------------------------
-\section{Metric Seeds}
+\section{Case Seeds}
 %-------------------------------------------------------------------
-\label{cap1:sec:motivation}
+\label{cap1:sec:metricseeds}
 
-Our objective for this chapter will be to provide details on the process chosen to develop a solid knowledge basis on which we can build a use case for our program.
-What we mean by this basis is the knowledge of which metrics to use to provide a clear picture of the datasets belonging to the domain, as well as which metrics are relevant to a profile and how should they be shown, as with a graph, through a text report, which colors, etc.
-We will be using the input of an expert to determine the metrics to use, and will then generate a seed profile based on an ELO tournament with a pool of experts
+The process to establish a frame of knowledge for a certain domain will be initiated by an expert who will provide its associated class, 
+or basic categorization of users, and a brief computer-understood description of what he's interested in.
 
+This knowledge will be used to run a first analysis and generate an array of reports through a semi randomization process, 
+which will be then pooled together as participants of a tournament, and given an initial ELO of 1000.
+
+The final winner of this tournament will be taken as the "seed" for the classification the users belonged to, 
+so if a new user enters the program and belongs to this class, it will be compared to people of this class through a metric and given the report of the person that is closer to them.
+
+The attributes of the user that form the metric are different for each class, and can be things like gender, age, medical specialty, etc.
 %-------------------------------------------------------------------
-\section*{\NotasBibliograficas}
+\section{Experiment Design}
 %-------------------------------------------------------------------
-\TocNotasBibliograficas
+\label{cap1:sec:experimentdesign}
+To test this approach to seed generation we have created an
 
-These are the bibliographical notes
-\citep{ldesc2e}
+To design the experiment we have used anonymized historical grades data from UCM's Computer Science.
 
-\medskip
+Our dataset contains data about anonymized global degree grades from the nineties, containing the year of graduation and the gender among other variables.
 
-%Y tambi�n ponemos el acr�nimo \ac{CVS} para que no cruja.
+This will be our domain.
 
+This dataset is to be viewed from three different perspectives : 
+\begin{enumerate}
+\item Students wishing to know how their grade stands among their peers, 
+\item Teachers who want to know how the year they've teached has faired compared to the others, 
+\item The figure of a gender delegate who wishes to know if the grade distributions are different when broken down by gender.
+\end{enumerate}
 
+Our objective first is to generate successful seed cases for each class which will then be used as base report generation techniques for each category of user within this domain. 
 %-------------------------------------------------------------------
-\section*{\ProximoCapitulo}
+\section{Experiment results}
 %-------------------------------------------------------------------
-\TocProximoCapitulo
+\label{cap1:sec:experimentresults}
 
-This is the next chapter section
-
-% Variable local para emacs, para  que encuentre el fichero maestro de
-% compilaci�n y funcionen mejor algunas teclas r�pidas de AucTeX
-%%%
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "../Tesis.tex"
-%%% End:
