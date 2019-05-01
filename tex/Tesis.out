@@ -22,30 +22,31 @@
 \BOOKMARK [1][-]{section.2.6}{Presentation and Feedback}{chapter.2}% 22
 \BOOKMARK [0][-]{chapter.3}{The Program Implementation : Architecture}{}% 23
 \BOOKMARK [1][-]{section.3.1}{The Program Module Structure}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.2}{The JSON Profile Storage Structure}{chapter.3}% 25
-\BOOKMARK [1][-]{section.3.3}{The Profile Storage Module}{chapter.3}% 26
-\BOOKMARK [1][-]{section.3.4}{The Comparison Metrics}{chapter.3}% 27
-\BOOKMARK [1][-]{section.3.5}{The Analysis Module}{chapter.3}% 28
-\BOOKMARK [1][-]{section.3.6}{The Report Generation Module}{chapter.3}% 29
-\BOOKMARK [0][-]{chapter.4}{Seed Cases and ELO Tournament}{}% 30
-\BOOKMARK [1][-]{section.4.1}{Motivation}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.2}{Case Seeds}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.3}{Experiment Design}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.4}{Experiment results}{chapter.4}% 34
-\BOOKMARK [0][-]{chapter.5}{CBR : Concept}{}% 35
-\BOOKMARK [1][-]{section.5.1}{CBR Design}{chapter.5}% 36
-\BOOKMARK [1][-]{section.5.2}{CBR Process}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.3}{Retrieve}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.4}{Reuse}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.5}{Revise}{chapter.5}% 40
-\BOOKMARK [1][-]{section.5.6}{Retain}{chapter.5}% 41
-\BOOKMARK [0][-]{chapter.6}{CBR : Implementation}{}% 42
-\BOOKMARK [1][-]{section.6.1}{Information Storage}{chapter.6}% 43
-\BOOKMARK [1][-]{section.6.2}{Retrieve}{chapter.6}% 44
-\BOOKMARK [1][-]{section.6.3}{Reuse}{chapter.6}% 45
-\BOOKMARK [1][-]{section.6.4}{Revise}{chapter.6}% 46
-\BOOKMARK [1][-]{section.6.5}{Retain}{chapter.6}% 47
-\BOOKMARK [0][-]{appendix.A}{As\355 se hizo...}{}% 48
-\BOOKMARK [1][-]{section.A.1}{Introducci\363n}{appendix.A}% 49
-\BOOKMARK [0][-]{section.A.1}{Index}{}% 50
-\BOOKMARK [0][-]{fin.0}{Fin}{}% 51
+\BOOKMARK [1][-]{section.3.2}{Non relational databases and the JSON structure}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.3}{The Objective Storage Module}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.4}{The Profile Storage Module}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.5}{The Comparison Metrics}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.6}{The Analysis Module}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.7}{The Report Generation Module}{chapter.3}% 30
+\BOOKMARK [0][-]{chapter.4}{Seed Cases and ELO Tournament}{}% 31
+\BOOKMARK [1][-]{section.4.1}{Motivation}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.2}{Case Seeds}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{Experiment Design}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.4}{Experiment results}{chapter.4}% 35
+\BOOKMARK [0][-]{chapter.5}{CBR : Concept}{}% 36
+\BOOKMARK [1][-]{section.5.1}{CBR Design}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.2}{CBR Process}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.3}{Retrieve}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.4}{Reuse}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.5}{Revise}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.6}{Retain}{chapter.5}% 42
+\BOOKMARK [0][-]{chapter.6}{CBR : Implementation}{}% 43
+\BOOKMARK [1][-]{section.6.1}{Information Storage}{chapter.6}% 44
+\BOOKMARK [1][-]{section.6.2}{Retrieve}{chapter.6}% 45
+\BOOKMARK [1][-]{section.6.3}{Reuse}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.4}{Revise}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.5}{Retain}{chapter.6}% 48
+\BOOKMARK [0][-]{appendix.A}{As\355 se hizo...}{}% 49
+\BOOKMARK [1][-]{section.A.1}{Introducci\363n}{appendix.A}% 50
+\BOOKMARK [0][-]{section.A.1}{Index}{}% 51
+\BOOKMARK [0][-]{fin.0}{Fin}{}% 52

@@ -45,9 +45,31 @@ The user is able to make changes to this final report (through the console in th
 All of this enables the CBR process which is explained in chapters 5 and 6.
 
 %-------------------------------------------------------------------
-\section{The JSON structure}
+\section{Non relational databases and the JSON structure}
 %-------------------------------------------------------------------
 \label{cap2:sec:jsonfiller}
+
+For the proof of concept implementation developed in this thesis, we've used the JSON structure to handle our information, to write it to a file system and to read it later.
+
+JSON, short for JavaScript Object Notation is a file format that uses text readable by humans to write attribute value pairs and serializable values. 
+
+It is a a very common data format used for general storage of information, and will allow us to do a quick implementation capable of handling enough domains and profiles to test our program, and will allow us to later transfer this information to a non-relational database system such as MongoDB.
+
+Python also allows us to quickly load this kind of object into its native dictionary type, making it easy for our modules to load, manipulate and store the information.
+
+A non relational database is one that does not use the tabular schema of rows and columns found in most typical databases like SQL.
+
+Our need for such a database comes from the fact that not every domain will have the same structure of knowledge for its analysis, with the possibilities of combinations being almost infinite and thus negating any approach to putting it inside a tabular schema.
+
+Inside these databases data may be kept as JSON documents, which is the format that we've chosen.
+
+The proposed database for the final model is MongoDB. 
+
+MongoDB is a non relational database program, which is also cross-platform and document oriented. It works with objects very similar to JSON, and is licensed under the Server Side Public License (SSPL). 
+
+Aside from this, it's easily managed through Python and has native packages to communicate with it, which would make our life easier when implementing the full program.
+
+All of this provides us with a solution catered to our needs, which can be scalated easily if needed into a production ready state, capable of dealing with large amounts of data and providing a real solution to real users.
 
 %-------------------------------------------------------------------
 \section{The Objective Storage Module}
