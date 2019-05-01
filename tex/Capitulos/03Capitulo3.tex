@@ -1,6 +1,6 @@
 %---------------------------------------------------------------------
 %
-%                          Cap�tulo 2
+%          Cap�tulo 2
 %
 %---------------------------------------------------------------------
 
@@ -16,21 +16,53 @@ In this chapter we provide a technical analysis of our tool, examining how it wo
 \section{The Program Module Structure}
 %-------------------------------------------------------------------
 
+First we need to provide our program with a clear programming structure that allows it to be customizable enough, as it is very important that we're able to add new functionality related to new kinds of analysis, users or datasets.
+
+To make it as customizable as possible, we've divided it in modules that have a clear functionality, with the objective that we're able to change an aspect of the program by changing just one module and not the whole program.
+
+All the code is openly hosted at www.github.com/jorses/tfg.
+
+We will have one module which handles the loading and storing of the objective information about domains, one that does the same for user profiles associated to each domain, one that runs an analysis on the dataset and compares it to the domain, and one that puts everything together to generate a report which will be then presented to the user through the frontend module, which handles interactions with the user.
+
+So our hierarchy goes as follows, the frontend module takes input from the user regarding its profile (input done through a dictionary-like object in the proof of concept) and a path to the dataset that is to be analyzed.
+
+This module then relays the information to the two modules that handle information storage. 
+
+The storage module will read the dataset, as a CSV file in the proof of concept, read its columns and search its database for a matching domain information.
+
+In a more advanced version this search would be performed through a lookup on a non relational database like MongoDB, but for the proof of concept it looks in a folder where it stores the domain information objects as JSONs.
+
+When it finds one that matches the column names, it loads the object into a python dictionary and sends it to the analysis module along with the new dataset.
+
+The analysis module then performs an analysis and generates a proto-report with all the objective information about the comparison between the dataset analysis and the domain historical analysis, then passes this along to the report generation module.
+
+In parallel, the module that handles the profile will load it in a way similar to the storage module, then pass it along to the report generation module.
+
+When the report generation module gets all the needed information uses the user-generated profile to "filter" the objective results (as explained later in detail), and extract from them the final info that will then be presented to the user through the frontend module.
+
+The user is able to make changes to this final report (through the console in the proof of concept), and before closing the program
+
+All of this enables the CBR process which is explained in chapters 5 and 6.
 
 %-------------------------------------------------------------------
-\section{The JSON Profile Storage Structure}
+\section{The JSON structure}
+%-------------------------------------------------------------------
+\label{cap2:sec:jsonfiller}
+
+%-------------------------------------------------------------------
+\section{The Objective Storage Module}
 %-------------------------------------------------------------------
 \label{cap2:sec:profilejson}
 
-Another kind of information is stored about the domains. This is the information concerning the **human** side of things, that is, **how** to interpret these stats and turn them into something that humans with different levels of familiarity can understand.
+Another kind of information is stored about the domains. This is the information concerning the human side of things, that is, how to interpret these stats and turn them into something that humans with different levels of familiarity can understand.
 
 To do this, we provide use another storage class that will contain human-relevant data that will modify the objective comparison delivered by the analysis module.
 
 A system of profiles is added to the object itself, inside a "profiles" key. The domain associated is clear as they share the same "attributelist" identification system.
 
-The information contained in each one of these "profiles" serves two different purposes. It provides customizable elements of *how* the data will be presented to the user, and it keeps an historical record of this user's dataset results (similar to the one in the domain storage) making a historical following of a profile possible.
+The information contained in each one of these "profiles" serves two different purposes. It provides customizable elements of  how  the data will be presented to the user, and it keeps an historical record of this user's dataset results (similar to the one in the domain storage) making a historical following of a profile possible.
 
-For each domain, there's a *default* profile. This provides a way to present the data when no previous knowledge of the profile is available. The automated processes of obtaining this profile and tuning the existing profiles from user feedback will be explained in further chapters.
+For each domain, there's a  default  profile. This provides a way to present the data when no previous knowledge of the profile is available. The automated processes of obtaining this profile and tuning the existing profiles from user feedback will be explained in further chapters.
 
 
 %-------------------------------------------------------------------
@@ -39,6 +71,7 @@ For each domain, there's a *default* profile. This provides a way to present the
 \label{cap2:sec:profilestorage}
 
 This module makes use of the tools provided by our Storage Module, the class itself extends the Storage class providing the extra methods needed to use the "profile" system.
+
 It has the same methods as that class but also provides a way to change or load a single profile, its functioning mirrors the Storage
 
 %-------------------------------------------------------------------
@@ -50,22 +83,22 @@ The purpose of these functions is to provide a way to measure the properties of 
 We can categorize them as follows:
 First the "measurement" metrics, used to get the information of a single dataset or domain.
 
-    - Dataset Metrics : they concern the dataset as a whole, like number of rows with missing values.
-        dm :: (ds) --> num
-        
-    - Single Column Metrics : they concern a certain column, and are based on the type of the column.
-        For numerical columns we will have things like median, averages, deviations, distributions...
-        For categorical columns we'll work with frequencies and things of the sort.
-        scm :: (col) --> num
-        
-    - Multiple Column Metrics : we will be looking for correlations and things of that sort.
-        scm :: (col,col) --> num 
-        Time based metrics will be defined from this construct.
+  - Dataset Metrics : they concern the dataset as a whole, like number of rows with missing values.
+    dm :: (ds) --> num
+    
+  - Single Column Metrics : they concern a certain column, and are based on the type of the column.
+    For numerical columns we will have things like median, averages, deviations, distributions...
+    For categorical columns we'll work with frequencies and things of the sort.
+    scm :: (col) --> num
+    
+  - Multiple Column Metrics : we will be looking for correlations and things of that sort.
+    scm :: (col,col) --> num 
+    Time based metrics will be defined from this construct.
 
 We will also have "comparison" metrics, used to compare datasets against their domains.
 These metrics will compare the output of two measurement metrics, both will have to
 spawn from the same function.
-    compm :: (metric) --> num
+  compm :: (metric) --> num
 
 Note that these metrics are not to provide "meaning" or any human-readable input, nor to be
 inherently comparable between each other outside of a framework of understanding of the domain
@@ -81,13 +114,13 @@ modules. For now, we're not taking humans into account.
 
 The analysis module will receive a dataset, use the Storage module to load its information, then analyze the dataset, which generates a similar object to the domain json, then producing a comparison of both.
 
-The main methods for this module are *getstats*, *getcolumnstats* and *getdatasetstats*.
+The main methods for this module are  getstats ,  getcolumnstats  and  getdatasetstats .
 
-The *getstats* method is just a wrapper for the other two, calls them both and stores its results inside the Analyzer class.
+The  getstats  method is just a wrapper for the other two, calls them both and stores its results inside the Analyzer class.
 
-Both *getcolumnstats* and *getdatasetstats* compute the statistics for the given dataset. If there is previous knowledge of the domain, the stats that appear there are computed for the domain. If not, a standard set of frequencies for categorical values and medians and distributions for numerical values are calculated and used to populate the stats object.
+Both  getcolumnstats  and  getdatasetstats  compute the statistics for the given dataset. If there is previous knowledge of the domain, the stats that appear there are computed for the domain. If not, a standard set of frequencies for categorical values and medians and distributions for numerical values are calculated and used to populate the stats object.
 
-The most important method is *getanalysis*. Once the stats for the datasets have been generated, if there's previous knowledge available the class runs an analysis comparing the metrics of the two, and generating an object with the result. For this to happen, each metric defined for the dataset must have an associated *comparison metric*.
+The most important method is  getanalysis . Once the stats for the datasets have been generated, if there's previous knowledge available the class runs an analysis comparing the metrics of the two, and generating an object with the result. For this to happen, each metric defined for the dataset must have an associated  comparison metric .
 
 If there is no previous knowledge then the dataset stats are passed along to the reporter with a field indicating that there was no previous knowledge.
 
@@ -100,9 +133,9 @@ In any case, at this level we've already filtered what is relevant and what is n
 
 This module stands at the edge between the backend and the frontend. It receives the information from the comparison between the dataset and the domain knowledge and extracts the relevant profile information.
 
-Once this is done, it uses both to generate a report with all the information from both sides. The user-relevant info will modify what is shown and *how* that is shown, changing the graphical elements according to the user so the frontend modules are able to be logic-free.
+Once this is done, it uses both to generate a report with all the information from both sides. The user-relevant info will modify what is shown and  how  that is shown, changing the graphical elements according to the user so the frontend modules are able to be logic-free.
 
-It is able to directly modify the profile information by the proxy methods *modify* and *savehumaninfo*. Its main method, *generate*, will create and populate an attribute within itself called report.
+It is able to directly modify the profile information by the proxy methods  modify  and  savehumaninfo . Its main method,  generate , will create and populate an attribute within itself called report.
 
 This method is called when the class itself is generated but the report can be modified as any Python attribute if needed.
 
