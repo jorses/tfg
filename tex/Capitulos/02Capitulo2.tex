@@ -17,6 +17,7 @@ In this chapter we provide an analysis of the program structure from an abstract
 \label{cap2:sec:structure}
 
 As we have stated before, our program consists of a series of modules designed to interact with each other and provide the necessary tools to work smoothly regardless of the data being used.
+
 Here we take a look at each functional module, providing a clear abstract picture of what our tool really is.
 
 %-------------------------------------------------------------------
@@ -25,7 +26,9 @@ Here we take a look at each functional module, providing a clear abstract pictur
 \label{cap2:sec:preparation}
 
 The input for our program is really just an user who desires to analyze a certain dataset.
+
 From now on on this chapter, we assume we have previous information for both the domain the dataset belongs to and about the type of user that is trying to analyze it.
+
 We will expand on how the base cases are formed and how we adapt to new profiles and new domains on further chapters, but for now let's say that a process is in place to ensure that the default report is correct enough, the analysis performs its due processes and the result is at least acceptable and relevant to the final user.
 
 %-------------------------------------------------------------------
@@ -34,12 +37,17 @@ We will expand on how the base cases are formed and how we adapt to new profiles
 \label{cap2:sec:information}
 
 First and foremost we need a way to store information and to retrieve it effectively. We will store two different kinds of information : objective information about the results of analysis performed on a dataset and information on what information to present and how to present it to the user.
+
 Since the first is related to the domain and applies to all users, and the second concerns both the domain and the user, it makes sense to store them and handle them separately.
+
 Regarding the first kind, we now provide both a way to identify which domain it belongs to and a general description of what it contains, which will be specified later during the technical implementation chapter.
 
 It contains statistics and properties from both columns and datasets, different for different types, as well as how they were measured. Saving how they're measured is important to measure new datasets and to be able to compare metrics effectively.
+
 Both the column specific stats and the dataset stats are subjective to change with each dataset added to the domain, so it is important that we're able to update this information readily and effectively.
+
 It's also important to be able to distinguish between domains. The solution proposed is to use the columns of each dataset as a unique key that identifies a domain, and their objective information will be stored as part of the same object.
+
 In the case of subjective kind, we combine this with a unique user identificator to make a unique key to identify the information.
 
 Each of these structures has parts of the program dedicated to loading this information into the program and updating it when presented with new datasets and storing it overwriting the previous information, creating a dynamic system capable of learning from users and gathering new insights.
@@ -50,9 +58,13 @@ Each of these structures has parts of the program dedicated to loading this info
 \label{cap2:sec:analysis}
 
 This analysis will concern the objective side only, so we don't need to take the user into account for now.
+
 First a dataset is provided as input for our tool. From this dataset, we retrieve the information of the associated domain so we know how to perform the analysis on this new dataset, as it has to be comparable to the domain information.
+
 So, using the metrics and analysis detailed in the domain information, we perform them on the dataset and compare the results with those of the domain through a series of comparison metrics which will be detailed later.
+
 These results are then condensed into an object containing all the objective data from the comparisons.
+
 This output will be the input for the subjective side of our program, as this information will then be filtered and transformed in a way tailored to the user.
 
 %-------------------------------------------------------------------
@@ -61,9 +73,13 @@ This output will be the input for the subjective side of our program, as this in
 \label{cap2:sec:subjective}
 
 This analysis will concern the subjective side, and is to be performed after the previous step has been completed.
+
 From the representation of the objective analysis, we need to perform two tasks.
+
 One is the filtering of such information, selecting the information relevant to the user, and the other is choosing how to present this information to the user.
+
 To perform these two tasks we first load the information we know about the user, which has been stored separately from the objective information as we have previously stated.
+
 We then filter the information through the user provided profile, selecting which comparison is most relevant. Finally we form a report using the graphical information on how to present each bit of data to this user.
 
 %-------------------------------------------------------------------
@@ -72,7 +88,9 @@ We then filter the information through the user provided profile, selecting whic
 \label{cap2:sec:feedback}
 
 Once the user has been presented with the report, he's able to make changes to it using a graphical interface. When the report is saved and the user has exited the program, it initializes a shutting down routine on which the two information databases are updated with the changes made by the user (if they existed) and the new information provided by the dataset.
+
 This is the main way our program has of expanding its knowledge, which will then be used to present better reports to the same user and to adapt the information it presents to new users which will be similar to this one.
+
 So we get a double benefit, getting both better results for this user and for all users of the same domain and class each time someone uses our program.
 
 %NEXTTTT

@@ -71,10 +71,27 @@ Aside from this, it's easily managed through Python and has native packages to c
 
 All of this provides us with a solution catered to our needs, which can be scalated easily if needed into a production ready state, capable of dealing with large amounts of data and providing a real solution to real users.
 
+Every module listed below corresponds to a Python class, and has a number of methods, functions and dictionaries associated to it to perform its function.
+
 %-------------------------------------------------------------------
 \section{The Objective Storage Module}
 %-------------------------------------------------------------------
-\label{cap2:sec:profilejson}
+\label{cap2:sec:objjson}
+
+This module is capable of reading and updating the information stored about the objective analysis of past domains.
+
+It sits at the lowest point in the hierarchy, as it only does as commanded and is usually handled by the other modules and used as a mere tool to get information, similar to the profile storage module.
+
+Both modules are derived from a more basic Python class, called just Storage, from which they inherit the methods responsible from loading and storing files (or updating and loading from the database, in the scalable version).
+
+This class adds to these functions more advanced tools to deal with the domain information and load it into a dictionary-like object that will then be able to be easily handled by the analysis module, translating information stored in plain text like function names to its equivalent variables and Python dictionaries in the program, using the dictionaries which it has as an attribute.
+
+This process is reversed before writing the information back to disk in a format that can be condensed to JSON documents, mainly turning every function name and other serializable objects back into strings to be stored.
+
+%-------------------------------------------------------------------
+\section{The Profile Storage Module}
+%-------------------------------------------------------------------
+\label{cap2:sec:profilestorage}
 
 Another kind of information is stored about the domains. This is the information concerning the human side of things, that is, how to interpret these stats and turn them into something that humans with different levels of familiarity can understand.
 
@@ -84,17 +101,7 @@ A system of profiles is added to the object itself, inside a "profiles" key. The
 
 The information contained in each one of these "profiles" serves two different purposes. It provides customizable elements of  how  the data will be presented to the user, and it keeps an historical record of this user's dataset results (similar to the one in the domain storage) making a historical following of a profile possible.
 
-For each domain, there's a  default  profile. This provides a way to present the data when no previous knowledge of the profile is available. The automated processes of obtaining this profile and tuning the existing profiles from user feedback will be explained in further chapters.
-
-
-%-------------------------------------------------------------------
-\section{The Profile Storage Module}
-%-------------------------------------------------------------------
-\label{cap2:sec:profilestorage}
-
-This module makes use of the tools provided by our Storage Module, the class itself extends the Storage class providing the extra methods needed to use the "profile" system.
-
-It has the same methods as that class but also provides a way to change or load a single profile, its functioning mirrors the Storage
+For each domain, there's a default profile. This provides a way to present the data when no previous knowledge of the profile is available. The automated processes of obtaining this profile and tuning the existing profiles from user feedback will be explained in further chapters.
 
 %-------------------------------------------------------------------
 \section{The Comparison Metrics}
@@ -102,25 +109,36 @@ It has the same methods as that class but also provides a way to change or load 
 \label{cap2:sec:metrics}
 
 The purpose of these functions is to provide a way to measure the properties of a given dataset or knowledge domain.
-We can categorize them as follows:
-First the "measurement" metrics, used to get the information of a single dataset or domain.
 
-  - Dataset Metrics : they concern the dataset as a whole, like number of rows with missing values.
+We have to note first that not every kind of possible metric has been added to the program, but we've instead added enough to cover the most common types of analysis, mainly detecting distributions, most frequent values, and calculating a series of common metrics over numerical columns.
+
+However, adding a new metric is as simple as providing it with a name, an associated function which fits into the types of one of the metrics listed below, and adding the pair of name,function to a dictionary present in the code.
+
+The rest of the program will behave exactly the same, thus fittinng the design principle mentioned before of being able to expand the program quickly and efficiently.
+
+We can categorize them as follows:
+
+First the "measurement" metrics, used to get the information of a single dataset or domain.
+\begin{itemize}
+\item Dataset Metrics : they concern the dataset as a whole, like number of rows with missing values.
     dm :: (ds) --> num
     
-  - Single Column Metrics : they concern a certain column, and are based on the type of the column.
+\item Single Column Metrics : they concern a certain column, and are based on the type of the column.
     For numerical columns we will have things like median, averages, deviations, distributions...
     For categorical columns we'll work with frequencies and things of the sort.
     scm :: (col) --> num
     
-  - Multiple Column Metrics : we will be looking for correlations and things of that sort.
+\item Multiple Column Metrics : we will be looking for correlations and things of that sort.
     scm :: (col,col) --> num 
     Time based metrics will be defined from this construct.
+\end{itemize}
 
 We will also have "comparison" metrics, used to compare datasets against their domains.
 These metrics will compare the output of two measurement metrics, both will have to
 spawn from the same function.
-  compm :: (metric) --> num
+\begin{itemize}
+\item compm :: (metric) --> num
+\end{itemize}
 
 Note that these metrics are not to provide "meaning" or any human-readable input, nor to be
 inherently comparable between each other outside of a framework of understanding of the domain
@@ -163,3 +181,19 @@ This method is called when the class itself is generated but the report can be m
 
 At this point, we have an object that represents the dataset compared to the historical data and data about the profile associated with the user. This information, however, is in the form of a JSON object and is not really human-readable. The job of the frontend modules is to take this information and turn it into something easy to understand.
 
+%-------------------------------------------------------------------
+\section{The Frontend Module}
+%-------------------------------------------------------------------
+\label{cap2:sec:frontend}
+
+The purpose of this module is to handle the user program interaction. It sits atop of the program hierarchy, being able to use all the other modules as it sees fit.
+
+Its role begins and the very beginning of the program life cycle and ends at the same time the user decides to exit. 
+
+Its functionality is based on the principles of minimalistic design and the user being able to interact with every element of the presented report.
+
+For our proof of concept, a more simple design has been put in place. Instead of clicking on the elements, the user is able to interact with the program through the console.
+
+However, all the functionality is present, as the users can input the information the program requests to generate the profile, and then change the report presented to them using commands too.
+
+When the program is closed the frontend module passes the modified report to the information storage modules, with both the updated objective information and the updated subjective information.

@@ -27,7 +27,7 @@
 %---------------------------------------------------------------------
 %
 % Fichero que  contiene la portada y  primera hoja de la  tesis, en la
-% que se vuelve a repetir el título.
+% que se vuelve a repetir el tï¿½tulo.
 %
 % El contenido  de la  portada se configura  en un fichero  externo en
 % Cascaras/cover.tex
@@ -35,10 +35,10 @@
 %---------------------------------------------------------------------
 
 %%%
-% Gestión de la configuración
+% Gestiï¿½n de la configuraciï¿½n
 %%%
 
-% Título de la portada
+% Tï¿½tulo de la portada
 \def\tituloPortadaVal{\titulo}
 \newcommand{\tituloPortada}[1]{
 \def\tituloPortadaVal{#1}
@@ -51,8 +51,7 @@
 }
 
 % Tutor
-\def\directorPortadaVal{Tutor no definido. Usa
-  \texttt{$\backslash$tutorPortada}}
+\def\directorPortadaVal{ Bel\'en D\'iaz Agudo, Juan Antonio Recio Garc\'ia}
 \newcommand{\directorPortada}[1]{
 \def\directorPortadaVal{#1}
 }
@@ -78,24 +77,24 @@
 \def\tipoDocumentoVal{#1}
 }
 
-% Institución
+% Instituciï¿½n
 \def\institucionVal{}
 \newcommand{\institucion}[1]{
 \def\institucionVal{#1}
 }
 
-% Primer subtítulo de la segunda portada
+% Primer subtï¿½tulo de la segunda portada
 \def\textoPrimerSubtituloPortadaVal{%
-\textit{Memoria que presenta para optar al título de Doctor en Informática}  \\ [0.3em]%
+\textit{Memoria que presenta para optar al tï¿½tulo de Doctor en Informï¿½tica}  \\ [0.3em]%
 \textbf{\autorPortadaVal}%
 }
 \newcommand{\textoPrimerSubtituloPortada}[1]{
 \def\textoPrimerSubtituloPortadaVal{#1}
 }
 
-% Segundo subtítulo de la segunda portada
+% Segundo subtï¿½tulo de la segunda portada
 \def\textoSegundoSubtituloPortadaVal{%
-\textit{Dirigida por el Doctor}  \\ [0.3em]
+\textit{Dirigida por los Doctores}  \\ [0.3em]
 \textbf{\directorPortadaVal}
 }
 \newcommand{\textoSegundoSubtituloPortada}[1]{
@@ -112,102 +111,102 @@
 \def\copyrightInfoVal{#1}
 }
 
-% Créditos a TeXiS
+% Crï¿½ditos a TeXiS
 \newcommand{\noTeXiSCredits}{
 \def\noTeXiSCreditsVal{}
 }
 
-% Explicación sobre impresión a doble cara
+% Explicaciï¿½n sobre impresiï¿½n a doble cara
 \newcommand{\explicacionDobleCara}{
 \def\explicacionDobleCaraVal{}
 }
 %%%
-% Configuración terminada
+% Configuraciï¿½n terminada
 %%%
 
 
 %%%
 %% COMANDO PARA CREAR LAS PORTADAS.
-%% CONTIENE TODO EL CÓDIGO LaTeX
+%% CONTIENE TODO EL Cï¿½DIGO LaTeX
 %%%
 \newcommand{\makeCover}{
 
 
 % Ponemos el marcador en el PDF
 \ifpdf
-\pdfbookmark{Página de Título}{titulo}
+\pdfbookmark{Pï¿½gina de Tï¿½tulo}{titulo}
 \fi
 
 %
-%  MÁRGENES
+%  Mï¿½RGENES
 %
-% La maquetación de las páginas en LaTeX es bastante complicada en lo
-% que se refiere a los márgenes. Por ejemplo, _siempre_ hay un
+% La maquetaciï¿½n de las pï¿½ginas en LaTeX es bastante complicada en lo
+% que se refiere a los mï¿½rgenes. Por ejemplo, _siempre_ hay un
 % desplazamiento de una pulgada hacia la derecha y hacia abajo, porque
-% por razones de maquetación se cree que es necesario ese espacio. Si
-% quieres (en una hoja impar, que son de las únicas que me he
+% por razones de maquetaciï¿½n se cree que es necesario ese espacio. Si
+% quieres (en una hoja impar, que son de las ï¿½nicas que me he
 % preocupado) escribir por encima de la primera pulgada, o hacia la
-% izquierda, tienes que usar "márgenes" negativos.
+% izquierda, tienes que usar "mï¿½rgenes" negativos.
 % 
 % Para poder seguir esto un poco, lo mejor es que ejecutes \layout con
 % el paquete layout cargado, para ver una imagen...
 %
 % Los valores importantes en lo que se refiere al margen (horizontal,
-% que es del único que me he preocupado) son:
+% que es del ï¿½nico que me he preocupado) son:
 %
 %   - \hoffset : desplazamiento horizontal del "eje" de coordenadas. A
 %   este valor hay que sumarle, irremediablemente, una pulgada. El
 %   valor por defecto es 0 pt
-%   - \oddsidemargin : "margen" izquierdo (en las páginas impares). El
-%   texto principal de los párrafos comenzará en esa posición (es
+%   - \oddsidemargin : "margen" izquierdo (en las pï¿½ginas impares). El
+%   texto principal de los pï¿½rrafos comenzarï¿½ en esa posiciï¿½n (es
 %   decir, 1 pulgada + \hoffset + \oddsidemargin). El valor por
 %   defecto es 22 pt
-%   - \textwidth : longitud del texto (de los párrafos). El valor por
+%   - \textwidth : longitud del texto (de los pï¿½rrafos). El valor por
 %   defecto son 360 pt.
 %   - \marginparsep : separador de la parte derecha del texto
 %   principal y el espacio a anotaciones en el margen (notas
 %   marginales). El valor por defecto es 7 pt.
-%   - \marginparwidth : ancho de la sección de notas marginales. El
+%   - \marginparwidth : ancho de la secciï¿½n de notas marginales. El
 %   valor por defecto es 106 pt.
 %
-% Fijate que las notas marginales NO necesariamente llegarán hasta el
-% final del folio. La separación entre el extremo derecho de las notas
-% al margen y el final del folio en realidad dependerá del tamaño de
-% éste; no se especifica de ninguna manera. Esto significa que si
+% Fijate que las notas marginales NO necesariamente llegarï¿½n hasta el
+% final del folio. La separaciï¿½n entre el extremo derecho de las notas
+% al margen y el final del folio en realidad dependerï¿½ del tamaï¿½o de
+% ï¿½ste; no se especifica de ninguna manera. Esto significa que si
 % quieres ajustar exactamente el margen derecho tienes que echar
-% cuentas con respecto al tamaño del papel, que se mantiene en
+% cuentas con respecto al tamaï¿½o del papel, que se mantiene en
 % \paperwidth.
 %
-% En realidad, no sé de qué manera pero todos los valores están
-% relacionados de algún modo, y un cambio en uno afecta a los demás de
-% maneras bastante inverosímiles. Además, _sólo_ pueden cambiarse en
-% el preámbulo (bueno... al menos \textwidth, \oddsidemargin se puede
-% cambiar en otros sitios, pero no se pueden hacer muchas cosas sólo
+% En realidad, no sï¿½ de quï¿½ manera pero todos los valores estï¿½n
+% relacionados de algï¿½n modo, y un cambio en uno afecta a los demï¿½s de
+% maneras bastante inverosï¿½miles. Ademï¿½s, _sï¿½lo_ pueden cambiarse en
+% el preï¿½mbulo (bueno... al menos \textwidth, \oddsidemargin se puede
+% cambiar en otros sitios, pero no se pueden hacer muchas cosas sï¿½lo
 % con aquellos que se pueden cambiar...).
 %
-% En general se recomienda que NO cambies los márgenes. Están elegidos
-% por especialistas que saben de maquetación y que han estudiado en
+% En general se recomienda que NO cambies los mï¿½rgenes. Estï¿½n elegidos
+% por especialistas que saben de maquetaciï¿½n y que han estudiado en
 % profundidad las mejores organizaciones. Por ejemplo, los cambios que
-% hagas pueden alargar demasiado las líneas, o dejarlas demasiado
-% cortas. Pero bueno, si aun así quieres cambiar los márgenes _a nivel
-% global_ es preferible que uses el paquete geometry, cuya inclusión
-% recibe los centímetros de márgen que quieres en cada lado, y él se
-% encarga de hacer las cuentas para que queden así, porque tocar tanto
+% hagas pueden alargar demasiado las lï¿½neas, o dejarlas demasiado
+% cortas. Pero bueno, si aun asï¿½ quieres cambiar los mï¿½rgenes _a nivel
+% global_ es preferible que uses el paquete geometry, cuya inclusiï¿½n
+% recibe los centï¿½metros de mï¿½rgen que quieres en cada lado, y ï¿½l se
+% encarga de hacer las cuentas para que queden asï¿½, porque tocar tanto
 % valor es un infierno.
 %
-% Si quieres cambiar los márgenes momentáneamente, entonces lo mejor
+% Si quieres cambiar los mï¿½rgenes momentï¿½neamente, entonces lo mejor
 % es hacer uso de un entorno tipo "lista" que permite tocar algunos
-% contadores para ajustar las posiciones de los párrafos. Eso es
+% contadores para ajustar las posiciones de los pï¿½rrafos. Eso es
 % precisamente lo que hace el entorno cambiamargen definido en
 % TeXiS.sty
 %
-% El problema es que esos cambios son _relativos_ a los márgenes
-% oficiales. Si quieres hacer un cambio drástico (como el que
+% El problema es que esos cambios son _relativos_ a los mï¿½rgenes
+% oficiales. Si quieres hacer un cambio drï¿½stico (como el que
 % necesitamos en la portada, para que quede centrada), entonces es
 % necesario echar cuentas con los contadores anteriores para realizar
 % el desplazamiento adecuado en cada lado para conseguirlo.
 %
-% Para resumir, los valores usados en los márgenes eran:
+% Para resumir, los valores usados en los mï¿½rgenes eran:
 % 1 pulgada + hoffset + oddsidemargin +
 %          + textwidth +
 % + marginparsep + marginparwidth + AJUSTE 
@@ -216,37 +215,37 @@
 % Lo que necesitamos en crear un entorno cambiamargen pasando los
 % valores adecuados para que quede centrado. Para eso, hay que hacer
 % cuentas, y eso es un tanto infierno en LaTeX a no ser que se incluya
-% el paquete calc que permite notación infija de operadores. Por
+% el paquete calc que permite notaciï¿½n infija de operadores. Por
 % tanto, para que esto funcione hay que incluirlo.
 %
 % Para aclararnos, vamos a crear un par de longitudes para hacer las
-% cuentas poco a poco. Además, lo primero es asumir que queremos
-% _eliminar todos los márgenes_ y que los párrafos lleguen totalmente
+% cuentas poco a poco. Ademï¿½s, lo primero es asumir que queremos
+% _eliminar todos los mï¿½rgenes_ y que los pï¿½rrafos lleguen totalmente
 % de lado a lado. Para eso, en la izquierda tendremos que restar la
 % suma de los tres primeros valores (1 pulgada, \hoffset y
 % \oddsidemargin).
 
 \newlength{\cambioIzquierdo}
 \setlength{\cambioIzquierdo}{1in + \hoffset + \oddsidemargin}
-% Si te falla aquí, incluye el paquete calc en el preámbulo.
+% Si te falla aquï¿½, incluye el paquete calc en el preï¿½mbulo.
 % 1in = 1 pulgada = 72.27 pt
 
 % En la parte derecha hay que restar el "margen" visible total, que es
-% el tamaño de la hoja restando el espacio hasta la izquierda del
-% párrafo y su ancho. Aprovechamos que el primer espacio lo tenemos en
+% el tamaï¿½o de la hoja restando el espacio hasta la izquierda del
+% pï¿½rrafo y su ancho. Aprovechamos que el primer espacio lo tenemos en
 % \cambioIzquierdo.
 \newlength{\cambioDerecho}
 \setlength{\cambioDerecho}{\cambioIzquierdo + \textwidth}
 \setlength{\cambioDerecho}{\paperwidth - \cambioDerecho}
 
-% Ya casi está. Si hicieramos
+% Ya casi estï¿½. Si hicieramos
 %
 % \begin{cambiamargen}{-\cambioIzquierdo}{-\cambioDerecho}
 %    ...
 % \end{cambiamargen}
 %
-% tendriamos párrafos que van de extremo a extremo de la hoja. Como
-% eso es una exageración, restamos a cada longitud el márgen real que
+% tendriamos pï¿½rrafos que van de extremo a extremo de la hoja. Como
+% eso es una exageraciï¿½n, restamos a cada longitud el mï¿½rgen real que
 % queremos dejar.
 \newlength{\margenPortada}
 \setlength{\margenPortada}{3.5cm}
@@ -260,13 +259,13 @@
 %%%
 
 
-% Página sin cabeceras
+% Pï¿½gina sin cabeceras
 \thispagestyle{empty}
 
 \begin{cambiamargen}{-\cambioIzquierdo}{-\cambioDerecho}
 
 
-% En la primera hoja no se entiende de páginas pares e impares
+% En la primera hoja no se entiende de pï¿½ginas pares e impares
 \newlength{\evensidemarginOriginal}
 \setlength{\evensidemarginOriginal}{\evensidemargin}
 
@@ -281,10 +280,10 @@
 \mbox{ }
 \vfill
 
-% Cuidado: Ajustarlo si el título cambia...
+% Cuidado: Ajustarlo si el tï¿½tulo cambia...
 \newlength{\longTitulo}
 \settowidth{\longTitulo}{%
-\textbf{Arquitectura y metodología para el}}
+\textbf{Arquitectura y metodologï¿½a para el}}
 \begin{center}
 \rule{\longTitulo}{.5mm}\\
 \vskip 1cm
@@ -326,9 +325,9 @@
 
 \newpage
 
-% Página que en la cara de detrás del folio de la portada.
+% Pï¿½gina que en la cara de detrï¿½s del folio de la portada.
 % Ponemos que el documento esta maquetado con TeXiS y la
-% aclaración de que debe imprimirse a doble cara.
+% aclaraciï¿½n de que debe imprimirse a doble cara.
 \thispagestyle{empty}
 \mbox{ }
 \vfill%space*{4cm}
@@ -347,7 +346,7 @@
 \ifx\explicacionDobleCaraVal\undefined
 \mbox{ }
 \else
-\noindent Este documento está preparado para ser imprimido a doble
+\noindent Este documento estï¿½ preparado para ser imprimido a doble
 cara.
 \fi
 \end{center}
@@ -394,7 +393,7 @@ cara.
 \thispagestyle{empty}
 \mbox{ }
 
-% Información del ISBN y copyright
+% Informaciï¿½n del ISBN y copyright
 \vskip 13cm
 \ifx\copyrightInfoVal\undefined
 \mbox{ }
@@ -411,7 +410,7 @@ ISBN \isbnVal
 } % \newcommand{\makeCover}
 
 % Variable local para emacs, para que encuentre el fichero
-% maestro de compilación
+% maestro de compilaciï¿½n
 %%%
 %%% Local Variables:
 %%% mode: latex

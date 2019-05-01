@@ -16,12 +16,19 @@ In this chapter we outline the thesis, state what our objective is and what we h
 \label{cap1:sec:problem}
 
 The need for performing analysis on large amounts of data to get very precise and specific information is becoming more and more present everyday in the jobs of data analysts and scientists in every field of work.
+
 Large amounts of time are wasted on repetitive tasks such as data wrangling, data transforming and the generation of tailored reports or collections of information with different objectives for diverse profiles with varying degrees of expertise.
+
 These reports are usually formed by a piece of text acompanied by some graphs.
+
 It is very common that from these huge amounts of data we want to extract some precise and relevant information to be presented to someone.
+
 These reports have a process behind them that entails the filtering, transformation and selection of the relevant information that will finally be part of the report.
+
 Here we have two questions to answer. First, we must choose what information to present, which is equivalent to choosing what information from the almost unlimited attributes that our data has is relevant to the user. 
+
 It is clear that this has an objective part, in the sense that it is first and foremost a matter of which data is relevant within a certain domain of knowledge and a certain set of metrics, but it also has a subjective side, in the sense that it's not the same to present medical information to a patient or to present it to a doctor. 
+
 The second answer, and perhaps the most subjective is how to present it. This second decision is related to things like choosing a type of graph, its colors, the font of the text, the words used... and almost an infinite list of subjective choices that build upon the previous more objective selection of information to form the final concept of a report of a piece of information.
 
 %-------------------------------------------------------------------
@@ -30,14 +37,23 @@ The second answer, and perhaps the most subjective is how to present it. This se
 \label{cap1:sec:solution}
 
 We believe that there is no unique formula to generating each report, because it would require the abstraction of very different problems in very different situations and for an almost unlimited variety of users. 
+
 Furthermore, what if we have to generate a report for a new user? Could this be similar to other reports presented for other users? 
+
 We believe that most of these questions can't be answered by a rigid mathematically formulated system, and are best tackled by a mixed system that combines an objective analysis of the information through a variety of metrics, analysis of correlations, distributions and other objective metrics with a subjective approach that takes the final user into account.
+
 Instead, what we propose is a mixed system in which an expert provides an initial input that signals some of the important aspects of the information, and then a pool of experts validates the subjective way in which an information is presented to end up choosing a default report form to present to a new user of their class.
+
 To start, we categorize the users or people that will be presented with the report into groups. Then, these groups will provide knowledge of the relevant objective information that they're looking for in the data, like what analysis to perform or what values of certain metrics they'd consider to be relevant.
+
 Once this information is fed to the system, it's able to generate reports completing the subjective decisions from semi-random choices from a pool of computer generated graphs, color choices and text based reports.
+
 Then our pool of experts proceeds to validate the best report by a voting system based on an ELO tournament. 
+
 The best selected report is then presented as default to users of this class. 
+
 Each user will also be able to change the result presented to them in terms of both content (objective) and presentation (subjective), and because the system recognizes individual users it will remember their choices.
+
 Users will also have a profile attached to them containing relevant data to the presentation of the information that will allow us to define a metric of sorts between users to further use this single user customization to influence how information is presented to users of the same class once enough individual inputs have been recorded, possibly substituting the initial ELO based report which will always act as default.
 
 
@@ -47,9 +63,13 @@ Users will also have a profile attached to them containing relevant data to the 
 \label{cap1:sec:overview}
 
 The logical structure chosen for the program reflects the need for our tool to be a fully functional agent in and out of itself. We have designed it with a clear divider between a backend capable of storing the information and handling at the lowest possible level, which provides the frontend side with easy methods to get the information it needs, which is then processed taking who is going to look at it into account and then adequately presented to the user.
+
 A cornerstone of the program's functionality is to be able to remember decisions taken by a certain user and to be able to compare new data to old data of its kind.
+
 From these two necessities it is natural to consider some kind of identification system for our datasets, as automated as possible so it needs minimum user input and remains independent of the use case.
+
 For our program, if two datasets contain the exact same set of column names then they are considered to be comparable to each other, and every information stored about this kind of datasets will carry an identifier with the column names.
+
 From here onwards, the term 'domain' shall refer to information coming from the same kind of dataset.
 
 %-------------------------------------------------------------------
@@ -58,10 +78,15 @@ From here onwards, the term 'domain' shall refer to information coming from the 
 \label{cap1:sec:workflow}
 
 When a new dataset doesn't match any previous knowledge, our program automatically creates a new representation for these datasets which is stored along the others. If it detects a matching JSON with knowledge o its domain it loads that instead.
+
 Each representation of a domain stores data such as how many datasets have been loaded and a number of stats for each dataset and its columns depending on its types which will be specified later.
+
 Also, each domain has a number of 'profiles' associated which correspond to *who* this data is associated with. These profiles contain both historical data of the specific owner of the data (in our practical example, the patient data), and who will watch the report generated by this program, that is, the user of the program.
+
 The information that we're using will be stored in a specific JSON format for each kind that will be specified in chapter 2.
+
 When a dataset is introduced, the program loads the previous information, analyzes it, compares it and generates relevant information to the user. Then it updates the information with both the results of the analysis and user provided information.
+
 This workflow will be the basic use case of the program for every kind of data.
 
 %-------------------------------------------------------------------
@@ -69,7 +94,9 @@ This workflow will be the basic use case of the program for every kind of data.
 %-------------------------------------------------------------------
 \label{cap1:sec:structure}
 A clear module structure is provided so each module does a task in the workflow.
+
 The main modules on the backend side of our application are the Storage module, the CBRStorage module and the Analysis module.
+
 For the frontend, the logic structure will be split into the Reporter module and the Presentation module.
 
 %-------------------------------------------------------------------
@@ -78,5 +105,6 @@ For the frontend, the logic structure will be split into the Reporter module and
 \label{cap1:sec:tools}
 
 Our programming language of choice has been Python, particulary making use of its class to dictionary representation methods which make the work of manipulating the JSON structures much easier than using more rigid languages.
+
 A public repository has been created at github.com/jorses/tfg, and we have used Jupyter Notebooks for the testing and formation o a prototype which has been then moved into standard Python packages.
 

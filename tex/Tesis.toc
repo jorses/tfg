@@ -1,28 +1,28 @@
 \babel@toc {english}{}
-\contentsline {chapter}{Agradecimientos}{ix}{chapter*.1}
-\contentsline {chapter}{Abstract}{xi}{chapter*.2}
+\contentsline {chapter}{Abstract}{v}{chapter*.1}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}The Initial Problem}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Solution Proposed}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}Overview}{2}{section.1.3}
+\contentsline {section}{\numberline {1.3}Overview}{3}{section.1.3}
 \contentsline {section}{\numberline {1.4}Workflow}{3}{section.1.4}
-\contentsline {section}{\numberline {1.5}Structure}{3}{section.1.5}
+\contentsline {section}{\numberline {1.5}Structure}{4}{section.1.5}
 \contentsline {section}{\numberline {1.6}Tools}{4}{section.1.6}
 \contentsline {chapter}{\numberline {2}The program structure}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}The Structure}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Case presentation}{5}{section.2.2}
 \contentsline {section}{\numberline {2.3}Handling the Information}{5}{section.2.3}
 \contentsline {section}{\numberline {2.4}Analyzing the Information}{6}{section.2.4}
-\contentsline {section}{\numberline {2.5}The Subjective Analysis}{6}{section.2.5}
+\contentsline {section}{\numberline {2.5}The Subjective Analysis}{7}{section.2.5}
 \contentsline {section}{\numberline {2.6}Presentation and Feedback}{7}{section.2.6}
 \contentsline {chapter}{\numberline {3}The Program Implementation : Architecture}{9}{chapter.3}
 \contentsline {section}{\numberline {3.1}The Program Module Structure}{9}{section.3.1}
 \contentsline {section}{\numberline {3.2}Non relational databases and the JSON structure}{10}{section.3.2}
 \contentsline {section}{\numberline {3.3}The Objective Storage Module}{11}{section.3.3}
-\contentsline {section}{\numberline {3.4}The Profile Storage Module}{11}{section.3.4}
+\contentsline {section}{\numberline {3.4}The Profile Storage Module}{12}{section.3.4}
 \contentsline {section}{\numberline {3.5}The Comparison Metrics}{12}{section.3.5}
-\contentsline {section}{\numberline {3.6}The Analysis Module}{12}{section.3.6}
-\contentsline {section}{\numberline {3.7}The Report Generation Module}{13}{section.3.7}
+\contentsline {section}{\numberline {3.6}The Analysis Module}{13}{section.3.6}
+\contentsline {section}{\numberline {3.7}The Report Generation Module}{14}{section.3.7}
+\contentsline {section}{\numberline {3.8}The Frontend Module}{14}{section.3.8}
 \contentsline {chapter}{\numberline {4}Seed Cases and ELO Tournament}{15}{chapter.4}
 \contentsline {section}{\numberline {4.1}Motivation}{15}{section.4.1}
 \contentsline {section}{\numberline {4.2}Case Seeds}{15}{section.4.2}
@@ -41,6 +41,3 @@
 \contentsline {section}{\numberline {6.3}Reuse}{22}{section.6.3}
 \contentsline {section}{\numberline {6.4}Revise}{22}{section.6.4}
 \contentsline {section}{\numberline {6.5}Retain}{22}{section.6.5}
-\contentsline {chapter}{\numberline {A}As\IeC {\'\i } se hizo...}{23}{appendix.A}
-\contentsline {section}{\numberline {A.1}Introducci\'on}{23}{section.A.1}
-\contentsline {chapter}{Index}{25}{section.A.1}
