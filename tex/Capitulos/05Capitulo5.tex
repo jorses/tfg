@@ -14,10 +14,16 @@ We provide both an abstract approach and the decisions taken to make the impleme
 
 \linespread{1.6}
 
+\begin{figure}[!htb]
+    \center{\includegraphics[width=\textwidth]
+    {Capitulos/CBRcycle.png}}
+    \caption{\label{fig:my-label} Explanation of the CBR Cycle [5.1]}
+\end{figure}
+
 %-------------------------------------------------------------------
 \section{CBR Design}
 %-------------------------------------------------------------------
-\label{cap1:sec:introduccion}
+\label{cap5:sec:introduccion}
 
 Let's first talk about what we mean when we talk about a CBR system.
 
@@ -33,7 +39,7 @@ CBR systems basically learn by acquiring new knowledge as cases, which combined 
 
 \section{CBR Process}
 %-------------------------------------------------------------------
-\label{cap1:sec:process}
+\label{cap5:sec:process}
 
 Case-based reasoning can be formulated for a program to emulate as the process that follows:
 
@@ -46,7 +52,7 @@ Case-based reasoning can be formulated for a program to emulate as the process t
 
 \section{Retrieve}
 %-------------------------------------------------------------------
-\label{cap1:sec:retrieve}
+\label{cap5:sec:retrieve}
 
 Conceptually, we need to get the necessary information about past cases of how they were resolved, that is, mainly what problem it was and how it was solved.
 We start from the idea that our problem is basically analyzing a new dataset.
@@ -55,7 +61,7 @@ Another side of how to solve it is represented by the profile information, which
 
 \section{Reuse}
 %-------------------------------------------------------------------
-\label{cap1:sec:reuse}
+\label{cap5:sec:reuse}
 The knowledge base is obtained primarily from the enumeration of certain past cases or problems. This is built from the fact that experts (humans) are much better at recalling previous experiences and problems than at creating systems of rules. 
 
 As new problems are fed to our expert system (containing the knowledge or memory of previous experiences) to which no past problem can match exactly, the system is capable of reasoning from more general similarities to come up with an answer. 
@@ -66,14 +72,14 @@ To map the solution from the previous cases to the current problem what we do is
 
 \section{Revise}
 %-------------------------------------------------------------------
-\label{cap1:sec:revise}
+\label{cap5:sec:revise}
 When the users are presented with the new report, they have the ability to modify its contents, both graphical and the information they're presented with. This changes are stored in the profile information, so we have access to the new preferences, thus making a better solution from the old one in the spirit of the revise process.
 
 What we're trying to achieve is giving the user as much power as possible, because that is what will make his or her experience better with each time they use the program, which is the whole point behind the implementation of the CBR based system that we've chosen.
 
 \section{Retain}
 %-------------------------------------------------------------------
-\label{cap1:sec:retain}
+\label{cap5:sec:retain}
 The system is able to retain new information by being able to make changes to the elements it stores, namely updating the domain objective analysis with the new analysis and updating the subjective profile report changes with the changes introduced by the users.
 
 This is done only once, after the user has made all the changes and exits the program. No interaction is needed on the side of the user to do this, it is done by default so as to make the whole experience as streamlined as possible.
@@ -82,3 +88,16 @@ The memory system present in our system grows and changes by each time we presen
 
 This is intended to complete our modeling of the human behaviour of CBR, and represent the final step of our CBR system.
 
+%-------------------------------------------------------------------
+\section*{\NotasBibliograficas}
+%-------------------------------------------------------------------
+\TocNotasBibliograficas
+
+[5.1] Agnar Aamodt y Enric Plaza, «Case-Based Reasoning: Foundational Issues, Methodological Variations, and System Approaches», AI Commun. IOS Press, vol. Vol. 7, n.o 1, pp. 39-59.
+
+\medskip
+
+%Y tambi�n ponemos el acr�nimo \ac{CVS} para que no cruja.
+
+
+%-------------------------------------------------------------------

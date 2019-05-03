@@ -13,7 +13,7 @@ In this chapter we outline the technical implementations of the CBR side of our 
 %-------------------------------------------------------------------
 \section{Information Storage}
 %-------------------------------------------------------------------
-\label{cap1:sec:informationstorage}
+\label{cap6:sec:informationstorage}
 
 Because the information we're storing is still low and the metrics are different for each domain the only way to consistenly store the information is through a non-relational database.
 
@@ -24,7 +24,7 @@ If we had a non relational database we could simply update the database instead.
 
 \section{Retrieve}
 %-------------------------------------------------------------------
-\label{cap1:sec:retrieve}
+\label{cap6:sec:retrieve}
 If we're doing a full non-relational database implementation it's probably better to develop a domainID, because that would allow us to have different domains with the same column names.
 
 For the proof of concept though that is not an issue because we've made sure this hasn't happened with the datasets used for the testing.
@@ -35,7 +35,7 @@ We do this with a file buffer the standard way. Once it has been loaded the info
 
 \section{Reuse}
 %-------------------------------------------------------------------
-\label{cap1:sec:reuse}
+\label{cap6:sec:reuse}
 The objective information about the domain is loaded and handled by the class that handles the objective information, which will then be passed to the 
 
 The profile or subjective information about the domain and user is handled by the module that handles the profiles, which will then pass it along to the module that generates the report.
@@ -44,7 +44,7 @@ This allows us to reuse the previous experiences in the process of generating th
 
 \section{Revise}
 %-------------------------------------------------------------------
-\label{cap1:sec:revise}
+\label{cap6:sec:revise}
 There are two ways on which we can revise the information. If the users from the start say what they want then the system associates what they want as if changes have been made to the report that was going to be presented to them.
 
 In any case, when the users are provided with the report they can provide feedback through a visual interface by selecting which information is shown and shouldn't be shown, what information should be shown but is not the report, and change the colors/fonts of the report.
@@ -55,7 +55,7 @@ This is incredibly important because it makes our system learn a lot from each i
 
 \section{Retain}
 %-------------------------------------------------------------------
-\label{cap1:sec:retain}
+\label{cap6:sec:retain}
 Once these changes have been made the objective information is updated and written back to disk by the same module that retrieved it through an store method.
 
 The same method is present in the module responsible for handling the profile information, which will update the choices the user has made.

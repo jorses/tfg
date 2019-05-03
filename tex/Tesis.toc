@@ -9,35 +9,39 @@
 \contentsline {section}{\numberline {1.6}Tools}{4}{section.1.6}
 \contentsline {chapter}{\numberline {2}The program structure}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}The Structure}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Case presentation}{5}{section.2.2}
-\contentsline {section}{\numberline {2.3}Handling the Information}{6}{section.2.3}
-\contentsline {section}{\numberline {2.4}Analyzing the Information}{6}{section.2.4}
-\contentsline {section}{\numberline {2.5}The Subjective Analysis}{7}{section.2.5}
-\contentsline {section}{\numberline {2.6}Presentation and Feedback}{7}{section.2.6}
-\contentsline {chapter}{\numberline {3}The Program Implementation : Architecture}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}The Program Module Structure}{9}{section.3.1}
-\contentsline {section}{\numberline {3.2}Non relational databases and the JSON structure}{10}{section.3.2}
-\contentsline {section}{\numberline {3.3}The Objective Storage Module}{11}{section.3.3}
-\contentsline {section}{\numberline {3.4}The Profile Storage Module}{12}{section.3.4}
-\contentsline {section}{\numberline {3.5}The Comparison Metrics}{12}{section.3.5}
-\contentsline {section}{\numberline {3.6}The Analysis Module}{13}{section.3.6}
-\contentsline {section}{\numberline {3.7}The Report Generation Module}{14}{section.3.7}
-\contentsline {section}{\numberline {3.8}The Frontend Module}{14}{section.3.8}
-\contentsline {chapter}{\numberline {4}Seed Cases and ELO Tournament}{17}{chapter.4}
-\contentsline {section}{\numberline {4.1}Motivation}{17}{section.4.1}
-\contentsline {section}{\numberline {4.2}Case Seeds}{18}{section.4.2}
-\contentsline {section}{\numberline {4.3}Experiment Design}{18}{section.4.3}
-\contentsline {section}{\numberline {4.4}Experiment results}{18}{section.4.4}
-\contentsline {chapter}{\numberline {5}CBR : Concept}{19}{chapter.5}
-\contentsline {section}{\numberline {5.1}CBR Design}{19}{section.5.1}
-\contentsline {section}{\numberline {5.2}CBR Process}{20}{section.5.2}
-\contentsline {section}{\numberline {5.3}Retrieve}{20}{section.5.3}
-\contentsline {section}{\numberline {5.4}Reuse}{20}{section.5.4}
-\contentsline {section}{\numberline {5.5}Revise}{21}{section.5.5}
-\contentsline {section}{\numberline {5.6}Retain}{21}{section.5.6}
-\contentsline {chapter}{\numberline {6}CBR : Implementation}{23}{chapter.6}
-\contentsline {section}{\numberline {6.1}Information Storage}{23}{section.6.1}
-\contentsline {section}{\numberline {6.2}Retrieve}{23}{section.6.2}
-\contentsline {section}{\numberline {6.3}Reuse}{24}{section.6.3}
-\contentsline {section}{\numberline {6.4}Revise}{24}{section.6.4}
-\contentsline {section}{\numberline {6.5}Retain}{24}{section.6.5}
+\contentsline {section}{\numberline {2.2}Case presentation}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}Handling the Information}{7}{section.2.3}
+\contentsline {section}{\numberline {2.4}Analyzing the Information}{7}{section.2.4}
+\contentsline {section}{\numberline {2.5}The Subjective Analysis}{8}{section.2.5}
+\contentsline {section}{\numberline {2.6}Presentation and Feedback}{8}{section.2.6}
+\contentsline {chapter}{\numberline {3}The Program Implementation : Architecture}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}The Program Module Structure}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}Non relational databases and the JSON structure}{12}{section.3.2}
+\contentsline {section}{\numberline {3.3}The Objective Storage Module}{13}{section.3.3}
+\contentsline {section}{\numberline {3.4}The Profile Storage Module}{14}{section.3.4}
+\contentsline {section}{\numberline {3.5}The Comparison Metrics}{14}{section.3.5}
+\contentsline {section}{\numberline {3.6}The Analysis Module}{15}{section.3.6}
+\contentsline {section}{\numberline {3.7}The Report Generation Module}{16}{section.3.7}
+\contentsline {section}{\numberline {3.8}The Frontend Module}{16}{section.3.8}
+\contentsline {chapter}{\numberline {4}Seed Cases and ELO Tournament}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivation}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Case Seeds}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}Experiment Design}{20}{section.4.3}
+\contentsline {section}{\numberline {4.4}The Elo Rating System}{21}{section.4.4}
+\contentsline {section}{\numberline {4.5}The Tournament}{22}{section.4.5}
+\contentsline {section}{\numberline {4.6}Experiment results}{22}{section.4.6}
+\contentsline {section}{Bibliographic Notes}{22}{section.4.6}
+\contentsline {chapter}{\numberline {5}CBR : Concept}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}CBR Design}{23}{section.5.1}
+\contentsline {section}{\numberline {5.2}CBR Process}{24}{section.5.2}
+\contentsline {section}{\numberline {5.3}Retrieve}{25}{section.5.3}
+\contentsline {section}{\numberline {5.4}Reuse}{25}{section.5.4}
+\contentsline {section}{\numberline {5.5}Revise}{25}{section.5.5}
+\contentsline {section}{\numberline {5.6}Retain}{26}{section.5.6}
+\contentsline {section}{Bibliographic Notes}{26}{section.5.6}
+\contentsline {chapter}{\numberline {6}CBR : Implementation}{27}{chapter.6}
+\contentsline {section}{\numberline {6.1}Information Storage}{27}{section.6.1}
+\contentsline {section}{\numberline {6.2}Retrieve}{27}{section.6.2}
+\contentsline {section}{\numberline {6.3}Reuse}{28}{section.6.3}
+\contentsline {section}{\numberline {6.4}Revise}{28}{section.6.4}
+\contentsline {section}{\numberline {6.5}Retain}{28}{section.6.5}

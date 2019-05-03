@@ -19,16 +19,32 @@ In this chapter we provide an analysis of the program structure from an abstract
 
 As we have stated before, our program consists of a series of modules designed to interact with each other and provide the necessary tools to work smoothly regardless of the data being used.
 
-Here we take a broad look at the program, trying to explain the design choices behind each aspect of it and 
+Here we take a broad look at the program, trying to explain the design choices behind each aspect of it and to provide a framework of thinking for the next chapter, when we will dive deeper into the technical, low level side of things.
+
+Our program structure needs to be flexible and adaptable, and fit the needs of both providing a basis on which to develop a CBR system and at the same time be quickly handling data, be responsive to user input, and scalable to a big data practical solution that can be used by real users for real use cases.
+
+We will have to take into account all of this into every decision, to make sure that we're building a functional system good enough for scalability but at the same time being quick to develop for the proof of concept and the experiment to test our design choices that will allow us to try our ideas before scaling.
 
 %-------------------------------------------------------------------
 \section{Case presentation}
 %-------------------------------------------------------------------
 \label{cap2:sec:preparation}
 
-The input for our program is really just an user who desires to analyze a certain dataset.
+The input for our program is really just an user who desires to analyze a certain dataset, so it can be conceptualized as a tuple containing a user and a dataset. This dataset will also belong to a specific domain, which will have association with the user profile aswell, so our input will be quickly transformed by the program into a domain, user, dataset concept.
 
 From now on on this chapter, we assume we have previous information for both the domain the dataset belongs to and about the type of user that is trying to analyze it.
+
+Our use case has the basis on the comparison of new info, represented by the dataset, to old info, represented by both the objective domain information and the subjective information associated to the profile. This flow is highly compatible with the CBR approach that we will outline in chapters 5 and 6, because we're essentially solving new problems from old problems.
+
+Tying the new information to the old information will be done through a storage system with matching keys for the dataset and domain, being the number of columns in our proof of concept but being easily expandable into a more global system through database indexes or anything acting like a unique identifier.
+
+The analysis of the new information will have two parts, the first one will do an isolated analysis of the new information using the techniques provided by the old, and in the second it will compare the results of the first part with the results of a similar analysis stored in the old information.
+
+This will provide us with a new object representing the relevant information about our new problem, or dataset, and then we will filter this object using the subjective information from the profile to present the user with a final report.
+
+The user will then have the means to modify this report, and thus modifying the subjective information about him or her.
+
+The program will also use the new analysis to udpate the old information about the domain before proceding to store it.
 
 We will expand on how the base cases are formed and how we adapt to new profiles and new domains on further chapters, but for now let's say that a process is in place to ensure that the default report is correct enough, the analysis performs its due processes and the result is at least acceptable and relevant to the final user.
 
@@ -90,10 +106,18 @@ We then filter the information through the user provided profile, selecting whic
 
 Once the user has been presented with the report, he's able to make changes to it using a graphical interface. When the report is saved and the user has exited the program, it initializes a shutting down routine on which the two information databases are updated with the changes made by the user (if they existed) and the new information provided by the dataset.
 
+This is essential to our CBR process as it creates a way to tie the old with the new, and greatly increases user experience as the program gets better with each iteration, as intended with the CBR methodology.
+
 This is the main way our program has of expanding its knowledge, which will then be used to present better reports to the same user and to adapt the information it presents to new users which will be similar to this one.
 
 So we get a double benefit, getting both better results for this user and for all users of the same domain and class each time someone uses our program.
 
-%NEXTTTT
+In terms of the presentation, we have two axis on which to make decisions, visual (graph-like) content and textual content.
 
+For the textual side, for the proof of concept we've developed a very simple template system for variables which lacks context for the specific domain and is instead tied to function results, that is, only distinguishes between categorical and numerical values for the final explanation.
 
+On the visual side, for the proof of concept we've added pie plots, histograms and temporal graphs each with an array of different colors to choose from, because of the importance of colors in the representation of information.
+
+It's also important to note that users are able to change the scale, size and place of the graphs in the report, which is very important for the visual impact and the user's quick and easy understanding of the information that is being presented to them.
+
+For the user, being able to change all of these aspects represents a very important interactive side of the tool, giving power to the user as it empowers their experience with each interaction.

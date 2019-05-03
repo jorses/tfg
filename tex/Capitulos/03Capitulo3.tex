@@ -48,7 +48,7 @@ All of this enables the CBR process which is explained in chapters 5 and 6.
 %-------------------------------------------------------------------
 \section{Non relational databases and the JSON structure}
 %-------------------------------------------------------------------
-\label{cap2:sec:jsonfiller}
+\label{cap3:sec:jsonfiller}
 
 For the proof of concept implementation developed in this thesis, we've used the JSON structure to handle our information, to write it to a file system and to read it later.
 
@@ -77,7 +77,7 @@ Every module listed below corresponds to a Python class, and has a number of met
 %-------------------------------------------------------------------
 \section{The Objective Storage Module}
 %-------------------------------------------------------------------
-\label{cap2:sec:objjson}
+\label{cap3:sec:objjson}
 
 This module is capable of reading and updating the information stored about the objective analysis of past domains.
 
@@ -92,7 +92,7 @@ This process is reversed before writing the information back to disk in a format
 %-------------------------------------------------------------------
 \section{The Profile Storage Module}
 %-------------------------------------------------------------------
-\label{cap2:sec:profilestorage}
+\label{cap3:sec:profilestorage}
 
 Another kind of information is stored about the domains. This is the information concerning the human side of things, that is, how to interpret these stats and turn them into something that humans with different levels of familiarity can understand.
 
@@ -107,7 +107,7 @@ For each domain, there's a default profile. This provides a way to present the d
 %-------------------------------------------------------------------
 \section{The Comparison Metrics}
 %-------------------------------------------------------------------
-\label{cap2:sec:metrics}
+\label{cap3:sec:metrics}
 
 The purpose of these functions is to provide a way to measure the properties of a given dataset or knowledge domain.
 
@@ -151,7 +151,7 @@ modules. For now, we're not taking humans into account.
 %-------------------------------------------------------------------
 \section{The Analysis Module}
 %-------------------------------------------------------------------
-\label{cap2:sec:analysis}
+\label{cap3:sec:analysis}
 
 The analysis module will receive a dataset, use the Storage module to load its information, then analyze the dataset, which generates a similar object to the domain json, then producing a comparison of both.
 
@@ -170,7 +170,7 @@ In any case, at this level we've already filtered what is relevant and what is n
 %-------------------------------------------------------------------
 \section{The Report Generation Module}
 %-------------------------------------------------------------------
-\label{cap2:sec:reporter}
+\label{cap3:sec:reporter}
 
 This module stands at the edge between the backend and the frontend. It receives the information from the comparison between the dataset and the domain knowledge and extracts the relevant profile information.
 
@@ -185,7 +185,7 @@ At this point, we have an object that represents the dataset compared to the his
 %-------------------------------------------------------------------
 \section{The Frontend Module}
 %-------------------------------------------------------------------
-\label{cap2:sec:frontend}
+\label{cap3:sec:frontend}
 
 The purpose of this module is to handle the user program interaction. It sits atop of the program hierarchy, being able to use all the other modules as it sees fit.
 
