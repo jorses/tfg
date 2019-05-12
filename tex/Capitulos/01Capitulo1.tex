@@ -57,22 +57,33 @@ Each user will also be able to change the result presented to them in terms of b
 
 Users will also have a profile attached to them containing relevant data to the presentation of the information that will allow us to define a metric of sorts between users to further use this single user customization to influence how information is presented to users of the same class once enough individual inputs have been recorded, possibly substituting the initial ELO based report which will always act as default.
 
-\section{Related work}
+%-------------------------------------------------------------------
+\section{Related Work}
+%-------------------------------------------------------------------
+\label{cap1:sec:relatedwork}
 
-Natural Language Generation (NLG) takes structured data as input and produces natural language text. Our approach relates with research on NLG  based on templates \cite{McKeown}. The underlying idea is that texts often follow conventionalized patterns. These patterns can be encapsulated in {\it schemas}, which are template programs which produce text plans. Schema are derived from a target text corpus, by breaking up these texts into messages, and trying to determine how each message can be
-computed from the input data. 
+Natural Language Generation (NLG) produces text in natural language from structured data, the same way we take the structural representations of data and users and generate a report.
+Our approach relates with research on NLG  based on templates \cite{McKeown}.
 
-The schema-based approach to NLG has striking parallelism to CBR approaches to problem solving, in that existing previous solutions, such as those obtained from a corpus of target texts, are extracted and prepared so they can be reused to solve future problems, much in the same way as cases in a case-base are prepared from previous problem solutions.
+The underlying idea is that texts often follow conventionalized patterns, that can be encapsulated in {\it schemas}, which are template programs which produce text plans. 
+Schema are derived from a target text corpus, by breaking up these texts into messages, and trying to determine how each message can be computed from the input data. 
 
-In our research group CBR has been previously used for poetry generation \cite{diaz2002} and story plot generation \cite{GervasDPH05}. The system reuses existing stories to produce a new story that matches a given user query. The plot structure is obtained by a CBR process over a case base of tales and an ontology of explicitly declared relevant knowledge. The resulting story is generated as a sketch of a plot described in natural language by means of NLG techniques. In \cite{sizov2017} authors propose a CBR approach reusing explanation reports from previous transportation incidents.  
+The schema-based approach to NLG approaches problem solving in the very same way as CBR does, reusing previous solutions to be used in future problems, resulting in very much the same cycle of work that we're aiming for.
 
-Also related with our methodology, the study described in \cite{Adegboyega2017} refines the traditional typology of data stories from the journalistic perspective and also identifies core templates to good data journalism practice. Authors characterize each of the 44 cases and determine the type of the stories and the nature of technologies employed to create them. 
+In \cite{sizov2017} we can see a CBR approach reusing explanation reports from previous transportation incidents.
 
-In \cite{Roels2017} authors describe an approach and a prototype to improve data driven knowledge transfer in presentation tools by applying information visualization concepts. They discuss some of the shortcomings of the current presentation tools and introduce an interactive data visualization solution providing effective narrative visualizations in presentations. Their tool offers the possibility of manually changing the chart type, applying filters on the data or adjusting the focus dynamically during the presentation time.
-The presenter breaks free from any predefined visualization and can explore and discuss the data without restrictions. Our approach is related to it in the sense of interaction and flexibility, although, taking advantage of the CBR methodology, we aim to provide automatic reasoning and advanced functionality extending the approach with the recommendation of the most appropriate visualization graphics, learning from the manual interaction of the user,  and the automatic rendering of a narrative text explaining the data. 
-Many of the existing works are presentation oriented~\cite{Kosara16,Roels2017}. Our approach is oriented to visual narrative, i.e., the rendering of data storytelling and visualization of the input data.
-The novelty of the proposal described in this paper is the use of CBR as an approach that uses the data, charts and user characterization to retrieve and personalize the visuals. Besides, CBR is appropriate for lazy learning from the manual interaction of the user with the data. It allows the system to tag data with expert knowledge captured through the interactions with data charts. 
+For other related work, \cite{Adegboyega2017} identifies core templates to good data journalism practice.
 
+In \cite{Roels2017} authors describe an approach and a prototype to improve data driven knowledge transfer in presentation tools by applying information visualization concepts. 
+The shortcomings of the current presentation tools are discussed and they also expose narrative visualization, with highly interactive components.
+
+Other uses for CBR have also been used for poetry generation \cite{diaz2002} and story plot generation \cite{GervasDPH05}. 
+
+Many of the existing works are presentation oriented~\cite{Kosara16,Roels2017}. 
+
+Our approach is more oriented towards visual narrative, i.e., the rendering of data storytelling and visualization of the input data, in the final form of a {\it report}.
+
+In this study we propose a CBR-based process to retrieve and personalize the visuals from a structured representation of both users and data analysis.
 
 %-------------------------------------------------------------------
 \section{Overview}
