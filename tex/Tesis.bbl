@@ -1,4 +1,15 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{AamodtPlaza}
+A.~Aamodt and E.~Plaza.
+\newblock Case-based reasoning: Foundational issues, methodological variations,
+  and system approaches.
+\newblock {\em AI Commun. IOS Press}, 7(1):39--59, 2016.
+
+\bibitem{ELOUSCF}
+M.~E. C.
+\newblock Elo distributions for the uscf.
+\newblock 2013.
 
 \bibitem{diaz2002}
 B.~D{\'\i}az-Agudo, P.~Gerv{\'a}s, and P.~A. Gonz{\'a}lez-Calero.
@@ -10,6 +21,12 @@ B.~D{\'\i}az-Agudo, P.~Gerv{\'a}s, and P.~A. Gonz{\'a}lez-Calero.
 P.~Gerv{\'{a}}s, B.~D{\'{\i}}az{-}Agudo, F.~Peinado, and R.~Herv{\'{a}}s.
 \newblock Story plot generation based on {CBR}.
 \newblock {\em Knowl.-Based Syst.}, 18(4-5):235--242, 2005.
+
+\bibitem{ELOFORMULA}
+M.~Glickman.
+\newblock Case-based reasoning: Foundational issues, methodological variations,
+  and system approaches.
+\newblock {\em AI Commun. IOS Press}, 2001.
 
 \bibitem{Kosara16}
 R.~Kosara.
