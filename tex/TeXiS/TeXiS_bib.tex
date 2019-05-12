@@ -42,7 +42,7 @@
 %%%
 
 % Ficheros .bib
-\def\ficherosBibliografia{}
+\def\ficherosBibliografia{bibliographify}
 \newcommand{\setBibFiles}[1]{
 \def\ficherosBibliografia{#1}
 }
@@ -92,7 +92,7 @@
 % que te lleva a un sitio cercano (no tan grave)
 \ifx\generatoc\undefined
 \else
-\addcontentsline{toc}{chapter}{Bibliograf�a}
+\addcontentsline{toc}{chapter}{Bibliography}
 \fi
 % A�adimos tambi�n una etiqueta, para poder referenciar el n�mero
 % de p�gina en el que comienza
@@ -133,7 +133,7 @@
 
 \begingroup
 %\sp%anishdeactivate{~}
-\bibliographystyle{TeXiS/TeXiS}
+\bibliographystyle{abbrv}
 %\bibliographystyle{abbrv}
 \bibliography{\ficherosBibliografia}
 \endgroup

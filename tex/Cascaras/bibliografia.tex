@@ -33,40 +33,40 @@
 %
 %---------------------------------------------------------------------
 %
-% Fichero  que  configura  los  parámetros  de  la  generación  de  la
-% bibliografía.  Existen dos  parámetros configurables:  los ficheros
-% .bib que se utilizan y la frase célebre que aparece justo antes de la
+% Fichero  que  configura  los  parï¿½metros  de  la  generaciï¿½n  de  la
+% bibliografï¿½a.  Existen dos  parï¿½metros configurables:  los ficheros
+% .bib que se utilizan y la frase cï¿½lebre que aparece justo antes de la
 % primera referencia.
 %
 %---------------------------------------------------------------------
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Definición de los ficheros .bib utilizados:
+% Definiciï¿½n de los ficheros .bib utilizados:
 % \setBibFiles{<lista ficheros sin extension, separados por comas>}
 % Nota:
-% Es IMPORTANTE que los ficheros estén en la misma línea que
-% el comando \setBibFiles. Si se desea utilizar varias líneas,
+% Es IMPORTANTE que los ficheros estï¿½n en la misma lï¿½nea que
+% el comando \setBibFiles. Si se desea utilizar varias lï¿½neas,
 % terminarlas con una apertura de comentario.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setBibFiles{%
-nuestros,latex,otros%
+nuestros,latex,otros,bibliographify%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Definición de la frase célebre para el capítulo de la
-% bibliografía. Dentro normalmente se querrá hacer uso del entorno
-% \begin{FraseCelebre}, que contendrá a su vez otros dos entornos,
+% Definiciï¿½n de la frase cï¿½lebre para el capï¿½tulo de la
+% bibliografï¿½a. Dentro normalmente se querrï¿½ hacer uso del entorno
+% \begin{FraseCelebre}, que contendrï¿½ a su vez otros dos entornos,
 % un \begin{Frase} y un \begin{Fuente}.
 %
 % Nota:
-% Si no se quiere cita, se puede eliminar su definición (en la
+% Si no se quiere cita, se puede eliminar su definiciï¿½n (en la
 % macro setCitaBibliografia{} ).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setCitaBibliografia{
 \begin{FraseCelebre}
 \begin{Frase}
-  Y así, del mucho leer y del poco dormir, se le secó el celebro de
+  Y asï¿½, del mucho leer y del poco dormir, se le secï¿½ el celebro de
   manera que vino a perder el juicio.
 \end{Frase}
 \begin{Fuente}
@@ -75,13 +75,15 @@ nuestros,latex,otros%
 \end{FraseCelebre}
 }
 
+\setCitaBibliografia{}
+
 %%
 %% Creamos la bibliografia
 %%
 \makeBib
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
-% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+% compilaciï¿½n y funcionen mejor algunas teclas rï¿½pidas de AucTeX
 
 %%%
 %%% Local Variables:

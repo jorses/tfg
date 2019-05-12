@@ -2,3 +2,6 @@
 notebooks/.ipynb_checkpoints/demo-checkpoint.ipynb
 *.csv
 *.png
+*.aux
+*.log
+*.toc

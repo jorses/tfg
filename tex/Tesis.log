@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.25)  1 MAY 2019 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.10.25)  12 MAY 2019 14:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -448,7 +448,21 @@ Copyright Marco Antonio and Pedro Pablo Gomez Martin
 (./Capitulos/02Capitulo2.aux) (./Capitulos/03Capitulo3.aux)
 (./Capitulos/04Capitulo4.aux) (./Capitulos/05Capitulo5.aux)
 (./Capitulos/06Capitulo6.aux) (./Cascaras/bibliografia.aux)
-(./TeXiS/TeXiS_indice.aux) (./Cascaras/fin.aux))
+(./TeXiS/TeXiS_indice.aux) (./Cascaras/fin.aux)
+
+! Package natbib Error: Bibliography not compatible with author-year citations.
+
+(natbib)                Press <return> to continue in numerical citation style.
+
+
+See the natbib package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 ...mand\NAT@force@numbers{}\NAT@force@numbers
+                                                  
+? 
+)
 \openout1 = `Tesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
@@ -467,8 +481,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
 LaTeX Font Info:    ... okay on input line 105.
 \AtBeginShipoutBox=\box58
 Package hyperref Info: Link coloring OFF on input line 105.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -536,7 +549,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 160.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 160.
-<Imagenes/Vectorial/escudoUCM.pdf, id=198, 597.23125pt x 844.15375pt>
+<Imagenes/Vectorial/escudoUCM.pdf, id=210, 597.23125pt x 844.15375pt>
 File: Imagenes/Vectorial/escudoUCM.pdf Graphic file (type pdf)
 <use Imagenes/Vectorial/escudoUCM.pdf>
 Package pdftex.def Info: Imagenes/Vectorial/escudoUCM.pdf  used on input line 1
@@ -609,7 +622,11 @@ Chapter 1.
 
 
 
-] [2] [3]) [4]
+] [2] [3] [4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5])
+[6]
 \openout2 = `Capitulos/02Capitulo2.aux'.
 
  (./Capitulos/02Capitulo2.tex
@@ -617,24 +634,24 @@ Chapter 2.
 
 Underfull \vbox (badness 1748) has occurred while \output is active []
 
- [5
+ [7
 
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6]
-[7] [8]) [9]
+ [8]
+[9] [10]) [11]
 \openout2 = `Capitulos/03Capitulo3.aux'.
 
- (./Capitulos/03Capitulo3.tex [10
+ (./Capitulos/03Capitulo3.tex [12
 
 
 
 ]
 Chapter 3.
-[11] [12] [13] [14]
+[13] [14] [15] [16]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 124.
 
 
@@ -649,10 +666,10 @@ Overfull \hbox (9.34918pt too wide) in paragraph at lines 127--131
 For cat-e-gor-i-cal columns
  []
 
-[15] [16]) [17]
+[17] [18]) [19]
 \openout2 = `Capitulos/04Capitulo4.aux'.
 
- (./Capitulos/04Capitulo4.tex [18
+ (./Capitulos/04Capitulo4.tex [20
 
 
 
@@ -661,8 +678,8 @@ Chapter 4.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19]
-<Capitulos/uscf.png, id=377, 699.61375pt x 407.5225pt>
+ [21]
+<Capitulos/uscf.png, id=415, 699.61375pt x 407.5225pt>
 File: Capitulos/uscf.png Graphic file (type png)
 <use Capitulos/uscf.png>
 Package pdftex.def Info: Capitulos/uscf.png  used on input line 68.
@@ -670,10 +687,10 @@ Package pdftex.def Info: Capitulos/uscf.png  used on input line 68.
 
 Underfull \vbox (badness 2443) has occurred while \output is active []
 
- [20]
+ [22]
 Underfull \vbox (badness 1694) has occurred while \output is active []
 
- [21 <./Capitulos/uscf.png>]
+ [23 <./Capitulos/uscf.png>]
 Overfull \hbox (90.13937pt too wide) in paragraph at lines 116--117
 []\T1/cmr/m/n/10.95 ELO Dis-tri-bu-tions for the USCF https://chess.stackexchan
 ge.com/questions/2550/whats-
@@ -685,48 +702,50 @@ Overfull \hbox (204.31361pt too wide) in paragraph at lines 117--118
 //math.bu.edu/people/mg/ratings/approx/approx.html 
  []
 
-) [22]
+) [24]
 \openout2 = `Capitulos/05Capitulo5.aux'.
 
  (./Capitulos/05Capitulo5.tex
 Chapter 5.
-<Capitulos/CBRcycle.png, id=396, 571.13374pt x 553.06625pt>
+<Capitulos/CBRcycle.png, id=436, 571.13374pt x 553.06625pt>
 File: Capitulos/CBRcycle.png Graphic file (type png)
 <use Capitulos/CBRcycle.png>
 Package pdftex.def Info: Capitulos/CBRcycle.png  used on input line 19.
 (pdftex.def)             Requested size: 360.0pt x 348.6108pt.
-[23
+[25
 
 
 
-] [24 <./Capitulos/CBRcycle.png>] [25]) [26]
+] [26 <./Capitulos/CBRcycle.png>] [27]) [28]
 \openout2 = `Capitulos/06Capitulo6.aux'.
 
  (./Capitulos/06Capitulo6.tex
 Chapter 6.
-[27
+[29
 
 
 
-] [28]) [29] [30
+] [30]) [31] [32
 
 
 ]
 \openout2 = `Cascaras/bibliografia.aux'.
 
- (./Cascaras/bibliografia.tex
-No file Tesis.bbl.
-)
+ (./Cascaras/bibliografia.tex (./Tesis.bbl)) [33
+
+
+]
 \openout2 = `TeXiS/TeXiS_indice.aux'.
 
- (./TeXiS/TeXiS_indice.tex
+
+(./TeXiS/TeXiS_indice.tex
 No file Tesis.ind.
 )
 \openout2 = `Cascaras/fin.aux'.
 
  (./Cascaras/fin.tex)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
  (./Tesis.aux (./Cascaras/cover.aux)
 (./Cascaras/dedicatoria.aux) (./Cascaras/agradecimientos.aux)
 (./Cascaras/resumen.aux) (./TeXiS/TeXiS_toc.aux) (./Capitulos/01Capitulo1.aux)
@@ -734,20 +753,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
 (./Capitulos/04Capitulo4.aux) (./Capitulos/05Capitulo5.aux)
 (./Capitulos/06Capitulo6.aux) (./Cascaras/bibliografia.aux)
 (./TeXiS/TeXiS_indice.aux) (./Cascaras/fin.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 195.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 195.
 Package rerunfilecheck Info: File `Tesis.out' has not changed.
-(rerunfilecheck)             Checksum: D00E3CBAA5C8211A693ACF2935761394;3052.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
+(rerunfilecheck)             Checksum: FFA00631CE6BF5C4EBBD8D141B67B92E;3226.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
  ) 
 Here is how much of TeX's memory you used:
- 10014 strings out of 492649
- 147537 string characters out of 6129621
- 253297 words of memory out of 5000000
- 13310 multiletter control sequences out of 15000+600000
- 21124 words of font info for 48 fonts, out of 8000000 for 9000
+ 10058 strings out of 492649
+ 148176 string characters out of 6129621
+ 252456 words of memory out of 5000000
+ 13339 multiletter control sequences out of 15000+600000
+ 21813 words of font info for 49 fonts, out of 8000000 for 9000
  1379 hyphenation exceptions out of 8191
- 55i,11n,53p,507b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,53p,651b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 /usr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></u
@@ -760,12 +779,13 @@ exlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/tex
 live/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/201
-8/texmf-dist/fonts/type1/public/cm-super/sfxc1000.pfb>
-Output written on Tesis.pdf (38 pages, 792007 bytes).
+018/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/public/cm-super/sfxc1000.pfb>
+Output written on Tesis.pdf (41 pages, 829274 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
- 442 compressed objects within 5 object streams
- 96 named destinations out of 1000 (max. 500000)
- 408 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 553 PDF objects out of 1000 (max. 8388607)
+ 485 compressed objects within 5 object streams
+ 108 named destinations out of 1000 (max. 500000)
+ 432 words of extra memory for PDF output out of 10000 (max. 10000000)
 
