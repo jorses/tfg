@@ -7,7 +7,7 @@
 \chapter{Introduction}
 
 \begin{resumen}
-In this chapter we outline the thesis, state what our objective is and what we hope to achieve and list the programming libraries, techniques and methods used to achieve our goal.
+In this study we propose a CBR-based process to retrieve and personalize the visuals from a structured representation of both users and data analysis.
 \end{resumen}
 \linespread{1.6}
 
@@ -17,78 +17,46 @@ In this chapter we outline the thesis, state what our objective is and what we h
 \label{cap1:sec:problem}
 
 The need for performing analysis on large amounts of data to get very precise and specific information is becoming more and more present everyday in the jobs of data analysts and scientists in every field of work.
-
 Large amounts of time are wasted on repetitive tasks such as data wrangling, data transforming and the generation of tailored reports or collections of information with different objectives for diverse profiles with varying degrees of expertise.
 
-These reports are usually formed by a piece of text acompanied by some graphs.
+These reports are usually formed by a piece of text acompanied by some graphs. 
+It is very common that from these huge amounts of data we want to extract some precise and relevant information to be presented to someone. 
+Our reports have a process behind them that entails the filtering, transformation and selection of the relevant information that will finally be part of the report.
 
-It is very common that from these huge amounts of data we want to extract some precise and relevant information to be presented to someone.
+To generate a report we have two questions to answer. First, we must choose the information to present, which is equivalent to choosing what information from the almost unlimited attributes that our data has is relevant to the user. 
+It is clear that this has an \textit{objective} part, in the sense that it is first and foremost a matter of which data is relevant within a certain domain of knowledge and a certain set of metrics, but it also has a \textit{subjective} side, because it's not the same to present a report with medical information to a patient or to present it to a doctor. From this kind of situation the necessity for the \textit{profile} system will arise and we will get both the \textit{doctor} and \textit{patient} profiles.
+The second answer, and perhaps the most \textit{subjective} is how to present it. This decision is related to things like choosing a type of graph, its colors, the font of the text, the words used... and almost an infinite list of \textit{subjective} choices that build upon the previous more objective selection of information to form the final concept of a report of a piece of information.
 
-These reports have a process behind them that entails the filtering, transformation and selection of the relevant information that will finally be part of the report.
-
-Here we have two questions to answer. First, we must choose what information to present, which is equivalent to choosing what information from the almost unlimited attributes that our data has is relevant to the user. 
-
-It is clear that this has an objective part, in the sense that it is first and foremost a matter of which data is relevant within a certain domain of knowledge and a certain set of metrics, but it also has a subjective side, in the sense that it's not the same to present medical information to a patient or to present it to a doctor. 
-
-The second answer, and perhaps the most subjective is how to present it. This second decision is related to things like choosing a type of graph, its colors, the font of the text, the words used... and almost an infinite list of subjective choices that build upon the previous more objective selection of information to form the final concept of a report of a piece of information.
+In this work we propose a system to generate \textit{reports} taking all of these factors into account. In the next section we will flesh out this solution and discuss it further.
 
 %-------------------------------------------------------------------
 \section{Solution Proposed}
 %-------------------------------------------------------------------
 \label{cap1:sec:solution}
 
-We believe that there is no unique formula to generating each report, because it would require the abstraction of very different problems in very different situations and for an almost unlimited variety of users. 
-
+From the problem analysis we have concluded that there is no unique formula to generate each report, because it would require the abstraction of very different problems in very different situations and for an almost unlimited variety of users. 
 Furthermore, what if we have to generate a report for a new user? Could this be similar to other reports presented for other users? 
 
-We believe that most of these questions can't be answered by a rigid mathematically formulated system, and are best tackled by a mixed system that combines an objective analysis of the information through a variety of metrics, analysis of correlations, distributions and other objective metrics with a subjective approach that takes the final user into account.
+Most of these questions can't be answered by a rigid mathematically formulated system, and are best tackled by a mixed system that combines an objective analysis of the information through a variety of metrics, analysis of correlations, distributions and other objective metrics with a subjective approach that takes the final user into account.
+In this system the knowledge provided by expert knowledge in the field forms the basis for the \textit{objective} approach, while we use an approach based on \textit{experience} of the system to flesh out the final report complemente with the \textit{subjective} side.
 
-Instead, what we propose is a mixed system in which an expert provides an initial input that signals some of the important aspects of the information, and then a pool of experts validates the subjective way in which an information is presented to end up choosing a default report form to present to a new user of their class.
+Instead, what we propose is a mixed system in which an expert provides an initial input that signals some of the important aspects of the information, and then a pool of experts validates the subjective way in which an information is presented to end up choosing a default report \textit{template} to present to a new user of their \textit{profile}.
 
-To start, we categorize the users or people that will be presented with the report into groups. Then, these groups will provide knowledge of the relevant objective information that they're looking for in the data, like what analysis to perform or what values of certain metrics they'd consider to be relevant.
+To start, we categorize the users or people that will be presented with the report into \textit{profiles}. Then, these groups will provide knowledge of the relevant objective information that they're looking for in the data, like what analysis to perform or what values of certain metrics they'd consider to be relevant.
+Once this information is fed to the system, it's able to generate reports completing the subjective decisions from semi-random choices from a pool of computer generated graphs, color choices and text based reports. This will provide the basis for a \textit{Case Based Reasoning} system, or \textit{CBR}.
 
-Once this information is fed to the system, it's able to generate reports completing the subjective decisions from semi-random choices from a pool of computer generated graphs, color choices and text based reports.
-
-Then our pool of experts proceeds to validate the best report by a voting system based on an ELO tournament. 
-
-The best selected report is then presented as default to users of this class. 
+Then our pool of experts proceeds to validate the best report by a voting system based on an ELO tournament, \ref{cap4:sec:tourney} which is the case adquisition step of our \textit{CBR} system. 
+The best selected report is then retrieved, reused and presented as default to users of this class. 
 
 Each user will also be able to change the result presented to them in terms of both content (objective) and presentation (subjective), and because the system recognizes individual users it will remember their choices.
+Users will also have a profile attached to them containing relevant data to the presentation of the information that will allow us to define a metric of sorts between users, the \textit{similarity metric} of our CBR system, to further use this single user customization to influence how information is presented to users of the same class once enough individual inputs have been recorded, possibly substituting the initial ELO based report which will always act as default, thus completing the \textit{learning} step of our CBR system.
 
-Users will also have a profile attached to them containing relevant data to the presentation of the information that will allow us to define a metric of sorts between users to further use this single user customization to influence how information is presented to users of the same class once enough individual inputs have been recorded, possibly substituting the initial ELO based report which will always act as default.
 
-%-------------------------------------------------------------------
-\section{Related Work}
-%-------------------------------------------------------------------
-\label{cap1:sec:relatedwork}
-
-Natural Language Generation (NLG) produces text in natural language from structured data, the same way we take the structural representations of data and users and generate a report.
-Our approach relates with research on NLG  based on templates \cite{McKeown}.
-
-The underlying idea is that texts often follow conventionalized patterns, that can be encapsulated in {\it schemas}, which are template programs which produce text plans. 
-Schema are derived from a target text corpus, by breaking up these texts into messages, and trying to determine how each message can be computed from the input data. 
-
-The schema-based approach to NLG approaches problem solving in the very same way as CBR does, reusing previous solutions to be used in future problems, resulting in very much the same cycle of work that we're aiming for.
-
-In \cite{sizov2017} we can see a CBR approach reusing explanation reports from previous transportation incidents.
-
-For other related work, \cite{Adegboyega2017} identifies core templates to good data journalism practice.
-
-In \cite{Roels2017} authors describe an approach and a prototype to improve data driven knowledge transfer in presentation tools by applying information visualization concepts. 
-The shortcomings of the current presentation tools are discussed and they also expose narrative visualization, with highly interactive components.
-
-Other uses for CBR have also been used for poetry generation \cite{diaz2002} and story plot generation \cite{GervasDPH05}. 
-
-Many of the existing works are presentation oriented~\cite{Kosara16,Roels2017}. 
-
-Our approach is more oriented towards visual narrative, i.e., the rendering of data storytelling and visualization of the input data, in the final form of a {\it report}.
-
-In this study we propose a CBR-based process to retrieve and personalize the visuals from a structured representation of both users and data analysis.
 
 %-------------------------------------------------------------------
-\section{Overview}
+\section{Workflow}
 %-------------------------------------------------------------------
-\label{cap1:sec:overview}
+\label{cap1:sec:workflow}
 
 The logical structure chosen for the program reflects the need for our tool to be a fully functional agent in and out of itself. We have designed it with a clear divider between a backend capable of storing the information and handling at the lowest possible level, which provides the frontend side with easy methods to get the information it needs, which is then processed taking who is going to look at it into account and then adequately presented to the user.
 
@@ -98,12 +66,7 @@ From these two necessities it is natural to consider some kind of identification
 
 For our program, if two datasets contain the exact same set of column names then they are considered to be comparable to each other, and every information stored about this kind of datasets will carry an identifier with the column names.
 
-From here onwards, the term 'domain' shall refer to information coming from the same kind of dataset.
-
-%-------------------------------------------------------------------
-\section{Workflow}
-%-------------------------------------------------------------------
-\label{cap1:sec:workflow}
+From here onwards, the term \textit{domain} shall refer to information coming from the same kind of dataset.
 
 When a new dataset doesn't match any previous knowledge, our program automatically creates a new representation for these datasets which is stored along the others. If it detects a matching JSON with knowledge o its domain it loads that instead.
 
@@ -124,14 +87,105 @@ This workflow will be the basic use case of the program for every kind of data.
 A clear module structure is provided so each module does a task in the workflow.
 
 The main modules on the backend side of our application are the Storage module, the CBRStorage module and the Analysis module.
-
 For the frontend, the logic structure will be split into the Reporter module and the Presentation module.
 
-%-------------------------------------------------------------------
-\section{Tools}
-%-------------------------------------------------------------------
-\label{cap1:sec:tools}
-
 Our programming language of choice has been Python, particulary making use of its class to dictionary representation methods which make the work of manipulating the JSON structures much easier than using more rigid languages.
-
 A public repository has been created at github.com/jorses/tfg, and we have used Jupyter Notebooks for the testing and formation o a prototype which has been then moved into standard Python packages.
+
+%-------------------------------------------------------------------
+\section{Related Work}
+%-------------------------------------------------------------------
+\label{cap1:sec:relatedwork}
+
+Natural Language Generation (NLG) produces text in natural language from structured data, the same way we take the structural representations of data and users and generate a report.
+Our approach relates with research on NLG  based on templates \cite{McKeown}.
+
+The underlying idea is that texts often follow conventionalized patterns, that can be encapsulated in {\it schemas}, which are template programs which produce text plans. 
+Schema are derived from a target text corpus, by breaking up these texts into messages, and trying to determine how each message can be computed from the input data. 
+
+The schema-based approach to NLG approaches problem solving in the very same way as CBR does, reusing previous solutions to be used in future problems, resulting in very much the same cycle of work that we're aiming for.
+In \cite{sizov2017} we can see a CBR approach reusing explanation reports from previous transportation incidents.
+For other related work, \cite{Adegboyega2017} identifies core templates to good data journalism practice.
+In \cite{Roels2017} authors describe an approach and a prototype to improve data driven knowledge transfer in presentation tools by applying information visualization concepts. 
+The shortcomings of the current presentation tools are discussed and they also expose narrative visualization, with highly interactive components.
+
+Other uses for CBR have also been used for poetry generation \cite{diaz2002} and story plot generation \cite{GervasDPH05}. 
+Many of the existing works are presentation oriented~\cite{Kosara16,Roels2017}. 
+
+Our approach is more oriented towards visual narrative, i.e., the rendering of data storytelling and visualization of the input data, in the final form of a {\it report}.
+Our use case also has the basis on the comparison of new info, represented by the dataset, to old info, represented by both the objective domain information and the subjective information associated to the profile. 
+
+%-------------------------------------------------------------------
+\section{CBR Design}
+%-------------------------------------------------------------------
+\label{cap5:sec:introduccion}
+
+Let's first talk about what we mean when we talk about a CBR system.
+
+CBR, or Case-Based Reasoning, is the process of solving new problems based on the solutions of similar problems we may have encountered before.
+
+We can see it as a type of analogy solution making.
+
+It doesn't need an explicit domain model and so it becomes a task of gathering case histories. 
+
+We achieve the reduction of the implementation to essentially identifying significant features that define a case, which is in essence a lot easier than creating a model explicitily. 
+
+CBR systems basically learn by acquiring new knowledge as cases, which combined with data handling techniques and big data make maintaining large volumes of information easier.
+
+\section{CBR Process}
+%-------------------------------------------------------------------
+\label{cap5:sec:process}
+
+Case-based reasoning can be formulated for a program to emulate as the process that follows:
+
+\begin{enumerate}
+\item Retrieve: When facing a new problem, get cases relevant to it from memory. A case is problem, solution, and, optionally, annotations about how the solution was derived. 
+\item Reuse: Map the solution from the previous case to the target problem. 
+\item Revise: Having mapped the previous solution to the target situation, test the new solution in the real world (or a simulation) and, if necessary, revise. 
+\item Retain: After the solution has been successfully adapted to the target problem, store the resulting experience as a new case in memory. 
+\end{enumerate}
+
+\section{Retrieve}
+%-------------------------------------------------------------------
+\label{cap5:sec:retrieve}
+
+Conceptually, we need to get the necessary information about past cases of how they were resolved, that is, mainly what problem it was and how it was solved.
+We start from the idea that our problem is basically analyzing a new dataset.
+To do this we provide the frame of domains, which ensures us that what we retrieve was relevant condensed information about the problem in the past, and within that information we have the metrics used to analyze datasets like our current one.
+Another side of how to solve it is represented by the profile information, which tells us how to solve it for the specific user who is using the program.
+
+\section{Reuse}
+%-------------------------------------------------------------------
+\label{cap5:sec:reuse}
+The knowledge base is obtained primarily from the enumeration of certain past cases or problems. This is built from the fact that experts (humans) are much better at recalling previous experiences and problems than at creating systems of rules. 
+
+As new problems are fed to our expert system (containing the knowledge or memory of previous experiences) to which no past problem can match exactly, the system is capable of reasoning from more general similarities to come up with an answer. 
+
+This tries to imitate the generalization capability of humans.
+
+To map the solution from the previous cases to the current problem what we do is run an analysis on the current dataset, and then use the metrics contained in the domain information, and then apply the profile information on the analysis to filter the results.
+
+\section{Revise}
+%-------------------------------------------------------------------
+\label{cap5:sec:revise}
+When the users are presented with the new report, they have the ability to modify its contents, both graphical and the information they're presented with. This changes are stored in the profile information, so we have access to the new preferences, thus making a better solution from the old one in the spirit of the revise process.
+
+What we're trying to achieve is giving the user as much power as possible, because that is what will make his or her experience better with each time they use the program, which is the whole point behind the implementation of the CBR based system that we've chosen.
+
+\section{Retain}
+%-------------------------------------------------------------------
+\label{cap5:sec:retain}
+The system is able to retain new information by being able to make changes to the elements it stores, namely updating the domain objective analysis with the new analysis and updating the subjective profile report changes with the changes introduced by the users.
+
+This is done only once, after the user has made all the changes and exits the program. No interaction is needed on the side of the user to do this, it is done by default so as to make the whole experience as streamlined as possible.
+
+The memory system present in our system grows and changes by each time we present it with a new case. An important aspect of this memory-based process of reasoning is closely related to automatic learning: our system should be able to remember the problems that it has been presented with and to use past information to solve new challenges.
+
+This is intended to complete our modeling of the human behaviour of CBR, and represent the final step of our CBR system.
+
+\section{Conclusion}
+%-------------------------------------------------------------------
+In this chapter we've outlined the most important aspects of the program, the related work that has been done in the field and explained the CBR process.
+We've proposed a workflow to follow, wrapped around a heavy CBR-like program structure that will allow us to work with different kinds of data and different users.
+In the next chapter we will provide a more specific description of the program functionalities and components, going over design and programming decisions from a high-level point of view.
+\medskip

@@ -7,7 +7,7 @@
 \chapter{The program structure}
 
 \begin{resumen}
-In this chapter we provide an analysis of the program structure from an abstract point of view.
+We will provide an analysis of the program structure from an abstract point of view, going from how our cases are presented to how we handle and analyze the information, ending with an explanation of our subjective side and feedback mechanism, and its relation to the conceptual CBR process.
 \end{resumen}
 
 \linespread{1.6}
@@ -17,11 +17,11 @@ In this chapter we provide an analysis of the program structure from an abstract
 %-------------------------------------------------------------------
 \label{cap2:sec:structure}
 
-As we have stated before, our program consists of a series of modules designed to interact with each other and provide the necessary tools to work smoothly regardless of the data being used.
+Our program consists of a series of modules, designed with a core of a CBR structure and a series of auxiliar modules and methods to make it easier to function. These modules are designed to interact with each other and provide the necessary tools to work smoothly regardless of the data being used.
 
-Here we take a broad look at the program, trying to explain the design choices behind each aspect of it and to provide a framework of thinking for the next chapter, when we will dive deeper into the technical, low level side of things.
+In this chapter we take a broad look at the program, trying to explain the design choices behind each aspect of it and to provide a framework of thinking for the next chapter, when we will dive deeper into the technical, low level side of things.
 
-Our program structure needs to be flexible and adaptable, and fit the needs of both providing a basis on which to develop a CBR system and at the same time be quickly handling data, be responsive to user input, and scalable to a big data practical solution that can be used by real users for real use cases.
+Our program structure needs to be flexible and adaptable, and fit the needs of both providing a basis on which to develop a CBR system and at the same time be quickly handling data, be able to work with very different domains, and be responsive to user input, and scalable to a big data practical solution that can be used by real users for real use cases.
 
 We will have to take into account all of this into every decision, to make sure that we're building a functional system good enough for scalability but at the same time being quick to develop for the proof of concept and the experiment to test our design choices that will allow us to try our ideas before scaling.
 
@@ -29,22 +29,23 @@ We will have to take into account all of this into every decision, to make sure 
 \section{Case presentation}
 %-------------------------------------------------------------------
 \label{cap2:sec:preparation}
-
-The input for our program is really just an user who desires to analyze a certain dataset, so it can be conceptualized as a tuple containing a user and a dataset. This dataset will also belong to a specific domain, which will have association with the user profile aswell, so our input will be quickly transformed by the program into a domain, user, dataset concept.
+The input for our program is really just an user who desires to analyze a certain dataset, so it can be conceptualized as a tuple containing a user and a dataset, or a \textit{profile} and \textit{domain} with the new information that it represents. This dataset will also belong to a specific \textit{domain}, which will have association with the user \textit{profile} aswell, so our input will be quickly transformed by the program into a domain, \textit{profile}, dataset concept. The concept of extracting the domain information from the dataset provided is our approach to the retrieve from the case base step from a CBR point of view.
 
 From now on on this chapter, we assume we have previous information for both the domain the dataset belongs to and about the type of user that is trying to analyze it.
 
 Our use case has the basis on the comparison of new info, represented by the dataset, to old info, represented by both the objective domain information and the subjective information associated to the profile. This flow is highly compatible with the CBR approach that we will outline in chapters 5 and 6, because we're essentially solving new problems from old problems.
-
 Tying the new information to the old information will be done through a storage system with matching keys for the dataset and domain, being the number of columns in our proof of concept but being easily expandable into a more global system through database indexes or anything acting like a unique identifier.
+This will be our retrieval step from a CBR point of view.
+
 
 The analysis of the new information will have two parts, the first one will do an isolated analysis of the new information using the techniques provided by the old, and in the second it will compare the results of the first part with the results of a similar analysis stored in the old information.
 
 This will provide us with a new object representing the relevant information about our new problem, or dataset, and then we will filter this object using the subjective information from the profile to present the user with a final report.
 
-The user will then have the means to modify this report, and thus modifying the subjective information about him or her.
+The user will then have the means to modify this report, and thus modifying the subjective information about him or her, forming the \textit{provide} CBR step.
 
 The program will also use the new analysis to udpate the old information about the domain before proceding to store it.
+This will provide our program with the \textit{reuse} and \textit{retain} functionalities needed from a CBR perspective.
 
 We will expand on how the base cases are formed and how we adapt to new profiles and new domains on further chapters, but for now let's say that a process is in place to ensure that the default report is correct enough, the analysis performs its due processes and the result is at least acceptable and relevant to the final user.
 
@@ -53,28 +54,30 @@ We will expand on how the base cases are formed and how we adapt to new profiles
 %-------------------------------------------------------------------
 \label{cap2:sec:information}
 
-First and foremost we need a way to store information and to retrieve it effectively. We will store two different kinds of information : objective information about the results of analysis performed on a dataset and information on what information to present and how to present it to the user.
-
-Since the first is related to the domain and applies to all users, and the second concerns both the domain and the user, it makes sense to store them and handle them separately.
+First and foremost we need a way to store information and to retrieve it effectively. We will store two different kinds of information: \textit{objective} information concerning the results of mathematical analysis performed on a dataset and \textit{subjective} information on what information to present and how to present it to the user.
+Since the first is related to a certain domain and applies to all its associated users (or \textit{profiles}), and the second concerns both the domain and the user, it makes sense to store and handle them separately.
 
 Regarding the first kind, we now provide both a way to identify which domain it belongs to and a general description of what it contains, which will be specified later during the technical implementation chapter.
-
 It contains statistics and properties from both columns and datasets, different for different types, as well as how they were measured. Saving how they're measured is important to measure new datasets and to be able to compare metrics effectively.
 
-Both the column specific stats and the dataset stats are subjective to change with each dataset added to the domain, so it is important that we're able to update this information readily and effectively.
+For a basic approach of our \textit{objective} column metrics we have divided columns into categorical data, that being columns which have discrete non-ordered values, and \textit{numerical} data which contains numbers.
+For the first we will measure things like most frequent categories and category distribution, while for numerical columns we have a more varied set of tools like studying ranges, numerical distributions, means, medians and other common mathematical metrics.
 
-It's also important to be able to distinguish between domains. The solution proposed is to use the columns of each dataset as a unique key that identifies a domain, and their objective information will be stored as part of the same object.
+Both the column specific stats and the dataset stats are subjective to change with each dataset added to the domain, so it is important that we're able to update this information readily and effectively.
+For starters we have provided our program with a toolset capable of doing an array of the most common analysis in data science.
+
+It's also important to be able to distinguish between \textit{domains}, that is, between datasets with different sets of columns. The solution proposed is to use the columns of each dataset as a unique key that identifies a domain, and their objective information will be stored as part of the same object.
 
 In the case of subjective kind, we combine this with a unique user identificator to make a unique key to identify the information.
 
-Each of these structures has parts of the program dedicated to loading this information into the program and updating it when presented with new datasets and storing it overwriting the previous information, creating a dynamic system capable of learning from users and gathering new insights.
+For all of this to be possible the program has to be able to handle loading the information, storing it and updating it, and that is achieved having functions dedicated to loading this information into the program and updating it when presented with new datasets and storing it overwriting the previous information, creating a dynamic system capable of learning from users and gathering new insights.
 
 %-------------------------------------------------------------------
 \section{Analyzing the Information}
 %-------------------------------------------------------------------
 \label{cap2:sec:analysis}
 
-This analysis will concern the objective side only, so we don't need to take the user into account for now.
+The \textit{objective} analysis will concern the objective side only, so we don't need to take the user into account for now.
 
 First a dataset is provided as input for our tool. From this dataset, we retrieve the information of the associated domain so we know how to perform the analysis on this new dataset, as it has to be comparable to the domain information.
 
@@ -84,20 +87,12 @@ These results are then condensed into an object containing all the objective dat
 
 This output will be the input for the subjective side of our program, as this information will then be filtered and transformed in a way tailored to the user.
 
-%-------------------------------------------------------------------
-\section{The Subjective Analysis}
-%-------------------------------------------------------------------
-\label{cap2:sec:subjective}
-
-This analysis will concern the subjective side, and is to be performed after the previous step has been completed.
+The \textit{subjective} analysis is to be performed after the previous step has been completed.
 
 From the representation of the objective analysis, we need to perform two tasks.
-
-One is the filtering of such information, selecting the information relevant to the user, and the other is choosing how to present this information to the user.
-
 To perform these two tasks we first load the information we know about the user, which has been stored separately from the objective information as we have previously stated.
-
-We then filter the information through the user provided profile, selecting which comparison is most relevant. Finally we form a report using the graphical information on how to present each bit of data to this user.
+One is the filtering of such information, selecting the information relevant to the user. This is achieved by using the information that the user's \textit{profile} contains, which will tell us the information of the analysis that will be relevant.
+The second task is choosing how to present this information to the user, that is, using the information also stored in the \textit{profile} to infer the appearance of our final \textit{report}, that is, how will we represent the relevant information to this user.
 
 %-------------------------------------------------------------------
 \section{Presentation and Feedback}
@@ -121,3 +116,10 @@ On the visual side, for the proof of concept we've added pie plots, histograms a
 It's also important to note that users are able to change the scale, size and place of the graphs in the report, which is very important for the visual impact and the user's quick and easy understanding of the information that is being presented to them.
 
 For the user, being able to change all of these aspects represents a very important interactive side of the tool, giving power to the user as it empowers their experience with each interaction.
+
+\section{Conclusion}
+%-------------------------------------------------------------------
+In this chapter we've provided a more detailed view of our program's usage, going over its functional modules from an abstract point of view. 
+We've also provided some specific descrption of the program functionality needed to implement at a programming level.
+In the next chapter we will provide a more specific description of the program functionalities and components, going over design and programming decisions from a low-level point of view, and going over how the different CBR steps were taking into account and implemented.
+\medskip

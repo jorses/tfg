@@ -8,7 +8,7 @@
 
 
 \begin{resumen}
-In this chapter we provide a technical analysis of our tool, examining how it works and what was designed for at a programming level, aswell as its module structure.
+In this chapter we provide a technical analysis of our tool, examining how it works and what was designed for at a programming level, aswell as its module structure, and its relation to the low-level CBR process.
 \end{resumen}
 
 \linespread{1.6}
@@ -43,7 +43,7 @@ When the report generation module gets all the needed information uses the user-
 
 The user is able to make changes to this final report (through the console in the proof of concept), and before closing the program
 
-All of this enables the CBR process which is explained in chapters 5 and 6.
+All of this contributes to making the CBR process as streamlined as possible while providing a flexible framework for data handling.
 
 %-------------------------------------------------------------------
 \section{Non relational databases and the JSON structure}
@@ -94,7 +94,7 @@ This process is reversed before writing the information back to disk in a format
 %-------------------------------------------------------------------
 \label{cap3:sec:profilestorage}
 
-Another kind of information is stored about the domains. This is the information concerning the human side of things, that is, how to interpret these stats and turn them into something that humans with different levels of familiarity can understand.
+Another kind of information is stored. This is the one concerning the human side of things, that is, how to interpret these stats and turn them into something that humans with different levels of familiarity can understand.
 
 To do this, we provide use another storage class that will contain human-relevant data that will modify the objective comparison delivered by the analysis module.
 
@@ -198,3 +198,64 @@ For our proof of concept, a more simple design has been put in place. Instead of
 However, all the functionality is present, as the users can input the information the program requests to generate the profile, and then change the report presented to them using commands too.
 
 When the program is closed the frontend module passes the modified report to the information storage modules, with both the updated objective information and the updated subjective information.
+
+%-------------------------------------------------------------------
+\section{Information Storage and the CBR}
+%-------------------------------------------------------------------
+\label{cap6:sec:informationstorage}
+
+Because the information we're storing is still low and the metrics are different for each domain the only way to consistenly store the information is through a non-relational database.
+
+To provide the information to the experiment and to run this as a proof of concept we can simplify it by storing information in the form of JSON structures, which will be stored as files in a directory accessible by our program.
+
+The relevant information for the use case at hand will be retrieved by our program, stored as a run time variable, modified when needed and then stored back to the JSON overwriting the previous structure.
+If we had a non relational database we could simply update the database instead.
+
+\section{Retrieve}
+%-------------------------------------------------------------------
+\label{cap6:sec:retrieve}
+If we're doing a full non-relational database implementation it's probably better to develop a domainID, because that would allow us to have different domains with the same column names.
+
+For the proof of concept though that is not an issue because we've made sure this hasn't happened with the datasets used for the testing.
+
+Retrieving this information is as easy as reading the JSON file and loading into a dictionary type in Python. We know which information to retrieve because each json contains an ID variable with the column list of the datasets from the domain.
+
+We do this with a file buffer the standard way. Once it has been loaded the information is handled by two different classes.
+
+\section{Reuse}
+%-------------------------------------------------------------------
+\label{cap6:sec:reuse}
+The objective information about the domain is loaded and handled by the class that handles the objective information, which will then be passed to the 
+
+The profile or subjective information about the domain and user is handled by the module that handles the profiles, which will then pass it along to the module that generates the report.
+
+This allows us to reuse the previous experiences in the process of generating the report module.
+
+\section{Revise}
+%-------------------------------------------------------------------
+\label{cap6:sec:revise}
+There are two ways on which we can revise the information. If the users from the start say what they want then the system associates what they want as if changes have been made to the report that was going to be presented to them.
+
+In any case, when the users are provided with the report they can provide feedback through a visual interface by selecting which information is shown and shouldn't be shown, what information should be shown but is not the report, and change the colors/fonts of the report.
+
+This allows us a thorough revise step, in which the user has full agency over the results generated by the program and is able to change all the choices that our system has made.
+
+This is incredibly important because it makes our system learn a lot from each interaction.
+
+\section{Retain}
+%-------------------------------------------------------------------
+\label{cap6:sec:retain}
+Once these changes have been made the objective information is updated and written back to disk by the same module that retrieved it through an store method.
+
+The same method is present in the module responsible for handling the profile information, which will update the choices the user has made.
+
+This is a crucial step because it is what allows us to retrieve these changes consistenly if this user or a similar one wants to use the system in the future.
+
+In the end what we've achieved is a system that grows better with each interaction, providing the users with better and easier use experiences every time they use it.
+
+\section{Conclusion}
+%-------------------------------------------------------------------
+In this chapter we've gone over the detailed implementation of our program, including the specific modules programmed in Python code and their relations to the flexible CBR structure we're trying to achieve.
+At this point we have a clear picture of what our program does and how it looks like from a code perspective, and we've specified the different techniques and metrics used to analyze common data types.
+However, there is one important question that still doesn't have an answer. How do we generate the first seed cases from which we build our retrieve step? Is there a better way than to randomly assemble them? Can we rely on expert insight for everything? We will answer these questions in the next chapter.
+\medskip

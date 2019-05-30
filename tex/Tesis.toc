@@ -3,45 +3,44 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}The Initial Problem}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Solution Proposed}{2}{section.1.2}
-\contentsline {section}{\numberline {1.3}Related Work}{3}{section.1.3}
-\contentsline {section}{\numberline {1.4}Overview}{4}{section.1.4}
-\contentsline {section}{\numberline {1.5}Workflow}{4}{section.1.5}
-\contentsline {section}{\numberline {1.6}Structure}{5}{section.1.6}
-\contentsline {section}{\numberline {1.7}Tools}{5}{section.1.7}
-\contentsline {chapter}{\numberline {2}The program structure}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}The Structure}{7}{section.2.1}
-\contentsline {section}{\numberline {2.2}Case presentation}{8}{section.2.2}
-\contentsline {section}{\numberline {2.3}Handling the Information}{9}{section.2.3}
-\contentsline {section}{\numberline {2.4}Analyzing the Information}{9}{section.2.4}
-\contentsline {section}{\numberline {2.5}The Subjective Analysis}{10}{section.2.5}
-\contentsline {section}{\numberline {2.6}Presentation and Feedback}{10}{section.2.6}
-\contentsline {chapter}{\numberline {3}The Program Implementation : Architecture}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}The Program Module Structure}{13}{section.3.1}
-\contentsline {section}{\numberline {3.2}Non relational databases and the JSON structure}{14}{section.3.2}
-\contentsline {section}{\numberline {3.3}The Objective Storage Module}{15}{section.3.3}
-\contentsline {section}{\numberline {3.4}The Profile Storage Module}{16}{section.3.4}
-\contentsline {section}{\numberline {3.5}The Comparison Metrics}{16}{section.3.5}
-\contentsline {section}{\numberline {3.6}The Analysis Module}{17}{section.3.6}
-\contentsline {section}{\numberline {3.7}The Report Generation Module}{18}{section.3.7}
-\contentsline {section}{\numberline {3.8}The Frontend Module}{18}{section.3.8}
-\contentsline {chapter}{\numberline {4}Seed Cases and ELO Tournament}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Motivation}{21}{section.4.1}
-\contentsline {section}{\numberline {4.2}Case Seeds}{22}{section.4.2}
-\contentsline {section}{\numberline {4.3}Experiment Design}{22}{section.4.3}
-\contentsline {section}{\numberline {4.4}The Elo Rating System}{23}{section.4.4}
-\contentsline {section}{\numberline {4.5}The Tournament}{24}{section.4.5}
-\contentsline {section}{\numberline {4.6}Experiment results}{24}{section.4.6}
-\contentsline {chapter}{\numberline {5}CBR : Concept}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}CBR Design}{25}{section.5.1}
-\contentsline {section}{\numberline {5.2}CBR Process}{26}{section.5.2}
-\contentsline {section}{\numberline {5.3}Retrieve}{27}{section.5.3}
-\contentsline {section}{\numberline {5.4}Reuse}{27}{section.5.4}
-\contentsline {section}{\numberline {5.5}Revise}{27}{section.5.5}
-\contentsline {section}{\numberline {5.6}Retain}{28}{section.5.6}
-\contentsline {chapter}{\numberline {6}CBR : Implementation}{29}{chapter.6}
-\contentsline {section}{\numberline {6.1}Information Storage}{29}{section.6.1}
-\contentsline {section}{\numberline {6.2}Retrieve}{29}{section.6.2}
-\contentsline {section}{\numberline {6.3}Reuse}{30}{section.6.3}
-\contentsline {section}{\numberline {6.4}Revise}{30}{section.6.4}
-\contentsline {section}{\numberline {6.5}Retain}{30}{section.6.5}
-\contentsline {chapter}{Bibliography}{33}{chapter*.5}
+\contentsline {section}{\numberline {1.3}Workflow}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Structure}{4}{section.1.4}
+\contentsline {section}{\numberline {1.5}Related Work}{4}{section.1.5}
+\contentsline {section}{\numberline {1.6}CBR Design}{5}{section.1.6}
+\contentsline {section}{\numberline {1.7}CBR Process}{5}{section.1.7}
+\contentsline {section}{\numberline {1.8}Retrieve}{6}{section.1.8}
+\contentsline {section}{\numberline {1.9}Reuse}{6}{section.1.9}
+\contentsline {section}{\numberline {1.10}Revise}{6}{section.1.10}
+\contentsline {section}{\numberline {1.11}Retain}{7}{section.1.11}
+\contentsline {section}{\numberline {1.12}Conclusion}{7}{section.1.12}
+\contentsline {chapter}{\numberline {2}The program structure}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}The Structure}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}Case presentation}{10}{section.2.2}
+\contentsline {section}{\numberline {2.3}Handling the Information}{11}{section.2.3}
+\contentsline {section}{\numberline {2.4}Analyzing the Information}{12}{section.2.4}
+\contentsline {section}{\numberline {2.5}Presentation and Feedback}{12}{section.2.5}
+\contentsline {section}{\numberline {2.6}Conclusion}{13}{section.2.6}
+\contentsline {chapter}{\numberline {3}The Program Implementation : Architecture}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}The Program Module Structure}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}Non relational databases and the JSON structure}{16}{section.3.2}
+\contentsline {section}{\numberline {3.3}The Objective Storage Module}{17}{section.3.3}
+\contentsline {section}{\numberline {3.4}The Profile Storage Module}{18}{section.3.4}
+\contentsline {section}{\numberline {3.5}The Comparison Metrics}{18}{section.3.5}
+\contentsline {section}{\numberline {3.6}The Analysis Module}{19}{section.3.6}
+\contentsline {section}{\numberline {3.7}The Report Generation Module}{20}{section.3.7}
+\contentsline {section}{\numberline {3.8}The Frontend Module}{20}{section.3.8}
+\contentsline {section}{\numberline {3.9}Information Storage}{21}{section.3.9}
+\contentsline {section}{\numberline {3.10}Retrieve}{21}{section.3.10}
+\contentsline {section}{\numberline {3.11}Reuse}{22}{section.3.11}
+\contentsline {section}{\numberline {3.12}Revise}{22}{section.3.12}
+\contentsline {section}{\numberline {3.13}Retain}{22}{section.3.13}
+\contentsline {section}{\numberline {3.14}Conclusion}{23}{section.3.14}
+\contentsline {chapter}{\numberline {4}Seed Cases and ELO Tournament}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivation}{25}{section.4.1}
+\contentsline {section}{\numberline {4.2}Case Seeds}{26}{section.4.2}
+\contentsline {section}{\numberline {4.3}Experiment Design}{26}{section.4.3}
+\contentsline {section}{\numberline {4.4}The Elo Rating System}{27}{section.4.4}
+\contentsline {section}{\numberline {4.5}The Tournament}{28}{section.4.5}
+\contentsline {section}{\numberline {4.6}Limitations}{28}{section.4.6}
+\contentsline {section}{\numberline {4.7}Conclusion}{29}{section.4.7}
+\contentsline {chapter}{Bibliography}{31}{chapter*.4}

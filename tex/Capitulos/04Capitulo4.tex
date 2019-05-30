@@ -103,7 +103,19 @@ Elo systems tend to create distributions such as the one in Figure 4.1, giving u
 
 Our first sample for the tournament experiment will be of 12 images, thus creating enough matches for our ELO system to be effective while being small enough not to bother our user pool of experts who will essentially decide the winners of every match
 
+Other proposed alternatives for case generation include completely random seeds that include a large collection of metrics, with the drawback that the first users will have to undergo great customization processes.
+
 %-------------------------------------------------------------------
-\section{Experiment results}
+\section{Limitations}
 %-------------------------------------------------------------------
-\label{cap4:sec:experimentresults}
+\label{cap4:sec:limitations}
+With this metric system we lack a way to infer some \textit{broadly} similar information representation characteristics from similar \textit{profiles} in different domains.
+Although this idea will not be developed further due to time constraints, it would require a way to \textit{categorize} profiles from different domains into the similar categories according to some \textit{inter-domain metric} that would need to be defined.
+
+This would allow us to incorporate domains similar to old ones with ease, and would allow us to cover one clear drawback of our proposed system, the fact that when introducing a new domain very similar to an already established one we have no more ground to work on that when introducing a completely different domain, and it shouldn't be the case.
+
+\section{Conclusion}
+Through this chapter we've covered a first way to answer the questions of how to set the seed cases and obtain a good basis of rules on which to build the case retrievals and similarity metrics of our CBR system, as well as greatly improving its reusability.
+The main work done throught this thesis has been to conceptually develop and also implement a CBR based system capable of handling different types of information, relating them to past information of the same kind, analyzing its differences according to some metrics relevant to its information, and finally using its user knowledge to filter out this information and present it in a relevant way.
+%-------------------------------------------------------------------
+\medskip
