@@ -45,6 +45,12 @@ The user is able to make changes to this final report (through the console in th
 
 All of this contributes to making the CBR process as streamlined as possible while providing a flexible framework for data handling.
 
+\begin{figure}[!htb]
+    \center{\includegraphics[width=\textwidth]
+    {Capitulos/information_flow.png}}
+    \caption{\label{fig:info_flow}}
+\end{figure}
+
 %-------------------------------------------------------------------
 \section{Non relational databases and the JSON structure}
 %-------------------------------------------------------------------
@@ -199,6 +205,12 @@ However, all the functionality is present, as the users can input the informatio
 
 When the program is closed the frontend module passes the modified report to the information storage modules, with both the updated objective information and the updated subjective information.
 
+\begin{figure}[!htb]
+    \center{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio]
+    {Capitulos/feedback_loop.png}}
+    \caption{\label{fig:feedback_loop}}
+\end{figure}
+
 %-------------------------------------------------------------------
 \section{Information Storage and the CBR}
 %-------------------------------------------------------------------
@@ -245,6 +257,13 @@ This is incredibly important because it makes our system learn a lot from each i
 \section{Retain}
 %-------------------------------------------------------------------
 \label{cap6:sec:retain}
+
+\begin{figure}[!htb]
+    \center{\includegraphics[width=\textwidth]
+    {Capitulos/shutdown.png}}
+    \caption{\label{fig:shutdown}}
+\end{figure}
+
 Once these changes have been made the objective information is updated and written back to disk by the same module that retrieved it through an store method.
 
 The same method is present in the module responsible for handling the profile information, which will update the choices the user has made.
