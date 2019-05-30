@@ -10,7 +10,7 @@
 \contentsline {section}{\numberline {1.7}CBR Process}{5}{section.1.7}
 \contentsline {section}{\numberline {1.8}Retrieve}{6}{section.1.8}
 \contentsline {section}{\numberline {1.9}Reuse}{6}{section.1.9}
-\contentsline {section}{\numberline {1.10}Revise}{6}{section.1.10}
+\contentsline {section}{\numberline {1.10}Revise}{7}{section.1.10}
 \contentsline {section}{\numberline {1.11}Retain}{7}{section.1.11}
 \contentsline {section}{\numberline {1.12}Conclusion}{7}{section.1.12}
 \contentsline {chapter}{\numberline {2}The program structure}{9}{chapter.2}

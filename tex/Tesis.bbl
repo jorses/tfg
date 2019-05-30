@@ -24,9 +24,14 @@ P.~Gerv{\'{a}}s, B.~D{\'{\i}}az{-}Agudo, F.~Peinado, and R.~Herv{\'{a}}s.
 
 \bibitem{ELOFORMULA}
 M.~Glickman.
-\newblock Case-based reasoning: Foundational issues, methodological variations,
-  and system approaches.
-\newblock {\em AI Commun. IOS Press}, 2001.
+\newblock Mathematics of the elo formulation.
+\newblock 2001.
+
+\bibitem{Hullermeier2007}
+E.~H\"{u}llermeier.
+\newblock {\em Case-Based Approximate Reasoning (Theory and Decision Library
+  B)}.
+\newblock Springer-Verlag, Berlin, Heidelberg, 2007.
 
 \bibitem{Kosara16}
 R.~Kosara.
@@ -42,6 +47,11 @@ K.~R. McKeown.
 A.~Ojo and B.~Heravi.
 \newblock Patterns in award winning data storytelling.
 \newblock {\em Digital Journalism}, pages 1--26, 2017.
+
+\bibitem{Richter}
+M.~M. Richter and R.~O. Weber.
+\newblock {\em Case-Based Reasoning: A Textbook}.
+\newblock Springer Publishing Company, Incorporated, 2013.
 
 \bibitem{Roels2017}
 R.~Roels, Y.~Baeten, and B.~Signer.

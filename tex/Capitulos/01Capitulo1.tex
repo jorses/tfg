@@ -102,8 +102,8 @@ Our approach relates with research on NLG  based on templates \cite{McKeown}.
 
 The underlying idea is that texts often follow conventionalized patterns, that can be encapsulated in {\it schemas}, which are template programs which produce text plans. 
 Schema are derived from a target text corpus, by breaking up these texts into messages, and trying to determine how each message can be computed from the input data. 
-
 The schema-based approach to NLG approaches problem solving in the very same way as CBR does, reusing previous solutions to be used in future problems, resulting in very much the same cycle of work that we're aiming for.
+
 In \cite{sizov2017} we can see a CBR approach reusing explanation reports from previous transportation incidents.
 For other related work, \cite{Adegboyega2017} identifies core templates to good data journalism practice.
 In \cite{Roels2017} authors describe an approach and a prototype to improve data driven knowledge transfer in presentation tools by applying information visualization concepts. 
@@ -111,16 +111,17 @@ The shortcomings of the current presentation tools are discussed and they also e
 
 Other uses for CBR have also been used for poetry generation \cite{diaz2002} and story plot generation \cite{GervasDPH05}. 
 Many of the existing works are presentation oriented~\cite{Kosara16,Roels2017}. 
+CBR has alsobeen successfully used in some help desk applications like the Compaq SMART system\cite{COMPAQ} and has had a specially successful history in the health sciences\cite{HEALTH}.
 
 Our approach is more oriented towards visual narrative, i.e., the rendering of data storytelling and visualization of the input data, in the final form of a {\it report}.
-Our use case also has the basis on the comparison of new info, represented by the dataset, to old info, represented by both the objective domain information and the subjective information associated to the profile. 
+Our use case also has the basis on the comparison of new info, represented by the dataset, to old info, represented by both the objective domain information and the subjective information associated to the profile.
 
 %-------------------------------------------------------------------
 \section{CBR Design}
 %-------------------------------------------------------------------
 \label{cap5:sec:introduccion}
 
-Let's first talk about what we mean when we talk about a CBR system.
+Let's first talk about what we mean when we talk about a CBR system.\cite{Richter}
 
 CBR, or Case-Based Reasoning, is the process of solving new problems based on the solutions of similar problems we may have encountered before.
 
@@ -136,7 +137,7 @@ CBR systems basically learn by acquiring new knowledge as cases, which combined 
 %-------------------------------------------------------------------
 \label{cap5:sec:process}
 
-Case-based reasoning can be formulated for a program to emulate as the process that follows:
+Case-based reasoning can be formulated for a program to emulate as the process that follows \cite{AamodtPlaza}:
 
 \begin{enumerate}
 \item Retrieve: When facing a new problem, get cases relevant to it from memory. A case is problem, solution, and, optionally, annotations about how the solution was derived. 
