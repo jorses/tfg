@@ -1,5 +1,5 @@
-# Trabajo de Fin de Grado
-## Doble Grado en Ingeniería Informática y Matemáticas, Universidad Complutense de Madrid
+# Bachelor's Thesis
+## Double Major in Mathematics and Computer Science, Complutense University of Madrid
 
 In this repo you will find the coding work done to implement the basis of a CBR based report system for my final degree thesis. 
 
