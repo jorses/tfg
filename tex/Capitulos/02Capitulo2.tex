@@ -26,23 +26,30 @@ Our program structure needs to be flexible and adaptable, and fit the needs of b
 We will have to take into account all of this into every decision, to make sure that we're building a functional system good enough for scalability but at the same time being quick to develop for the proof of concept and the experiment to test our design choices that will allow us to try our ideas before scaling.
 
 %-------------------------------------------------------------------
-\section{Case presentation}
+\section{Overview and Case Presentation}
 %-------------------------------------------------------------------
 \label{cap2:sec:preparation}
 The input for our program is really just an user who desires to analyze a certain dataset, so it can be conceptualized as a tuple containing a user and a dataset, or a \textit{profile} and \textit{domain} with the new information that it represents. This dataset will also belong to a specific \textit{domain}, which will have association with the user \textit{profile} aswell, so our input will be quickly transformed by the program into a domain, \textit{profile}, dataset concept. The concept of extracting the domain information from the dataset provided is our approach to the retrieve from the case base step from a CBR point of view.
 
 From now on on this chapter, we assume we have previous information for both the domain the dataset belongs to and about the type of user that is trying to analyze it.
+As an example, let's say that we're a doctor looking to analyze how our new patients are faring compared to our past patients in a certain medical test.
 
 Our use case has the basis on the comparison of new info, represented by the dataset, to old info, represented by both the objective domain information and the subjective information associated to the profile. This flow is highly compatible with the CBR approach that we will outline in chapters 5 and 6, because we're essentially solving new problems from old problems.
+In the doctor's case, they would feed the system new data regarding our new patients' test.
+
 Tying the new information to the old information will be done through a storage system with matching keys for the dataset and domain, being the number of columns in our proof of concept but being easily expandable into a more global system through database indexes or anything acting like a unique identifier.
-This will be our retrieval step from a CBR point of view.
+This will be our retrieval step from a CBR point of view, and in the doctor's case this would be done by identifying what kind of tests the data belongs to. 
+As we see in \ref{cap3:sec:jsonfiller} this will be done in our proof of concept by identifying the \textit{domain} associated with the dataset fed to the system.
 
 
 The analysis of the new information will have two parts, the first one will do an isolated analysis of the new information using the techniques provided by the old, and in the second it will compare the results of the first part with the results of a similar analysis stored in the old information.
-
+In the case of our medical data, we might be able to note things like the new patients having a generally higher score for some kind of medical test, lower blood pressure, being older than usual or other metrics of the sort, which would be related to \textit{single columns} of the dataset.
+We would also be able to see things like the new dataset containing only six patients while the datasets usually contain twenty or more, objective metrics concerning the \textit{whole dataset}, or even a correlation between age and blood pressure, objective metrics concerning \textit{two or more columns}.
 This will provide us with a new object representing the relevant information about our new problem, or dataset, and then we will filter this object using the subjective information from the profile to present the user with a final report.
 
 The user will then have the means to modify this report, and thus modifying the subjective information about him or her, forming the \textit{provide} CBR step.
+Let's say for example that as a doctor we've been presented with a \textit{report} containing among other things a graphic for the unusual blood pressure from our patients in blue and also notes the unusual number of patients aswell.
+Then we'd be able to tell the program that the number of patients is not really relevant and shouldn't be taken into account, and that we'd also like a different type of graph for the blood pressure. We're able to change the report and when we shut down the program it saves the final state of the report.
 
 The program will also use the new analysis to udpate the old information about the domain before proceding to store it.
 This will provide our program with the \textit{reuse} and \textit{retain} functionalities needed from a CBR perspective.
